@@ -1,0 +1,319 @@
+{
+ "note": "Egitilmis FedProx ajaniyla GERCEK inference ornekleri (seed'li, A6 parametreleri)",
+ "agent": "FedPPO-FedProx (A6, 160 round)",
+ "seed": 777,
+ "samples": [
+  {
+   "state": [
+    0.5,
+    1.0,
+    0.6,
+    0.8825,
+    0.9621,
+    1.0,
+    0.0,
+    0.6,
+    0.8333,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0009,
+    "uyari_olustur": 0.0017,
+    "ic_sorusturma": 0.0025,
+    "some_mudahale": 0.0065,
+    "shgm_72saat_bildirim": 0.9884
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9884,
+   "value_estimate": 17.2603,
+   "reward": -6.0,
+   "appropriate_action": "ic_sorusturma"
+  },
+  {
+   "state": [
+    0.0,
+    0.0,
+    0.8,
+    0.7839,
+    0.8623,
+    1.0,
+    1.0,
+    0.6,
+    0.6667,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0005,
+    "uyari_olustur": 0.0021,
+    "ic_sorusturma": 0.0012,
+    "some_mudahale": 0.0022,
+    "shgm_72saat_bildirim": 0.994
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.994,
+   "value_estimate": 17.9024,
+   "reward": -4.0,
+   "appropriate_action": "ic_sorusturma"
+  },
+  {
+   "state": [
+    1.0,
+    0.4,
+    0.6,
+    0.8224,
+    0.9649,
+    0.0,
+    1.0,
+    0.6,
+    0.5,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0004,
+    "uyari_olustur": 0.0011,
+    "ic_sorusturma": 0.0015,
+    "some_mudahale": 0.002,
+    "shgm_72saat_bildirim": 0.995
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.995,
+   "value_estimate": 17.9049,
+   "reward": 20.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  },
+  {
+   "state": [
+    0.5,
+    1.0,
+    0.4,
+    0.7328,
+    0.9995,
+    1.0,
+    1.0,
+    0.6,
+    0.5,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0008,
+    "uyari_olustur": 0.0011,
+    "ic_sorusturma": 0.0019,
+    "some_mudahale": 0.0036,
+    "shgm_72saat_bildirim": 0.9927
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9927,
+   "value_estimate": 17.408,
+   "reward": -4.0,
+   "appropriate_action": "ic_sorusturma"
+  },
+  {
+   "state": [
+    0.7857,
+    0.6,
+    0.6,
+    0.942,
+    0.8772,
+    0.0,
+    1.0,
+    0.6,
+    0.6667,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0004,
+    "uyari_olustur": 0.001,
+    "ic_sorusturma": 0.0014,
+    "some_mudahale": 0.0027,
+    "shgm_72saat_bildirim": 0.9945
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9945,
+   "value_estimate": 17.8015,
+   "reward": 20.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  },
+  {
+   "state": [
+    0.0,
+    0.0,
+    0.4,
+    0.6316,
+    0.984,
+    1.0,
+    1.0,
+    0.6,
+    0.6667,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0005,
+    "uyari_olustur": 0.0019,
+    "ic_sorusturma": 0.0012,
+    "some_mudahale": 0.0023,
+    "shgm_72saat_bildirim": 0.9941
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9941,
+   "value_estimate": 17.7905,
+   "reward": -1.0,
+   "appropriate_action": "some_mudahale"
+  },
+  {
+   "state": [
+    0.5,
+    1.0,
+    0.4,
+    0.929,
+    0.9588,
+    1.0,
+    1.0,
+    0.6,
+    0.8333,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0008,
+    "uyari_olustur": 0.001,
+    "ic_sorusturma": 0.0017,
+    "some_mudahale": 0.0044,
+    "shgm_72saat_bildirim": 0.9921
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9921,
+   "value_estimate": 17.4228,
+   "reward": -4.0,
+   "appropriate_action": "ic_sorusturma"
+  },
+  {
+   "state": [
+    0.8571,
+    0.0,
+    0.6,
+    0.9508,
+    0.9641,
+    0.0,
+    1.0,
+    0.6,
+    0.6667,
+    0.6
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0004,
+    "uyari_olustur": 0.0015,
+    "ic_sorusturma": 0.0014,
+    "some_mudahale": 0.0023,
+    "shgm_72saat_bildirim": 0.9944
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9944,
+   "value_estimate": 17.8243,
+   "reward": 20.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  },
+  {
+   "state": [
+    0.3571,
+    0.0,
+    0.8,
+    0.7356,
+    0.7013,
+    0.0,
+    1.0,
+    0.6,
+    0.8333,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0005,
+    "uyari_olustur": 0.0022,
+    "ic_sorusturma": 0.0014,
+    "some_mudahale": 0.0023,
+    "shgm_72saat_bildirim": 0.9936
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9936,
+   "value_estimate": 17.8457,
+   "reward": 20.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  },
+  {
+   "state": [
+    0.1429,
+    0.0,
+    0.6,
+    0.8731,
+    0.9501,
+    1.0,
+    0.0,
+    0.8,
+    0.6667,
+    0.8
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0005,
+    "uyari_olustur": 0.0029,
+    "ic_sorusturma": 0.0016,
+    "some_mudahale": 0.0037,
+    "shgm_72saat_bildirim": 0.9912
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9912,
+   "value_estimate": 17.789,
+   "reward": 18.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  },
+  {
+   "state": [
+    0.8571,
+    0.0,
+    0.8,
+    0.7472,
+    0.8988,
+    0.0,
+    1.0,
+    0.6,
+    0.6667,
+    0.6
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0004,
+    "uyari_olustur": 0.0019,
+    "ic_sorusturma": 0.0017,
+    "some_mudahale": 0.0021,
+    "shgm_72saat_bildirim": 0.9938
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9938,
+   "value_estimate": 17.8233,
+   "reward": 20.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  },
+  {
+   "state": [
+    0.8571,
+    0.0,
+    0.4,
+    0.893,
+    0.9798,
+    1.0,
+    1.0,
+    0.6,
+    0.5,
+    0.6
+   ],
+   "action_distribution": {
+    "izleme_devam": 0.0005,
+    "uyari_olustur": 0.0014,
+    "ic_sorusturma": 0.0016,
+    "some_mudahale": 0.0026,
+    "shgm_72saat_bildirim": 0.9938
+   },
+   "decision": "shgm_72saat_bildirim",
+   "confidence": 0.9938,
+   "value_estimate": 17.651,
+   "reward": 20.0,
+   "appropriate_action": "shgm_72saat_bildirim"
+  }
+ ]
+}

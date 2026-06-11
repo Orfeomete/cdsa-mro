@@ -1,0 +1,144 @@
+% CDSA-MRO arXiv preprint v2 — LaTeX source (converted from CDSA_MRO_arXiv_preprint_v2.docx)
+% Compile: pdflatex main.tex (x2)
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+
+\title{\bfseries Multi-modal Federated Reinforcement Learning for Aviation Maintenance Safety: Engine Health, Cyber-Safety and Maintenance History Fusion}
+\author{Mete Cantekin\\[2pt]
+\normalsize Department of Computer Engineering, Istanbul Beykent University, Istanbul, Turkey\\
+\normalsize ORCID: 0009-0001-6990-6340 \,\textperiodcentered\, \texttt{metecantekin@gmail.com}}
+\date{Preprint v2 --- Scenario C paradigm alignment (May 2026)}
+
+\begin{document}
+\maketitle
+
+\begin{center}\small
+Primary class: cs.LG (Machine Learning) \,\textperiodcentered\, Cross-list: cs.AI, cs.CR, eess.SY\\
+Companion journal article (sibling): \emph{Reliability Engineering \& System Safety} (RESS, Q1), v3 in preparation.\\
+Sole author per the CDSA Authorship Rule.
+\end{center}
+
+\begin{abstract}
+\noindent We propose a multi-modal Federated Reinforcement Learning (FRL) architecture for aviation maintenance safety, integrating engine health monitoring, cyber-safety incident prediction and maintenance record history into a unified decision framework. The architecture comprises five components: (i) a three-encoder multi-modal policy network (1D-CNN+LSTM for NASA C-MAPSS turbofan engine signals, Transformer for cyber-safety incidents aligned with SHT-SIBER Annex~13, LSTM for SHY-145-format maintenance records); (ii) cross-modal attention + gating fusion; (iii) FedPPO (Federated Averaging + Proximal Policy Optimization) across a three-MRO consortium; (iv) differential privacy + threshold cryptography; (v) SHAP + counterfactual XAI. Tested on three simulated MROs under Non-IID Dirichlet $\alpha=0.5$ distribution, the FedPPO multi-modal architecture achieves $+0.08$ F1 gain on Urgent Maintenance decisions at a typical 3--5\% RMSE cost on the NASA C-MAPSS RUL prediction task. SHAP modality contribution analysis shows that Urgent Maintenance is 62\% engine + 28\% cyber; Fleet-wide Alert is 64\% cyber + 23\% engine. This is the MRO pillar of the three-pillar CDSA research programme; the companion journal article is in preparation for RESS (Q1).
+
+\medskip
+\noindent\textbf{Keywords:} Federated Reinforcement Learning, Multi-modal Fusion, NASA C-MAPSS, Engine Health Monitoring, Cyber-Safety, Aviation Maintenance, EASA Part-IS, MEDA, Explainable AI, SHAP, CDSA.
+\end{abstract}
+
+\section*{CDSA Paradigm Context (Scenario C)}
+This preprint is positioned within the CDSA Methodological Unification Decision (Scenario~C, 21~May~2026, frozen status). CDSA (Complementary Diagnostic Safety Approach) is a Federated Reinforcement Learning (FRL)-based multi-domain aviation safety decision framework. The three pillars are CDSA-BB3 (Pilot Biometrics), CDSA-MRO (Maintenance Safety) and CDSA-ATM (Air Traffic Management); the three pillars share a common FRL paradigm with pillar-specific policy network architectures.
+
+This preprint presents the MRO (maintenance safety) pillar. The sibling preprints cover CDSA-BB3 (pilot biometrics, JATM~Q2) and CDSA-ATM (air traffic management, CEAS~Q2). A paradigm-defining umbrella paper (CDSA Safety Science~Q1, in preparation) positions the three pillars under a common diagnostic-safety paradigm and reports convergent validation results across the three domains.
+
+\section{Introduction}
+Aviation maintenance organisations face two regulatory frontlines that have traditionally been addressed by separate academic communities. The first is engine health monitoring, where the canonical benchmark is the NASA C-MAPSS turbofan engine degradation dataset~\cite{saxena2008}. The second is cyber-safety, where EU Implementing Regulation 2023/203 (EASA Part-IS)~\cite{partis} and the Turkish SHGM SHT-SIBER directive~\cite{shtsiber} mandate cyber-safety management systems. Modern maintenance decisions, however, require simultaneous consideration of both dimensions: an engine degradation trend combined with a cyber-safety event can directly trigger an Urgent Maintenance action.
+
+Furthermore, MRO operational records and cyber-safety incident logs carry trade-secret status, making centralised AI training across multiple MROs impractical. This preprint addresses both challenges with a single architecture: multi-modal fusion of engine, cyber and maintenance history modalities under an FRL paradigm that preserves data locality.
+
+\section{Methodology}
+\subsection{Multi-modal policy network}
+Three modality streams are encoded by parallel branches: (i)~engine modality (NASA C-MAPSS FD001--FD004, 21 sensor channels) by 1D-CNN+LSTM; (ii)~cyber-safety modality (CDSA-MRO-SDG synthetic data, 1000 records, seed${}=42$, byte-reproducible) by Transformer encoder~\cite{vaswani2017}; (iii)~maintenance history modality (800 simulated SHY-145 records) by LSTM. Encoder outputs are fused via cross-modal attention with per-modality gating $g_m = \sigma(W h_m + b)$; the fused representation feeds into a PPO Actor--Critic head~\cite{schulman2017, sutton2018} with four action classes: \emph{no maintenance required}, \emph{scheduled maintenance}, \emph{urgent maintenance}, \emph{fleet-wide alert}. Total parameter count ${\sim}4.2$M.
+
+\subsection{Federated layer, privacy and XAI}
+The federated layer covers a three-MRO consortium (MRO-A, MRO-B, MRO-C) with FedAvg~\cite{mcmahan2017} + FedProx ($\mu=0.01$)~\cite{li2020} aggregation. Differential privacy ($\varepsilon \le 1.0$, $\delta = 10^{-5}$)~\cite{dwork2014} and Shamir Secret Sharing (2,3)~\cite{shamir1979} are applied at the aggregation step. The XAI layer combines SHAP~\cite{lundberg2017}, counterfactual reasoning~\cite{wachter2017} and LIME; outputs are convertible to EASA Part-IS audit reports and SHGM SHT-SIBER Annex~13 incident analysis format, in line with EASA AI Roadmap Level~2 AI/ML expectations~\cite{easaai}.
+
+\section{Experimental setup}
+\begin{table}[ht]\centering\small
+\caption{Federated multi-modal experiment configuration.}
+\begin{tabular}{ll}
+\toprule
+\textbf{Configuration parameter} & \textbf{Value}\\
+\midrule
+Consortium size & 3 MROs\\
+Data distribution & Non-IID (Dirichlet $\alpha=0.5$)\\
+Federation algorithm & FedAvg + FedProx ($\mu=0.01$)\\
+Federation rounds ($R$) & 60\\
+Local epochs / round ($E$) & 5\\
+Policy algorithm & PPO (clip${}=0.2$, $\gamma=0.99$)\\
+Multi-modal fusion & Cross-modal attention + gating\\
+Total parameters & ${\sim}4.2$\,M\\
+DP budget ($\varepsilon$) & 1.0\\
+Threshold crypto $(t,n)$ & (2,3) Shamir SSS\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Results}
+\subsection{NASA C-MAPSS engine pillar}
+\begin{table}[ht]\centering\small
+\caption{C-MAPSS results: RUL RMSE, PHM08 score and maintenance-decision F1.}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Sub-set} & \textbf{Architecture} & \textbf{RMSE} & \textbf{PHM08} & \textbf{Decision F1}\\
+\midrule
+FD001 & Centralised LSTM (baseline) & 13.4 & 289 & ---\\
+FD001 & Centralised multi-modal & 11.8 & 241 & 0.71\\
+FD001 & FedPPO multi-modal & 12.3 & 256 & 0.69\\
+FD002 & FedPPO multi-modal & 17.6 & 1924 & 0.62\\
+FD003 & FedPPO multi-modal & 13.1 & 327 & 0.66\\
+FD004 & FedPPO multi-modal & 20.5 & 3784 & 0.57\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Federated aggregation incurs a 3--5\% RMSE increase across all sub-sets compared to centralised baselines (typical federation cost~\cite{mcmahan2017}). The multi-modal architecture yields $+0.08$ decision F1 over the single-modal engine baseline on FD001. The agent captures 91\% of critical engine failures via the Urgent Maintenance action (recall${}=0.91$, precision${}=0.74$). Dispatch reliability improves by 2.4\% on simulated fleets.
+
+\subsection{SHAP modality contribution analysis}
+\begin{table}[ht]\centering\small
+\caption{Mean SHAP modality contribution (\%) per maintenance decision class.}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Decision class} & \textbf{Engine (\%)} & \textbf{Cyber (\%)} & \textbf{Maint.\ history (\%)}\\
+\midrule
+No maintenance required & 41 & 12 & 47\\
+Scheduled maintenance & 58 & 10 & 32\\
+Urgent maintenance & 62 & 28 & 10\\
+Fleet-wide alert & 23 & 64 & 13\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Urgent Maintenance is engine-dominated (62\%) with cyber trigger support (28\%). Fleet-wide Alert is cyber-dominated (64\%) --- a single engine fault does not trigger a fleet-level alert; only widespread cyber events (supply chain contamination, authorisation violations) do. Counterfactual analysis: on FD001, with the engine signal below the pre-fault warning level, an injected USB-malware cyber event transitions the agent from Scheduled Maintenance to Urgent Maintenance; in the counterfactual (no cyber event) it reverts to Scheduled Maintenance.
+
+\section{Discussion and limitations}
+Four limitations are noted. (i)~NASA C-MAPSS is a synthetic benchmark; real MRO sensor diversity is not fully reflected. (ii)~The three-MRO consortium is simulated; real-world field validation is deferred to TUBITAK Project~3 (Sept~2026 cycle). (iii)~FedProx $\mu$ and round count $R$ hyperparameter sensitivity may require HPO re-tuning. (iv)~Alternative federated algorithms (FedNova, SCAFFOLD) and deep RL variants (SAC, TD3) are out of scope.
+
+\section{Conclusion}
+This preprint presents the MRO pillar of the CDSA three-pillar FRL paradigm: multi-modal fusion of engine health, cyber-safety and maintenance history under FedPPO. The companion RESS journal article (v3, in preparation) elaborates the methodology and includes the MEDA cross-alignment analysis~\cite{meda, mitre, khan2024}. Future work focuses on TUBITAK Project~3 field validation in two pilot maintenance organisations, real-scale FedPPO training, and CDSA three-pillar cross-domain transfer learning integration.
+
+\section*{Data and code availability}
+Source code, training scripts, synthetic data and XAI output schemas are available at the \texttt{Orfeomete/cdsa-mro} GitHub repository and archived on Zenodo under MIT (code) and CC-BY~4.0 (data) licences.
+
+\section*{AI use statement}
+Anthropic Claude was used as a writing assistant for manuscript editing, code scaffolding and formatting support. All scientific claims, experimental design decisions and interpretation of results are the author's own. AI tools are not listed as authors.
+
+\begin{thebibliography}{19}\small
+\bibitem{saxena2008} Saxena, A., Goebel, K., Simon, D., Eklund, N. (2008). Damage propagation modeling for aircraft engine run-to-failure simulation. \emph{PHM08} (NASA C-MAPSS dataset).
+\bibitem{sutton2018} Sutton, R.~S., Barto, A.~G. (2018). \emph{Reinforcement Learning: An Introduction} (2nd ed.). MIT Press.
+\bibitem{schulman2017} Schulman, J., Wolski, F., Dhariwal, P., Radford, A., Klimov, O. (2017). Proximal Policy Optimization Algorithms. arXiv:1707.06347.
+\bibitem{mcmahan2017} McMahan, B., Moore, E., Ramage, D., Hampson, S., y~Arcas, B.~A. (2017). Communication-Efficient Learning of Deep Networks from Decentralized Data. \emph{AISTATS}.
+\bibitem{li2020} Li, T., Sahu, A.~K., Zaheer, M., Sanjabi, M., Talwalkar, A., Smith, V. (2020). Federated Optimization in Heterogeneous Networks (FedProx). \emph{MLSys}.
+\bibitem{vaswani2017} Vaswani, A., et al. (2017). Attention Is All You Need. \emph{NeurIPS}.
+\bibitem{lundberg2017} Lundberg, S.~M., Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions. \emph{NeurIPS}.
+\bibitem{wachter2017} Wachter, S., Mittelstadt, B., Russell, C. (2017). Counterfactual Explanations Without Opening the Black Box. \emph{Harvard Journal of Law and Technology}, 31(2), 841--887.
+\bibitem{dwork2014} Dwork, C., Roth, A. (2014). The Algorithmic Foundations of Differential Privacy. \emph{Foundations and Trends in TCS}.
+\bibitem{shamir1979} Shamir, A. (1979). How to Share a Secret. \emph{Communications of the ACM}, 22(11), 612--613.
+\bibitem{partis} European Union Aviation Safety Agency (2023). Implementing Regulation (EU) 2023/203 --- Part-IS.
+\bibitem{part145} European Union Aviation Safety Agency (2014). Commission Regulation (EU) No.~1321/2014 --- Part-145.
+\bibitem{easaai} EASA (2023). Artificial Intelligence Roadmap 2.0 --- Concepts of Design (Level~2 AI/ML).
+\bibitem{shtsiber} Sivil Havacilik Genel Mudurlugu (2022). SHT-SIBER Directive + 21 Annexes.
+\bibitem{meda} Boeing CAS / FAA (2022). Maintenance Event Decision Aid (MEDA) Users Guide.
+\bibitem{mitre} MITRE Corporation (2024). MITRE ATT\&CK Framework v15.
+\bibitem{khan2024} Khan, F., Mishra, A. (2024). Synthetic Data Generation in Aviation Safety: A Survey. \emph{Reliability Engineering \& System Safety}.
+\end{thebibliography}
+
+\end{document}

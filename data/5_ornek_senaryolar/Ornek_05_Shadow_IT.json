@@ -1,0 +1,86 @@
+{
+  "olay_id": "CDSA-MRO-SDG-000005",
+  "olay_tarihi": "2026-05-02T10:15:00+03:00",
+  "firma_anonim_id": "MRO-TR-058",
+
+  "olay_ozeti": {
+    "olay_turu": "shadow_it",
+    "saat_araligi": {
+      "baslangic": "2026-03-10T00:00:00+03:00",
+      "bitis": "2026-05-02T10:15:00+03:00"
+    },
+    "olay_aciklama": "Onaylı bakım kuruluşunda hat bakım personelinden bir grup, kurumsal iletişim yazılımının cep telefonu desteği yetersiz bulduğu için kişisel WhatsApp gruplarında iş kartı fotoğrafları, bakım kayıt ekran görüntüleri ve kalibrasyon değer dökümleri paylaşmaya başlamıştır. Yaklaşık iki ay süren bu uygulama, periyodik KVKK iç denetimi sırasında fark edilmiş ve özel nitelikli personel verisi içerme potansiyeli nedeniyle yüksek seviyede değerlendirilmiştir.",
+    "kesinti_suresi_dakika": 0,
+    "etkilenen_hizmetler": [
+      "Bakım kayıt ekran görüntüleri (anonim olmayan)",
+      "İş kartı fotoğrafları (personel kimlik bilgisi)",
+      "Kalibrasyon değer dökümleri (özet)"
+    ],
+    "tahmini_maddi_kayip_TL": 60000
+  },
+
+  "olay_sureci": "Mart başında, hat bakım vardiyalarında değişen ekipler arasında iletişim sorunları yaşandığı için bir teknisyen kıdemli vardiya sorumlusu, mesai dışı saatlerde sorulara hızlı cevap üretebilmek amacıyla WhatsApp üzerinden bir grup oluşturdu. Grup zamanla 24 personele genişledi. Personel, anlık bakım sorularını çözmek için iş kartlarının cep telefonu fotoğraflarını, bakım kayıt yazılımının ekran görüntülerini ve bazen kalibrasyon değer özetlerini bu gruba göndermeye başladı. Uygulama yaklaşık iki ay sürdü. Mayıs ayında Sorumlu Müdür tarafından yürütülen periyodik KVKK iç denetimi sırasında, personel kişisel cihazlarındaki uygulama kullanım örüntüleri incelendi ve grup tespit edildi. İncelemede grubun 142 iş kartı fotoğrafı, 87 bakım kayıt ekran görüntüsü ve 23 kalibrasyon değer dökümü görüntüsü içerdiği fark edildi. İş kartlarında personelin tam adı, sicil numarası ve lisans kategorisi yer alıyordu. Olay KVKK Madde 6 kapsamında özel nitelikli personel verisi işleme yasağı potansiyel ihlali olarak SHGM ve KVKK Kurumu'na bildirildi.",
+
+  "kok_neden_analizi": {
+    "temel_neden": "Kurumsal iletişim yazılımının mobil cihaz desteğinin yetersiz olması ve personel davranış izleme sürecinin yalnızca BT varlıkları üzerinde yapılması, BYOD politikasının yokluğu.",
+    "katkida_bulunan_etmenler": [
+      "Kurumsal iletişim platformunda anlık mesaj fotoğraf paylaşım yeteneğinin sınırlı olması",
+      "Bring Your Own Device (BYOD) politikasının yokluğu",
+      "Çalışan farkındalık eğitiminde KVKK biyometrik veri kapsamının eksik anlatımı",
+      "Vardiya değişimi iletişim protokolünün dijital olarak desteklenmemesi",
+      "Sorumlu Müdür'ün KVKK iç denetimini sadece yılda 2 kez yapması"
+    ],
+    "swiss_cheese_katmanlari": [
+      {"katman": "personel_egitimi", "delik_aciklamasi": "KVKK özel veri kapsamı eğitimi yetersiz."},
+      {"katman": "teknik_kontrol", "delik_aciklamasi": "Kurumsal iletişim platformu mobil yetersizliği. BYOD politikası yok."},
+      {"katman": "yonetim", "delik_aciklamasi": "Vardiya iletişim ihtiyacı dijital olarak karşılanmamış."},
+      {"katman": "denetim", "delik_aciklamasi": "KVKK iç denetim periyodu çok seyrek."}
+    ]
+  },
+
+  "aksiyonlar": [
+    {"aksiyon_no": 1, "aciklama": "Kurumsal mobil iletişim platformu yenilenecek, KVKK uyumlu mesajlaşma çözümüne geçiş yapılacak.", "sorumlu_rol": "BT_Mudur", "oncelik": "acil"},
+    {"aksiyon_no": 2, "aciklama": "BYOD politikası yazılacak ve onaylı uygulama listesi belirlenecek.", "sorumlu_rol": "SGSYY", "oncelik": "yuksek"},
+    {"aksiyon_no": 3, "aciklama": "Tüm personele KVKK özel nitelikli veri kapsamı eğitimi verilecek.", "sorumlu_rol": "SGSYY", "oncelik": "yuksek"},
+    {"aksiyon_no": 4, "aciklama": "Sözü geçen WhatsApp grubu kapatılacak, içeriği KVKK ihbarına uygun biçimde silinecek.", "sorumlu_rol": "Sorumlu_Mudur", "oncelik": "acil"},
+    {"aksiyon_no": 5, "aciklama": "KVKK iç denetim periyodu aylık seviyeye çekilecek.", "sorumlu_rol": "SGSYY", "oncelik": "orta"}
+  ],
+
+  "projelendirme": [
+    {"proje_no": 1, "duzeltici_faaliyet": "Kurumsal mobil iletişim platformu yenileme", "baslama_tarihi": "2026-05-15", "bitis_tarihi": "2026-08-31"},
+    {"proje_no": 2, "duzeltici_faaliyet": "BYOD politika yazımı ve onay", "baslama_tarihi": "2026-05-15", "bitis_tarihi": "2026-07-31"},
+    {"proje_no": 3, "duzeltici_faaliyet": "KVKK eğitim programı (tüm personel)", "baslama_tarihi": "2026-06-01", "bitis_tarihi": "2026-09-30"},
+    {"proje_no": 4, "duzeltici_faaliyet": "Grup kapama ve içerik silme protokolü", "baslama_tarihi": "2026-05-03", "bitis_tarihi": "2026-05-15"},
+    {"proje_no": 5, "duzeltici_faaliyet": "Aylık KVKK denetim takvimi kurulumu", "baslama_tarihi": "2026-06-01", "bitis_tarihi": "2026-06-30"}
+  ],
+
+  "etiketler": {
+    "risk_seviyesi": 2,
+    "risk_seviyesi_metin": "orta",
+    "mitre_attack": {
+      "tactic": "TA0010",
+      "technique": "T1567",
+      "subtechnique": ""
+    },
+    "shtsiber_ek19_kontrol_atfi": ["2.1.1", "1.5.1", "4.2.1"],
+    "kvkk_ozel_veri_iceriyor": true,
+    "shy145_madde18_72saat_uygunluk": false
+  },
+
+  "metaveri": {
+    "uretim_tarihi": "2026-05-15T21:42:00+03:00",
+    "uretim_motor_versiyonu": "CDSA-MRO-SDG-v1.0",
+    "sentetik_garanti": {
+      "epsilon_dp": 0.8,
+      "gercek_kisi_atfi": false,
+      "gercek_firma_atfi": false,
+      "gercek_olay_atfi": false
+    },
+    "delphi_dogrulama": {
+      "uzman_sayisi": 0,
+      "realism_score": null,
+      "compliance_score": null,
+      "delphi_round_count": 0
+    }
+  }
+}

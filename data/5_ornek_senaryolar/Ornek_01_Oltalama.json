@@ -1,0 +1,82 @@
+{
+  "olay_id": "CDSA-MRO-SDG-000001",
+  "olay_tarihi": "2026-03-14T09:42:00+03:00",
+  "firma_anonim_id": "MRO-TR-017",
+
+  "olay_ozeti": {
+    "olay_turu": "oltalama_saldirisi",
+    "saat_araligi": {
+      "baslangic": "2026-03-14T09:15:00+03:00",
+      "bitis": "2026-03-14T11:08:00+03:00"
+    },
+    "olay_aciklama": "Onaylı bakım kuruluşunun bakım kayıt yöneticisi konumundaki bir personel hesabına, SHGM ARBİS sistemini taklit eden bir e-posta ulaşmıştır. E-posta, kullanıcıdan kuruluşa ait Form-4 onayının yenilenmesi gerekçesiyle ARBİS portalına benzer bir sayfaya yönlenmesini ve kurumsal kimlik bilgilerini girmesini talep etmiştir. Personel oturum açma denemesi yaptıktan yaklaşık 53 dakika sonra Kurumsal SOME izleme panosunda olağandışı IP üzerinden yapılmış başarılı oturum girişi tespit edilmiş ve hesap derhal askıya alınmıştır.",
+    "kesinti_suresi_dakika": 113,
+    "etkilenen_hizmetler": [
+      "Bakım kayıt yönetim sistemi",
+      "ARBİS bağlantılı kuruluş portal erişimi",
+      "Onaylayıcı personel yetkilendirme kuyruğu"
+    ],
+    "tahmini_maddi_kayip_TL": 35000
+  },
+
+  "olay_sureci": "Olay sabah 09 15'te kurumsal e-posta sunucusuna ulaşan, başlık satırında SHGM ARBİS Bilgilendirme ibaresi taşıyan bir oltalama iletisiyle başladı. İleti, gerçek SHGM kurumsal kimlik renkleri ve ARBİS logosunun taklidiyle hazırlanmıştı ve gönderici alanı arbis-bilgi@sgm-portal-tr.com şeklinde meşrulaştırılmaya çalışılmıştı. Personel, BKEK dokümantasyonu güncelleme dönemi nedeniyle bu iletinin gerçek olduğunu varsayarak gömülü bağlantıya tıkladı. Açılan sahte ARBİS portalı görsel olarak kurumsal kimliğin bire bir kopyasıydı. Personel kullanıcı adı ve parolasını girdi. Yaklaşık iki dakika sonra aynı kimlik bilgileriyle Romanya merkezli bir IP adresinden gerçek ARBİS sistemine başarılı bir oturum açıldı. Kurumsal SOME, anormal coğrafi konum tabanlı oturum filtresinin tetiklenmesiyle uyarıyı 53 dakika sonra aldı. Tepki olarak hesap askıya alındı, parola sıfırlandı ve aynı oltalama dalgasına maruz kalmış üç ek personel kullanıcı uyarıldı.",
+
+  "kok_neden_analizi": {
+    "temel_neden": "Bakım kayıt yönetim personelinin oltalama farkındalık eğitiminin altı aydan uzun süredir yenilenmemiş olması ve kurumsal e-posta ağ geçidinde SHGM dış alan adı doğrulamasının (DMARC strict) aktif olmaması.",
+    "katkida_bulunan_etmenler": [
+      "İki faktörlü kimlik doğrulamanın yalnızca BT sistem yöneticileri için aktif olması, bakım kayıt rollerine yayılmamış olması",
+      "Anormal coğrafi konum tabanlı oturum tespitinin yalnızca saatlik periyodla çalışması",
+      "ARBİS portal arayüzünün taklit edilebilecek şekilde standartlaştırılmış görsel kimliğe sahip olması",
+      "Kurumsal SOME izleme panosunda kritik uyarıların onay zincirinde tek kişiye bağımlı olması"
+    ],
+    "swiss_cheese_katmanlari": [
+      {"katman": "personel_egitimi", "delik_aciklamasi": "Farkındalık eğitimi son 6 ay içinde yenilenmemiş."},
+      {"katman": "teknik_kontrol", "delik_aciklamasi": "MFA bakım kayıt rolüne yayılmamış. DMARC strict politikası uygulanmamış."},
+      {"katman": "denetim", "delik_aciklamasi": "Anomali tespit eşik süresi 1 saat — fazla geniş."}
+    ]
+  },
+
+  "aksiyonlar": [
+    {"aksiyon_no": 1, "aciklama": "Tüm bakım kayıt ve onaylayıcı personel rollerine zorunlu MFA aktive edilecek.", "sorumlu_rol": "SGSYY", "oncelik": "acil"},
+    {"aksiyon_no": 2, "aciklama": "Kurumsal e-posta ağ geçidinde DMARC reject politikası uygulanacak.", "sorumlu_rol": "BT_Mudur", "oncelik": "acil"},
+    {"aksiyon_no": 3, "aciklama": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.", "sorumlu_rol": "Kurumsal_SOME", "oncelik": "yuksek"},
+    {"aksiyon_no": 4, "aciklama": "Tüm personele güncellenmiş oltalama farkındalık eğitimi verilecek, simülasyonlu test ile pekiştirilecek.", "sorumlu_rol": "SGSYY", "oncelik": "yuksek"}
+  ],
+
+  "projelendirme": [
+    {"proje_no": 1, "duzeltici_faaliyet": "MFA yayılım projesi", "baslama_tarihi": "2026-03-17", "bitis_tarihi": "2026-04-30"},
+    {"proje_no": 2, "duzeltici_faaliyet": "DMARC reject geçiş projesi", "baslama_tarihi": "2026-03-17", "bitis_tarihi": "2026-03-31"},
+    {"proje_no": 3, "duzeltici_faaliyet": "Anomali tespit periyodu sıkılaştırma", "baslama_tarihi": "2026-03-20", "bitis_tarihi": "2026-04-15"},
+    {"proje_no": 4, "duzeltici_faaliyet": "Yıllık oltalama simülasyonu programı kurulumu", "baslama_tarihi": "2026-04-01", "bitis_tarihi": "2026-06-30"}
+  ],
+
+  "etiketler": {
+    "risk_seviyesi": 3,
+    "risk_seviyesi_metin": "yuksek",
+    "mitre_attack": {
+      "tactic": "TA0001",
+      "technique": "T1566",
+      "subtechnique": "T1566.002"
+    },
+    "shtsiber_ek19_kontrol_atfi": ["1.2.1", "4.1.1", "1.4.2"],
+    "kvkk_ozel_veri_iceriyor": false,
+    "shy145_madde18_72saat_uygunluk": true
+  },
+
+  "metaveri": {
+    "uretim_tarihi": "2026-05-15T21:25:00+03:00",
+    "uretim_motor_versiyonu": "CDSA-MRO-SDG-v1.0",
+    "sentetik_garanti": {
+      "epsilon_dp": 0.8,
+      "gercek_kisi_atfi": false,
+      "gercek_firma_atfi": false,
+      "gercek_olay_atfi": false
+    },
+    "delphi_dogrulama": {
+      "uzman_sayisi": 0,
+      "realism_score": null,
+      "compliance_score": null,
+      "delphi_round_count": 0
+    }
+  }
+}

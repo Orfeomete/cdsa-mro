@@ -1,0 +1,85 @@
+{
+  "olay_id": "CDSA-MRO-SDG-000002",
+  "olay_tarihi": "2026-02-08T14:11:00+03:00",
+  "firma_anonim_id": "MRO-TR-042",
+
+  "olay_ozeti": {
+    "olay_turu": "ot_sistem_sizmasi",
+    "saat_araligi": {
+      "baslangic": "2026-02-08T13:55:00+03:00",
+      "bitis": "2026-02-09T03:20:00+03:00"
+    },
+    "olay_aciklama": "Onaylı bakım kuruluşunun NDT atölyesinde yer alan ultrasonik tahribatsız muayene cihazına ait kontrol bilgisayarına, periyodik kalibrasyon güncellemesi gerekçesiyle bağlanan bir teknisyen USB belleğinden tespit edilemeyen bir zararlı yazılım bulaşmıştır. Zararlı yazılım yaklaşık 13 saat sonra atölye yerel ağı içinde kalibrasyon kayıt sunucusuna yatay geçiş yapmaya çalışırken Kurumsal SOME tarafından imza tabanlı tespit kuralı ile yakalanmıştır.",
+    "kesinti_suresi_dakika": 805,
+    "etkilenen_hizmetler": [
+      "Ultrasonik NDT cihazı kontrol bilgisayarı",
+      "Atölye yerel ağ segmenti",
+      "Kalibrasyon kayıt sunucusu (kısmi etki)"
+    ],
+    "tahmini_maddi_kayip_TL": 180000
+  },
+
+  "olay_sureci": "Olayın başlangıç noktası, atölyede ultrasonik NDT cihazının üretici tarafından önerilen yıllık yazılım güncellemesi sürecidir. Teknisyen, üretici web sitesinden indirilen güncelleme paketini önce bir kişisel USB belleğe kopyalamış, ardından bu USB'yi atölyedeki kontrol bilgisayarına takmıştır. USB cihazı kullanım öncesinde kuruluşun beyaz liste yazılım envanterinde bulunmamasına rağmen kontrol bilgisayarının USB portu fiziksel olarak kilitli değildi. Güncelleme paketinin imza doğrulaması başarılı görünmüştü ancak paketin içinde gizlenmiş ikinci bir yürütülebilir bileşen, kalibrasyon kayıtlarının çalıştığı backend sunucuya yatay geçiş yapmak amacıyla zamanlanmış bir görev oluşturdu. Bu görev gece saat 03 20 civarında otomatik tetiklendi ve atölye yerel ağı üzerinde port tarama başlattı. İlk on dakika içinde Kurumsal SOME izleme sisteminin OT segmenti için ayarlanmış olan davranış tabanlı tespit kuralı yatay hareketi yakaladı ve etkilenen cihazı ağdan otomatik izole etti. NDT cihazı ertesi gün yeniden imaj alınarak hizmete döndürüldü.",
+
+  "kok_neden_analizi": {
+    "temel_neden": "OT segmentindeki cihazlarda USB portu fiziksel kilit veya yazılım tabanlı erişim kontrolü uygulanmamış olması ve üretici güncelleme paketlerinin imza doğrulamasının çok katmanlı yapılmaması.",
+    "katkida_bulunan_etmenler": [
+      "Teknisyenin kişisel USB belleğini kurumsal cihaz üzerinde kullanması, beyaz liste politikasının uygulanmaması",
+      "BT ve OT ağ segmentasyonunun yalnızca VLAN seviyesinde olması, mikro-segmentasyon uygulanmaması",
+      "Üretici güncelleme paketinin paketleme bütünlüğünün yalnızca tek bir kriptografik imza ile doğrulanması",
+      "OT cihazları için davranış tabanlı izleme kuralının yalnızca bir Kurumsal SOME izleme ekibine bağlı olması"
+    ],
+    "swiss_cheese_katmanlari": [
+      {"katman": "fiziksel_guvenlik", "delik_aciklamasi": "USB portu fiziksel kilit yok."},
+      {"katman": "teknik_kontrol", "delik_aciklamasi": "OT-BT mikro-segmentasyon eksik. Beyaz liste politikası zorunlu değil."},
+      {"katman": "tedarikci", "delik_aciklamasi": "Üretici güncelleme paketi tek katmanlı imza ile gelir."},
+      {"katman": "personel_egitimi", "delik_aciklamasi": "Teknisyenler için OT güvenlik bilinci eğitimi yapılmamış."}
+    ]
+  },
+
+  "aksiyonlar": [
+    {"aksiyon_no": 1, "aciklama": "Tüm OT cihazlarının USB portlarına fiziksel kilit takılacak ve yazılım tabanlı erişim kontrolü uygulanacak.", "sorumlu_rol": "Sorumlu_Mudur", "oncelik": "acil"},
+    {"aksiyon_no": 2, "aciklama": "OT-BT mikro-segmentasyon projesi başlatılacak.", "sorumlu_rol": "BT_Mudur", "oncelik": "yuksek"},
+    {"aksiyon_no": 3, "aciklama": "Tüm üretici güncelleme paketleri çift katmanlı imza doğrulamasından geçirilecek.", "sorumlu_rol": "Kurumsal_SOME", "oncelik": "yuksek"},
+    {"aksiyon_no": 4, "aciklama": "OT cihazları için özel davranış tabanlı izleme kurallarının kapsamı genişletilecek.", "sorumlu_rol": "Kurumsal_SOME", "oncelik": "yuksek"},
+    {"aksiyon_no": 5, "aciklama": "Atölye personeli için OT güvenlik farkındalık eğitimi düzenlenecek.", "sorumlu_rol": "SGSYY", "oncelik": "orta"}
+  ],
+
+  "projelendirme": [
+    {"proje_no": 1, "duzeltici_faaliyet": "OT USB fiziksel kilit projesi", "baslama_tarihi": "2026-02-12", "bitis_tarihi": "2026-03-15"},
+    {"proje_no": 2, "duzeltici_faaliyet": "OT-BT mikro-segmentasyon projesi", "baslama_tarihi": "2026-03-01", "bitis_tarihi": "2026-09-30"},
+    {"proje_no": 3, "duzeltici_faaliyet": "Çift katmanlı imza doğrulama kurulumu", "baslama_tarihi": "2026-02-15", "bitis_tarihi": "2026-04-15"},
+    {"proje_no": 4, "duzeltici_faaliyet": "OT davranış tespit kuralları genişletme", "baslama_tarihi": "2026-02-15", "bitis_tarihi": "2026-05-15"},
+    {"proje_no": 5, "duzeltici_faaliyet": "OT güvenlik farkındalık eğitimi programı", "baslama_tarihi": "2026-03-01", "bitis_tarihi": "2026-06-30"}
+  ],
+
+  "etiketler": {
+    "risk_seviyesi": 4,
+    "risk_seviyesi_metin": "kritik",
+    "mitre_attack": {
+      "tactic": "TA0001",
+      "technique": "T1091",
+      "subtechnique": ""
+    },
+    "shtsiber_ek19_kontrol_atfi": ["12.3.5", "6.2.1", "1.3.1", "15.1.1"],
+    "kvkk_ozel_veri_iceriyor": false,
+    "shy145_madde18_72saat_uygunluk": true
+  },
+
+  "metaveri": {
+    "uretim_tarihi": "2026-05-15T21:30:00+03:00",
+    "uretim_motor_versiyonu": "CDSA-MRO-SDG-v1.0",
+    "sentetik_garanti": {
+      "epsilon_dp": 0.8,
+      "gercek_kisi_atfi": false,
+      "gercek_firma_atfi": false,
+      "gercek_olay_atfi": false
+    },
+    "delphi_dogrulama": {
+      "uzman_sayisi": 0,
+      "realism_score": null,
+      "compliance_score": null,
+      "delphi_round_count": 0
+    }
+  }
+}

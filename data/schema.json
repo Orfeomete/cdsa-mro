@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CDSA-MRO Sentetik Siber-Emniyet Olay Veri Şeması",
+  "description": "SHT-SİBER Ek-13 5-bölümlü olay analiz formatı temel alınarak, Ek-19 (173 kontrol noktası), Ek-21 (Bulgu Önem Seviyesi), MITRE ATT&CK, SHY-145, SHT-145 ve KVKK ile hizalı sentetik olay kaydı şeması.",
+  "version": "1.0",
+  "type": "object",
+  "required": [
+    "olay_id",
+    "olay_tarihi",
+    "firma_anonim_id",
+    "olay_ozeti",
+    "olay_sureci",
+    "kok_neden_analizi",
+    "aksiyonlar",
+    "projelendirme",
+    "etiketler",
+    "metaveri"
+  ],
+  "properties": {
+
+    "olay_id": {
+      "type": "string",
+      "pattern": "^CDSA-MRO-SDG-[0-9]{6}$",
+      "description": "Benzersiz sentetik olay tanımlayıcısı. Örnek CDSA-MRO-SDG-000142."
+    },
+
+    "olay_tarihi": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 sentetik olay tespit tarihi ve saati."
+    },
+
+    "firma_anonim_id": {
+      "type": "string",
+      "pattern": "^MRO-[A-Z]{2}-[0-9]{3}$",
+      "description": "Anonim MRO tanımlayıcısı. Gerçek firmaya atıf yapmaz. Örnek MRO-TR-017."
+    },
+
+    "olay_ozeti": {
+      "type": "object",
+      "description": "Ek-13 Bölüm 1 - Siber Olay Hakkında Özet Bilgi",
+      "required": ["olay_turu", "saat_araligi", "olay_aciklama", "kesinti_suresi_dakika", "etkilenen_hizmetler", "tahmini_maddi_kayip_TL"],
+      "properties": {
+        "olay_turu": {
+          "type": "string",
+          "enum": [
+            "oltalama_saldirisi",
+            "hesap_ele_gecirme",
+            "ot_sistem_sizmasi",
+            "fidye_yazilimi",
+            "ddos_saldirisi",
+            "tedarik_zinciri_kontaminasyonu",
+            "usb_zararli_yazilim",
+            "shadow_it",
+            "konfigurasyon_hatasi",
+            "yetki_iptal_eksikligi",
+            "egitim_sistem_manipulasyonu",
+            "kalibrasyon_butunluk_ihlali",
+            "portal_erisim_ihlali",
+            "sosyal_muhendislik",
+            "is_emri_sahteciligi"
+          ]
+        },
+        "saat_araligi": {
+          "type": "object",
+          "properties": {
+            "baslangic": {"type": "string", "format": "date-time"},
+            "bitis": {"type": "string", "format": "date-time"}
+          }
+        },
+        "olay_aciklama": {
+          "type": "string",
+          "minLength": 100,
+          "maxLength": 800,
+          "description": "Türkçe akademik dilde olay özet anlatımı. 1-2 paragraf."
+        },
+        "kesinti_suresi_dakika": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10080,
+          "description": "Etki süresi, dakika cinsinden. Maks 7 gün."
+        },
+        "etkilenen_hizmetler": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Etkilenen MRO hizmetleri veya süreçleri."
+        },
+        "tahmini_maddi_kayip_TL": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Tahmini maddi kayıp, TL cinsinden."
+        }
+      }
+    },
+
+    "olay_sureci": {
+      "type": "string",
+      "minLength": 300,
+      "maxLength": 2500,
+      "description": "Ek-13 Bölüm 2 - Siber Olay Süreci Detaylı Anlatım. Olayın baştan sonuna teknik öyküsü, Türkçe akademik dil, 3-5 paragraf."
+    },
+
+    "kok_neden_analizi": {
+      "type": "object",
+      "description": "Ek-13 Bölüm 3 - Kök Neden Analizi. XAI için kritik alan.",
+      "required": ["temel_neden", "katkida_bulunan_etmenler", "swiss_cheese_katmanlari"],
+      "properties": {
+        "temel_neden": {
+          "type": "string",
+          "minLength": 100,
+          "maxLength": 500
+        },
+        "katkida_bulunan_etmenler": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 2,
+          "maxItems": 6,
+          "description": "Olaya katkıda bulunan organizasyonel, insan, teknik ve süreç etmenleri."
+        },
+        "swiss_cheese_katmanlari": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "katman": {"type": "string", "enum": ["yonetim", "denetim", "personel_egitimi", "teknik_kontrol", "fiziksel_guvenlik", "tedarikci"]},
+              "delik_aciklamasi": {"type": "string"}
+            }
+          },
+          "description": "Reason Swiss Cheese modeli ile bakım organizasyonu emniyet katmanlarındaki delikler."
+        }
+      }
+    },
+
+    "aksiyonlar": {
+      "type": "array",
+      "description": "Ek-13 Bölüm 4 - Olayın Tekrarlanmaması için Alınacak Aksiyonlar",
+      "minItems": 3,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["aksiyon_no", "aciklama", "sorumlu_rol", "oncelik"],
+        "properties": {
+          "aksiyon_no": {"type": "integer", "minimum": 1},
+          "aciklama": {"type": "string"},
+          "sorumlu_rol": {"type": "string", "enum": ["SGSYY", "Kurumsal_SOME", "BT_Mudur", "Sorumlu_Mudur", "Onaylayici_Personel", "B1_Tekniker", "Tedarikci_Yonetim"]},
+          "oncelik": {"type": "string", "enum": ["acil", "yuksek", "orta", "dusuk"]}
+        }
+      }
+    },
+
+    "projelendirme": {
+      "type": "array",
+      "description": "Ek-13 Bölüm 5 - Düzeltici Faaliyet Projelendirme",
+      "items": {
+        "type": "object",
+        "required": ["proje_no", "duzeltici_faaliyet", "baslama_tarihi", "bitis_tarihi"],
+        "properties": {
+          "proje_no": {"type": "integer"},
+          "duzeltici_faaliyet": {"type": "string"},
+          "baslama_tarihi": {"type": "string", "format": "date"},
+          "bitis_tarihi": {"type": "string", "format": "date"}
+        }
+      }
+    },
+
+    "etiketler": {
+      "type": "object",
+      "description": "Pekiştirmeli Öğrenme modeline beslenecek hazır etiketler.",
+      "required": ["risk_seviyesi", "mitre_attack", "shtsiber_ek19_kontrol_atfi", "kvkk_ozel_veri_iceriyor", "shy145_madde18_72saat_uygunluk"],
+      "properties": {
+        "risk_seviyesi": {
+          "type": "integer",
+          "enum": [1, 2, 3, 4],
+          "description": "Ek-21 Bulgu Önem Seviyesi. 4 Kritik, 3 Yüksek, 2 Orta, 1 Düşük."
+        },
+        "risk_seviyesi_metin": {
+          "type": "string",
+          "enum": ["dusuk", "orta", "yuksek", "kritik"]
+        },
+        "mitre_attack": {
+          "type": "object",
+          "properties": {
+            "tactic": {"type": "string", "description": "Örnek TA0001 Initial Access"},
+            "technique": {"type": "string", "description": "Örnek T1566 Phishing"},
+            "subtechnique": {"type": "string"}
+          }
+        },
+        "shtsiber_ek19_kontrol_atfi": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Hangi 173 kontrol noktasından hangileri ihlal edildi. Örnek 1.2.1, 10.3.4"
+        },
+        "kvkk_ozel_veri_iceriyor": {
+          "type": "boolean",
+          "description": "Olay KVKK md.6 özel nitelikli veri içeriyor mu (biyometrik vb)."
+        },
+        "shy145_madde18_72saat_uygunluk": {
+          "type": "boolean",
+          "description": "Olay 72 saat içinde bildirildi mi."
+        }
+      }
+    },
+
+    "metaveri": {
+      "type": "object",
+      "description": "Sentetik veri üretim metadata.",
+      "required": ["uretim_tarihi", "uretim_motor_versiyonu", "sentetik_garanti", "delphi_dogrulama"],
+      "properties": {
+        "uretim_tarihi": {"type": "string", "format": "date-time"},
+        "uretim_motor_versiyonu": {"type": "string", "description": "Örnek CDSA-MRO-SDG-v1.0"},
+        "sentetik_garanti": {
+          "type": "object",
+          "properties": {
+            "epsilon_dp": {"type": "number", "description": "Diferansiyel mahremiyet epsilon"},
+            "gercek_kisi_atfi": {"type": "boolean", "const": false},
+            "gercek_firma_atfi": {"type": "boolean", "const": false},
+            "gercek_olay_atfi": {"type": "boolean", "const": false}
+          }
+        },
+        "delphi_dogrulama": {
+          "type": "object",
+          "properties": {
+            "uzman_sayisi": {"type": "integer"},
+            "realism_score": {"type": "number", "minimum": 1, "maximum": 5},
+            "compliance_score": {"type": "number", "minimum": 1, "maximum": 5},
+            "delphi_round_count": {"type": "integer"}
+          }
+        }
+      }
+    }
+  }
+}

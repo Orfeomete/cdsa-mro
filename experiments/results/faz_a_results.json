@@ -1,0 +1,53 @@
+{
+  "pillar": "CDSA-MRO",
+  "date": "2026-06-11",
+  "seed": 42,
+  "config": {
+    "rounds": 100,
+    "clients": 3,
+    "local_rollouts": 6,
+    "rollout_len": 96,
+    "eval_steps": 600,
+    "agent": {
+      "hidden": 64,
+      "lr": 0.05,
+      "reward_scale": 0.05,
+      "max_grad_norm": 10
+    },
+    "fedprox_mu": 0.01,
+    "dp": {
+      "epsilon": 1.0,
+      "sensitivity": 0.01
+    }
+  },
+  "random": {
+    "mean_reward": -20.48,
+    "accuracy_pct": 19.7,
+    "critical_recall": 0.189
+  },
+  "central_ppo": {
+    "mean_reward": 7.58,
+    "accuracy_pct": 43.7,
+    "critical_recall": 0.499,
+    "convergence_round": 1
+  },
+  "fedavg": {
+    "mean_reward": 7.58,
+    "accuracy_pct": 43.7,
+    "critical_recall": 0.499,
+    "convergence_round": 1
+  },
+  "fedprox": {
+    "mean_reward": 7.58,
+    "accuracy_pct": 43.7,
+    "critical_recall": 0.499,
+    "convergence_round": 1
+  },
+  "fedprox_dp": {
+    "mean_reward": 7.58,
+    "accuracy_pct": 43.7,
+    "critical_recall": 0.499,
+    "convergence_round": 1
+  },
+  "runtime_note": "staged runs, 11 Jun 2026"
+}

@@ -1,0 +1,83 @@
+{
+  "olay_id": "CDSA-MRO-SDG-000004",
+  "olay_tarihi": "2026-04-03T11:22:00+03:00",
+  "firma_anonim_id": "MRO-TR-031",
+
+  "olay_ozeti": {
+    "olay_turu": "tedarik_zinciri_kontaminasyonu",
+    "saat_araligi": {
+      "baslangic": "2026-04-01T22:00:00+03:00",
+      "bitis": "2026-04-03T11:22:00+03:00"
+    },
+    "olay_aciklama": "Onaylı bakım kuruluşunun yedek parça yönetim yazılımı için üreticiden gelen rutin güncelleme paketinin içinde, kompromize edilmiş bir bağımlılık kütüphanesi yoluyla zararlı kod tespit edilmiştir. Güncelleme paketi otomatik dağıtım sürecinde 11 farklı iş istasyonuna yüklenmiş ve 14 saat boyunca sessiz kalmıştır. Zararlı kod, yedek parça envanter veritabanından dışarıya küçük paketler hâlinde veri sızdırmaya başlamış, davranış tabanlı izleme bunu yakalamıştır.",
+    "kesinti_suresi_dakika": 2122,
+    "etkilenen_hizmetler": [
+      "Yedek parça yönetim yazılımı",
+      "11 iş istasyonu",
+      "Envanter veritabanı (sızıntı tespit edildi)"
+    ],
+    "tahmini_maddi_kayip_TL": 420000
+  },
+
+  "olay_sureci": "Kuruluşun yedek parça yönetim yazılımının üreticisi, 1 Nisan 2026 tarihinde rutin sürüm güncellemesi yayımladı. Güncelleme paketi resmi imza ile bütünlük doğrulamasından geçti ve otomatik dağıtım altyapısıyla 11 farklı iş istasyonuna yüklendi. Sorun, güncelleme paketinin içerdiği üçüncü taraf bağımlılık kütüphanesinin önceden kompromize edilmiş olmasıydı. Kompromize, üreticinin DevOps boru hattındaki bir oturum açma anahtarı sızıntısı yoluyla gerçekleşmiş ve kötü niyetli aktör, kütüphanenin sürüm 4.2.7 yayımına ek bir komuta-kontrol modülü gömmüştü. Modül yüklenmenin ardından 14 saat sessiz kaldı, daha sonra envanter veritabanından parça stok seviyelerini ve tedarikçi bilgilerini küçük HTTP istekleri hâlinde dışarıya sızdırmaya başladı. Kurumsal SOME, ağ trafiği davranış analiz aracında olağandışı dış HTTP çağrı örüntüsünü 3 Nisan sabah 09 50 itibarıyla tespit etti. Tüm 11 iş istasyonu izole edildi, üretici uyarıldı, kompromize bağımlılık tespit edilip kaldırıldı.",
+
+  "kok_neden_analizi": {
+    "temel_neden": "Üretici güncelleme paketinde bağımsız bağımlılık zinciri doğrulamasının (SBOM analizi) yapılmaması ve dağıtım öncesi karantina dönemi uygulanmaması.",
+    "katkida_bulunan_etmenler": [
+      "Yazılım Üreticisinin DevOps boru hattının yeterince sertleştirilmemiş olması (sorumluluk üreticide)",
+      "Kuruluşun güncelleme dağıtım sürecinde sandbox karantinasının olmaması",
+      "SBOM (Software Bill of Materials) tabanlı tedarikçi denetiminin sözleşmeye dahil edilmemiş olması",
+      "Davranış tabanlı izlemenin sızdırma örüntüsünü 14 saatlik gecikmeyle yakalaması"
+    ],
+    "swiss_cheese_katmanlari": [
+      {"katman": "tedarikci", "delik_aciklamasi": "Üretici DevOps zincirinde anahtar sızıntısı."},
+      {"katman": "teknik_kontrol", "delik_aciklamasi": "Karantina ve SBOM doğrulama yok."},
+      {"katman": "yonetim", "delik_aciklamasi": "Tedarikçi sözleşmesinde SBOM zorunluluğu yok."},
+      {"katman": "denetim", "delik_aciklamasi": "Davranış izleme tepki süresi yavaş."}
+    ]
+  },
+
+  "aksiyonlar": [
+    {"aksiyon_no": 1, "aciklama": "Tüm üretici güncelleme paketleri 24 saat sandbox karantinasından geçirildikten sonra üretim dağıtımına alınacak.", "sorumlu_rol": "Kurumsal_SOME", "oncelik": "acil"},
+    {"aksiyon_no": 2, "aciklama": "Tedarikçi sözleşmelerine SBOM ibrazı ve bağımsız bağımlılık denetimi zorunluluğu eklenecek.", "sorumlu_rol": "Tedarikci_Yonetim", "oncelik": "yuksek"},
+    {"aksiyon_no": 3, "aciklama": "Davranış tabanlı izleme sistemi gerçek zamanlı (5 dakikalık periyot) çalışacak biçimde yeniden yapılandırılacak.", "sorumlu_rol": "Kurumsal_SOME", "oncelik": "yuksek"},
+    {"aksiyon_no": 4, "aciklama": "Etkilenen iş istasyonları forensik analiz sonrası yeniden imaj alınarak hizmete döndürülecek.", "sorumlu_rol": "BT_Mudur", "oncelik": "acil"}
+  ],
+
+  "projelendirme": [
+    {"proje_no": 1, "duzeltici_faaliyet": "Üretici güncelleme sandbox karantinası kurulumu", "baslama_tarihi": "2026-04-06", "bitis_tarihi": "2026-05-31"},
+    {"proje_no": 2, "duzeltici_faaliyet": "Tedarikçi sözleşme yenileme (SBOM ek maddeleri)", "baslama_tarihi": "2026-04-10", "bitis_tarihi": "2026-09-30"},
+    {"proje_no": 3, "duzeltici_faaliyet": "Davranış izleme gerçek zamanlı yeniden yapılandırma", "baslama_tarihi": "2026-04-06", "bitis_tarihi": "2026-06-30"},
+    {"proje_no": 4, "duzeltici_faaliyet": "Forensik analiz ve sistem yeniden imajı", "baslama_tarihi": "2026-04-04", "bitis_tarihi": "2026-04-15"}
+  ],
+
+  "etiketler": {
+    "risk_seviyesi": 4,
+    "risk_seviyesi_metin": "kritik",
+    "mitre_attack": {
+      "tactic": "TA0001",
+      "technique": "T1195",
+      "subtechnique": "T1195.002"
+    },
+    "shtsiber_ek19_kontrol_atfi": ["15.1.1", "18.2.1", "12.3.7"],
+    "kvkk_ozel_veri_iceriyor": false,
+    "shy145_madde18_72saat_uygunluk": true
+  },
+
+  "metaveri": {
+    "uretim_tarihi": "2026-05-15T21:38:00+03:00",
+    "uretim_motor_versiyonu": "CDSA-MRO-SDG-v1.0",
+    "sentetik_garanti": {
+      "epsilon_dp": 0.8,
+      "gercek_kisi_atfi": false,
+      "gercek_firma_atfi": false,
+      "gercek_olay_atfi": false
+    },
+    "delphi_dogrulama": {
+      "uzman_sayisi": 0,
+      "realism_score": null,
+      "compliance_score": null,
+      "delphi_round_count": 0
+    }
+  }
+}

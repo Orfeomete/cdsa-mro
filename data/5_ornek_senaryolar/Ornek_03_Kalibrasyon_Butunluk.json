@@ -1,0 +1,84 @@
+{
+  "olay_id": "CDSA-MRO-SDG-000003",
+  "olay_tarihi": "2026-01-22T16:48:00+03:00",
+  "firma_anonim_id": "MRO-TR-009",
+
+  "olay_ozeti": {
+    "olay_turu": "kalibrasyon_butunluk_ihlali",
+    "saat_araligi": {
+      "baslangic": "2025-12-18T08:00:00+03:00",
+      "bitis": "2026-01-22T16:48:00+03:00"
+    },
+    "olay_aciklama": "Onaylı bakım kuruluşunun kalibrasyon kayıt sisteminde, periyodik iç denetim sırasında dört adet tork anahtarı kalibrasyon kaydının değerlerinin manuel yazılım arabirimi üzerinden değiştirilmiş olduğu fark edilmiştir. Değişiklik, yaklaşık beş hafta önce tek bir oturumda yapılmış, ancak izleme sisteminde uygun denetim izi tutulmamıştı. Olay, uçuşa elverişlilik sertifikalandırma sürecinin doğruluğunu doğrudan etkilediği için kritik seviyede değerlendirilmiştir.",
+    "kesinti_suresi_dakika": 0,
+    "etkilenen_hizmetler": [
+      "Tork anahtarı kalibrasyon kayıt sistemi",
+      "Yetkilendirilmiş kalibrasyon değer dökümü süreci",
+      "Bakım çıkış sertifikası onay zinciri (geriye dönük gözden geçirme)"
+    ],
+    "tahmini_maddi_kayip_TL": 250000
+  },
+
+  "olay_sureci": "Kalibrasyon kayıt yazılımının 18 Aralık 2025 tarihli erişim günlüğünde, bir B1 lisanslı teknisyen hesabıyla tek bir oturumda dört farklı tork anahtarının kalibrasyon değer kaydının manuel olarak değiştirildiği görülmektedir. Değişikliklerin yaklaşık beş hafta sonra, 22 Ocak 2026 tarihinde gerçekleştirilen periyodik iç kalite denetimi sırasında fark edilmesinin nedeni, denetim sürecinde kalibrasyon değerlerinin OEM referans dökümüyle yapılan çapraz kontrolüdür. Sapma tespit edildiğinde, kayıt sistemi denetim izini incelemek için açıldı ancak yazılımın değişiklik geçmişi modülünün yalnızca son bir hafta için ayrıntılı kayıt tuttuğu fark edildi. Daha eski değişiklikler için yalnızca özet log mevcuttu. Olay, kalibrasyon değerlerinin gerçek dışı olarak kabul edilmiş olabileceği potansiyel olarak 11 bakım çıkış sertifikasının geriye dönük gözden geçirilmesini gerektirdi. SHGM'ye SHY-145 Madde 18 kapsamında bildirim yapılmıştır.",
+
+  "kok_neden_analizi": {
+    "temel_neden": "Kalibrasyon kayıt yazılımında değişiklik denetim izinin yalnızca son 7 gün için ayrıntılı tutulması ve eski değişikliklerin kriptografik olarak korunmaması. Ek olarak değişikliklerin onay-zincirli iş akışı yerine tek kullanıcı erişimiyle yapılabilir olması.",
+    "katkida_bulunan_etmenler": [
+      "Kalibrasyon kayıt sisteminde dijital imza zinciri yokluğu",
+      "Değişikliklerin Sorumlu Müdür ön onayı gerektirmemesi",
+      "İç denetim periyodunun aylık değil çeyrek dönemli olması",
+      "Yetkilendirilmiş kayıt değiştirme rolünün ayrılmaması (görev ayrılığı eksikliği)",
+      "Yazılımın değişiklik geçmişi modülünün uzun süreli arşivleme yapmaması"
+    ],
+    "swiss_cheese_katmanlari": [
+      {"katman": "teknik_kontrol", "delik_aciklamasi": "Denetim izi kısa süreli. Kriptografik bütünlük koruma yok."},
+      {"katman": "denetim", "delik_aciklamasi": "Aylık denetim yerine çeyrek denetim — geç tespit."},
+      {"katman": "yonetim", "delik_aciklamasi": "Görev ayrılığı politikası kalibrasyon değiştirme rolüne uygulanmamış."}
+    ]
+  },
+
+  "aksiyonlar": [
+    {"aksiyon_no": 1, "aciklama": "Kalibrasyon kayıt sisteminde tüm değişiklik denetim izi süresiz arşivlenecek, kriptografik özet ile bütünlüğü korunacak.", "sorumlu_rol": "BT_Mudur", "oncelik": "acil"},
+    {"aksiyon_no": 2, "aciklama": "Kalibrasyon değer değişiklikleri için Sorumlu Müdür onay zinciri devreye alınacak.", "sorumlu_rol": "Sorumlu_Mudur", "oncelik": "acil"},
+    {"aksiyon_no": 3, "aciklama": "İç denetim periyodu aylık seviyeye çekilecek.", "sorumlu_rol": "SGSYY", "oncelik": "yuksek"},
+    {"aksiyon_no": 4, "aciklama": "Görev ayrılığı politikası tüm bütünlük kritik rollere uygulanacak.", "sorumlu_rol": "SGSYY", "oncelik": "yuksek"},
+    {"aksiyon_no": 5, "aciklama": "Geriye dönük 11 bakım çıkış sertifikası incelenecek, gerekiyorsa yeniden onaylanacak.", "sorumlu_rol": "Onaylayici_Personel", "oncelik": "acil"}
+  ],
+
+  "projelendirme": [
+    {"proje_no": 1, "duzeltici_faaliyet": "Kalibrasyon denetim izi arşivleme ve bütünlük projesi", "baslama_tarihi": "2026-01-25", "bitis_tarihi": "2026-04-30"},
+    {"proje_no": 2, "duzeltici_faaliyet": "Sorumlu Müdür onay zinciri kurulumu", "baslama_tarihi": "2026-01-25", "bitis_tarihi": "2026-03-15"},
+    {"proje_no": 3, "duzeltici_faaliyet": "Görev ayrılığı politika yenileme", "baslama_tarihi": "2026-02-01", "bitis_tarihi": "2026-05-01"},
+    {"proje_no": 4, "duzeltici_faaliyet": "Sertifika geriye dönük inceleme", "baslama_tarihi": "2026-01-23", "bitis_tarihi": "2026-02-28"}
+  ],
+
+  "etiketler": {
+    "risk_seviyesi": 4,
+    "risk_seviyesi_metin": "kritik",
+    "mitre_attack": {
+      "tactic": "TA0009",
+      "technique": "T1565",
+      "subtechnique": "T1565.001"
+    },
+    "shtsiber_ek19_kontrol_atfi": ["3.2.1", "6.1.2", "1.4.2"],
+    "kvkk_ozel_veri_iceriyor": false,
+    "shy145_madde18_72saat_uygunluk": true
+  },
+
+  "metaveri": {
+    "uretim_tarihi": "2026-05-15T21:34:00+03:00",
+    "uretim_motor_versiyonu": "CDSA-MRO-SDG-v1.0",
+    "sentetik_garanti": {
+      "epsilon_dp": 0.8,
+      "gercek_kisi_atfi": false,
+      "gercek_firma_atfi": false,
+      "gercek_olay_atfi": false
+    },
+    "delphi_dogrulama": {
+      "uzman_sayisi": 0,
+      "realism_score": null,
+      "compliance_score": null,
+      "delphi_round_count": 0
+    }
+  }
+}

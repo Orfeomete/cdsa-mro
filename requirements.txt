@@ -1,0 +1,12 @@
+numpy>=1.24
+matplotlib>=3.7
+jsonschema>=4.0
+
+# Optional — for deep RL extension (v2.0+)
+# torch>=2.0
+# stable-baselines3>=2.0
+# gymnasium>=0.29
+
+# Optional — for explainability layer (v2.1+)
+# shap>=0.42
+# scikit-learn>=1.3

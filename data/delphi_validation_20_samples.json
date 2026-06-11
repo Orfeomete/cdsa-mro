@@ -1,0 +1,2556 @@
+[
+  {
+    "olay_id": "CDSA-MRO-SDG-000945",
+    "olay_tarihi": "2025-03-07T14:08:00",
+    "firma_anonim_id": "MRO-TR-779",
+    "olay_ozeti": {
+      "olay_turu": "ddos_saldirisi",
+      "saat_araligi": {
+        "baslangic": "2025-03-07T14:08:00",
+        "bitis": "2025-03-08T21:44:00"
+      },
+      "olay_aciklama": "Trabzon hat bakım istasyonu merkezinin internet bağlantısı, botnet kaynaklı HTTP flood saldırısı nedeniyle 1896 dakika boyunca yetersiz performansla çalışmıştır. AMOS bakım kayıt yazılımı arabirimi etkilenmiştir.",
+      "kesinti_suresi_dakika": 1896,
+      "etkilenen_hizmetler": [
+        "Hat bakım istasyonu portalı",
+        "Yer destek iletişim sistemi",
+        "Tedarikçi sipariş arabirimi"
+      ],
+      "tahmini_maddi_kayip_TL": 196848
+    },
+    "olay_sureci": "DDoS olayı, Trabzon hat bakım istasyonu bünyesindeki açık DNS çözümleyici üzerinden gerçekleştirilen amplifikasyon saldırısıyla başladı. Saldırgan saldırıyı diğer hedeflere yönlendirmek için kuruluş altyapısını ara sunucu olarak kullandı. Bu süreçte kuruluşun çıkış bant genişliği 1896 dakika boyunca tükendi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Uygulama katmanı saldırı tespitinin sınırlı kalması ve yalnızca ağ katmanı izlemenin yapılması.",
+      "katkida_bulunan_etmenler": [
+        "Açık DNS çözümleyici olması ve bunun amplifikasyon saldırılarında kötüye kullanılması.",
+        "Trafik filtreleme altyapısının dağıtık saldırı senaryolarına karşı yeterli kapasiteye sahip olmaması.",
+        "Uygulama katmanı saldırı tespitinin sınırlı kalması ve yalnızca ağ katmanı izlemenin yapılması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "DDoS koruma servisi kapasitesi yükseltilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Açık DNS çözümleyici kapatılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Trafik anomali tespiti gerçek zamanlı yapılandırılacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Uygulama katmanı saldırı tespiti devreye alınacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "DDoS koruma servisi kapasitesi yükseltilecek.",
+        "baslama_tarihi": "2025-03-08",
+        "bitis_tarihi": "2025-06-05"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Açık DNS çözümleyici kapatılacak.",
+        "baslama_tarihi": "2025-03-09",
+        "bitis_tarihi": "2025-03-21"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Trafik anomali tespiti gerçek zamanlı yapılandırılacak.",
+        "baslama_tarihi": "2025-03-12",
+        "bitis_tarihi": "2025-03-21"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Uygulama katmanı saldırı tespiti devreye alınacak.",
+        "baslama_tarihi": "2025-03-11",
+        "bitis_tarihi": "2025-03-21"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 3,
+      "risk_seviyesi_metin": "yuksek",
+      "mitre_attack": {
+        "tactic": "TA0040",
+        "technique": "T1498",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "12.2.1",
+        "14.1.1",
+        "5.1.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": false,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.679539",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 1
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000199",
+    "olay_tarihi": "2024-11-16T13:57:00",
+    "firma_anonim_id": "MRO-TR-127",
+    "olay_ozeti": {
+      "olay_turu": "egitim_sistem_manipulasyonu",
+      "saat_araligi": {
+        "baslangic": "2024-11-16T13:57:00",
+        "bitis": "2024-11-16T18:59:00"
+      },
+      "olay_aciklama": "İzmir hat bakım istasyonu merkezinde bir B2 lisans sınavı sırasında ofis e-posta sunucusu arabiriminden cevap anahtarı sızdırılmıştır.",
+      "kesinti_suresi_dakika": 302,
+      "etkilenen_hizmetler": [
+        "Personel yetkilendirme veritabanı",
+        "Sınav sonuç kayıtları",
+        "E-öğrenme platformu"
+      ],
+      "tahmini_maddi_kayip_TL": 454381
+    },
+    "olay_sureci": "Olay, İzmir hat bakım istasyonu e-öğrenme platformunda bir kategori sınavının cevap anahtarına yetkisiz erişim yapılmasıyla başladı. Tedarikçi ilişkileri yöneticisi hesabı üzerinden bu anahtar bir başka kullanıcıyla paylaşıldı. Olay sınav sonuçlarının istatistiksel analizinde anormallik tespit edilince fark edildi.",
+    "kok_neden_analizi": {
+      "temel_neden": "E-öğrenme platformunda sınav cevap anahtarı erişiminin az sayıda kişiye verilmesinin sağlanmaması.",
+      "katkida_bulunan_etmenler": [
+        "E-öğrenme platformunda sınav cevap anahtarı erişiminin az sayıda kişiye verilmesinin sağlanmaması.",
+        "Sınav sonuçlarının istatistiksel anormallik analizinin yapılmaması.",
+        "Sertifika düzenleme yetkisinin tek kişiye bağımlı olması ve görev ayrılığı uygulanmaması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Sınav cevap anahtarı erişimi azaltılacak ve şifrelenecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Sertifika düzenleme yetkisi görev ayrılığı ile uygulanacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Sınav sonuçları istatistiksel anormallik analizinden geçirilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "orta"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Sınav cevap anahtarı erişimi azaltılacak ve şifrelenecek.",
+        "baslama_tarihi": "2024-11-20",
+        "bitis_tarihi": "2024-11-30"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Sertifika düzenleme yetkisi görev ayrılığı ile uygulanacak.",
+        "baslama_tarihi": "2024-11-20",
+        "bitis_tarihi": "2024-11-30"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Sınav sonuçları istatistiksel anormallik analizinden geçirilecek.",
+        "baslama_tarihi": "2024-11-21",
+        "bitis_tarihi": "2025-01-15"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 3,
+      "risk_seviyesi_metin": "yuksek",
+      "mitre_attack": {
+        "tactic": "TA0009",
+        "technique": "T1565",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "4.3.1",
+        "7.4.1",
+        "3.2.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.626018",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 2
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000013",
+    "olay_tarihi": "2025-08-16T19:41:00",
+    "firma_anonim_id": "MRO-TR-798",
+    "olay_ozeti": {
+      "olay_turu": "fidye_yazilimi",
+      "saat_araligi": {
+        "baslangic": "2025-08-16T19:41:00",
+        "bitis": "2025-08-17T06:17:00"
+      },
+      "olay_aciklama": "Sabiha Gökçen ana üs bakım tesisi bünyesindeki yedek sunucu, bir RDP zafiyeti üzerinden sızılan fidye yazılımı saldırısına maruz kalmıştır. Yedekler dahil tüm tedarikçi entegrasyon API verileri şifrelenmiştir.",
+      "kesinti_suresi_dakika": 636,
+      "etkilenen_hizmetler": [
+        "Müşteri sözleşme arşivi",
+        "Geriye dönük bakım kayıtları (3 yıl)",
+        "BKEK doküman arşivi",
+        "Bakım kayıt yazılımı veri tabanı"
+      ],
+      "tahmini_maddi_kayip_TL": 82840
+    },
+    "olay_sureci": "Olay, tedarikçi yazılım güncelleme paketinde gizlenmiş bir fidye yazılımı yükleyicisinin Sabiha Gökçen ana üs bakım tesisi üzerinde otomatik dağıtılmasıyla başladı. Yükleyici 636 dakika sessiz bekledi, ardından şifreleme sürecini tetikledi. tedarikçi entegrasyon API ve bağlı sürücülerdeki tüm dosyalar erişilemez hale geldi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Yedeklerin offline olmaması ve yedek bütünlüğünün düzenli olarak test edilmemesi.",
+      "katkida_bulunan_etmenler": [
+        "Personelin makro içeren e-posta eki açma riskine karşı eğitilmemiş olması.",
+        "Uzak masaüstü hizmetlerinin internete açık bırakılmış olması ve zayıf parolalarla korunması.",
+        "Yedeklerin offline olmaması ve yedek bütünlüğünün düzenli olarak test edilmemesi."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Yedek bütünlüğü haftalık test edilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Yedekleme stratejisi 3-2-1 prensibine göre yeniden yapılandırılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Uzak masaüstü hizmetleri VPN arkasına alınacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "E-posta eki çalıştırma kısıtlaması (sandboxing) uygulanacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Yedek bütünlüğü haftalık test edilecek.",
+        "baslama_tarihi": "2025-08-20",
+        "bitis_tarihi": "2025-09-15"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Yedekleme stratejisi 3-2-1 prensibine göre yeniden yapılandırılacak.",
+        "baslama_tarihi": "2025-08-17",
+        "bitis_tarihi": "2026-02-12"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Uzak masaüstü hizmetleri VPN arkasına alınacak.",
+        "baslama_tarihi": "2025-08-20",
+        "bitis_tarihi": "2025-11-14"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "E-posta eki çalıştırma kısıtlaması (sandboxing) uygulanacak.",
+        "baslama_tarihi": "2025-08-18",
+        "bitis_tarihi": "2026-02-12"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0040",
+        "technique": "T1486",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "9.1.1",
+        "14.1.1",
+        "5.2.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": false,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.610917",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 3
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000458",
+    "olay_tarihi": "2024-01-01T12:07:00",
+    "firma_anonim_id": "MRO-TR-292",
+    "olay_ozeti": {
+      "olay_turu": "hesap_ele_gecirme",
+      "saat_araligi": {
+        "baslangic": "2024-01-01T12:07:00",
+        "bitis": "2024-01-01T20:05:00"
+      },
+      "olay_aciklama": "Gaziantep komponent atölyesi merkezindeki BKEK editör personeli hesabına ait kimlik bilgileri, başka bir hizmette yaşanan veri ihlali sonucu sızdırılmıştır. Aynı parolanın kurumsal hesapta yeniden kullanılması nedeniyle saldırgan BKEK doküman yönetim sistemi arabirimine erişim sağlamıştır.",
+      "kesinti_suresi_dakika": 478,
+      "etkilenen_hizmetler": [
+        "Yetkilendirme yönetim portalı",
+        "Sorumlu Müdür onay arabirimi",
+        "Onaylayıcı personel imza yetkisi"
+      ],
+      "tahmini_maddi_kayip_TL": 432110
+    },
+    "olay_sureci": "Olay zinciri, BKEK editör personeli hesabına yönelik şifre püskürtme saldırısıyla başladı. Saldırgan, ortak kullanılan zayıf parolaların listesini sırayla deneyerek tek bir hesap üzerinde değil çok sayıda hesap üzerinde paralel denemeler yaptı. Çok faktörlü kimlik doğrulamanın aktif olmadığı BKEK editör personeli hesabı bu yöntemle ele geçirildi. Saldırgan BKEK doküman yönetim sistemi arabirimine giriş yaparak yaklaşık 478 dakika boyunca yetkili kullanıcı olarak hareket etti.",
+    "kok_neden_analizi": {
+      "temel_neden": "Parola tekrar kullanım kontrolünün uygulanmaması ve dark web ihlal monitörlemesinin eksikliği.",
+      "katkida_bulunan_etmenler": [
+        "Çalışma saatleri dışı oturum açma tespitinin geç tepki vermesi ve davranış tabanlı kullanıcı analitiğinin eksikliği.",
+        "Parola tekrar kullanım kontrolünün uygulanmaması ve dark web ihlal monitörlemesinin eksikliği.",
+        "Çok faktörlü kimlik doğrulamanın tüm kullanıcılara zorunlu kılınmamış olması ve parola politikasının zayıf örüntülere izin vermesi."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Çok faktörlü kimlik doğrulama tüm hesaplara zorunlu hale getirilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Davranış tabanlı kullanıcı analitiği (UEBA) sistemi devreye alınacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Parola politikası güçlendirilecek ve dark web izleme servisi aktive edilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Olağandışı oturum açma alarmı 5 dakikaya çekilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Çok faktörlü kimlik doğrulama tüm hesaplara zorunlu hale getirilecek.",
+        "baslama_tarihi": "2024-01-06",
+        "bitis_tarihi": "2024-03-01"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Davranış tabanlı kullanıcı analitiği (UEBA) sistemi devreye alınacak.",
+        "baslama_tarihi": "2024-01-03",
+        "bitis_tarihi": "2024-01-15"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Parola politikası güçlendirilecek ve dark web izleme servisi aktive edilecek.",
+        "baslama_tarihi": "2024-01-04",
+        "bitis_tarihi": "2024-06-29"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Olağandışı oturum açma alarmı 5 dakikaya çekilecek.",
+        "baslama_tarihi": "2024-01-03",
+        "bitis_tarihi": "2024-01-15"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0006",
+        "technique": "T1110",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.1.1",
+        "1.4.2",
+        "13.2.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.645097",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 4
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000357",
+    "olay_tarihi": "2025-03-01T17:28:00",
+    "firma_anonim_id": "MRO-TR-685",
+    "olay_ozeti": {
+      "olay_turu": "is_emri_sahteciligi",
+      "saat_araligi": {
+        "baslangic": "2025-03-01T17:28:00",
+        "bitis": "2025-03-01T23:29:00"
+      },
+      "olay_aciklama": "İstanbul ana üs bakım hangarı merkezinde bir bakım iş kartı üzerindeki imza ve sicil numarası, Kurumsal SOME izleme uzmanı hesabı üzerinden yetkisiz olarak değiştirilmiştir.",
+      "kesinti_suresi_dakika": 361,
+      "etkilenen_hizmetler": [
+        "Kalibrasyon iş kartı",
+        "Bakım çıkış sertifikası"
+      ],
+      "tahmini_maddi_kayip_TL": 384895
+    },
+    "olay_sureci": "İstanbul ana üs bakım hangarı biriminde tedarikçi entegrasyon API üzerinden sahte bir komponent kabul kaydı oluşturuldu. Fiziksel olarak bakımdan geçmemiş bir parça için kabul kaydı dijital ortamda oluşturulmuştu. Olay parçanın fiziksel envanter kontrolünde fark edildi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Dijital imza modüllerinin yeterince güvenli olmaması ve çift imza zincirinin uygulanmaması.",
+      "katkida_bulunan_etmenler": [
+        "İş emri ve bakım çıkış sertifikası kayıtlarının kriptografik bütünlük korumasından geçmemesi.",
+        "Komponent fiziksel envanter ile dijital kayıt arasında otomatik çapraz kontrol mekanizmasının olmaması.",
+        "Dijital imza modüllerinin yeterince güvenli olmaması ve çift imza zincirinin uygulanmaması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "İş emri kayıtları kriptografik bütünlük korumasından geçirilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Komponent fiziksel envanter ile dijital kayıt arasında otomatik çapraz kontrol kurulacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Dijital imza modülleri sertleştirilecek ve çift imza zinciri uygulanacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Bakım çıkış sertifikası geriye dönük incelemesi yapılacak.",
+        "sorumlu_rol": "Onaylayici_Personel",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "İş emri kayıtları kriptografik bütünlük korumasından geçirilecek.",
+        "baslama_tarihi": "2025-03-02",
+        "bitis_tarihi": "2025-03-31"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Komponent fiziksel envanter ile dijital kayıt arasında otomatik çapraz kontrol kurulacak.",
+        "baslama_tarihi": "2025-03-05",
+        "bitis_tarihi": "2025-03-15"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Dijital imza modülleri sertleştirilecek ve çift imza zinciri uygulanacak.",
+        "baslama_tarihi": "2025-03-06",
+        "bitis_tarihi": "2025-04-30"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Bakım çıkış sertifikası geriye dönük incelemesi yapılacak.",
+        "baslama_tarihi": "2025-03-03",
+        "bitis_tarihi": "2025-03-15"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0040",
+        "technique": "T1565",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "6.3.1",
+        "3.2.2",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": false,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.637574",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 5
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000210",
+    "olay_tarihi": "2025-12-15T11:56:00",
+    "firma_anonim_id": "MRO-TR-775",
+    "olay_ozeti": {
+      "olay_turu": "kalibrasyon_butunluk_ihlali",
+      "saat_araligi": {
+        "baslangic": "2025-12-15T11:56:00",
+        "bitis": "2025-12-16T16:18:00"
+      },
+      "olay_aciklama": "Sabiha Gökçen ana üs bakım tesisi merkezindeki TRAX bakım yönetim sistemi, dört adet tork anahtarı kalibrasyon kaydının Kurumsal SOME izleme uzmanı hesabıyla manuel olarak değiştirilmesi sonucu bütünlük ihlaline maruz kalmıştır. Olay iç denetimde fark edilmiştir.",
+      "kesinti_suresi_dakika": 1702,
+      "etkilenen_hizmetler": [
+        "Tork anahtarı kalibrasyon kayıtları",
+        "NDT cihaz kalibrasyon değerleri"
+      ],
+      "tahmini_maddi_kayip_TL": 139190
+    },
+    "olay_sureci": "Kurumsal SOME izleme uzmanı hesabı üzerinden Sabiha Gökçen ana üs bakım tesisi merkezindeki TRAX bakım yönetim sistemi arabiriminde geriye dönük tarih damgası manipülasyonu yapıldığı fark edildi. Manipülasyon, bir bakım kaydının zamanını değiştirerek o tarihte mevcut olmayan bir yetki kullanılmış gibi göstermeyi amaçlıyordu.",
+    "kok_neden_analizi": {
+      "temel_neden": "Kalibrasyon değer değişikliklerinin onay zincirli iş akışı yerine tek kullanıcı erişimiyle yapılabilir olması.",
+      "katkida_bulunan_etmenler": [
+        "Kalibrasyon değer değişikliklerinin onay zincirli iş akışı yerine tek kullanıcı erişimiyle yapılabilir olması.",
+        "Kalibrasyon kayıt yazılımında değişiklik denetim izinin yalnızca kısa süreli tutulması ve eski değişikliklerin kriptografik korunmaması.",
+        "İç denetim periyodunun aylık değil çeyrek dönemli olması ve geç tespite yol açması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "İç denetim periyodu aylık seviyeye çekilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Görev ayrılığı politikası tüm bütünlük kritik rollere uygulanacak.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Kalibrasyon değişiklik denetim izi süresiz arşivlenecek ve kriptografik özet ile korunacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Kalibrasyon değer değişiklikleri için Sorumlu Müdür onay zinciri devreye alınacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "İç denetim periyodu aylık seviyeye çekilecek.",
+        "baslama_tarihi": "2025-12-20",
+        "bitis_tarihi": "2025-12-29"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Görev ayrılığı politikası tüm bütünlük kritik rollere uygulanacak.",
+        "baslama_tarihi": "2025-12-18",
+        "bitis_tarihi": "2026-06-13"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Kalibrasyon değişiklik denetim izi süresiz arşivlenecek ve kriptografik özet ile korunacak.",
+        "baslama_tarihi": "2025-12-18",
+        "bitis_tarihi": "2026-01-14"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Kalibrasyon değer değişiklikleri için Sorumlu Müdür onay zinciri devreye alınacak.",
+        "baslama_tarihi": "2025-12-20",
+        "bitis_tarihi": "2026-03-15"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0009",
+        "technique": "T1565",
+        "subtechnique": "T1565.001"
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "3.2.1",
+        "6.1.2",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": false,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.626818",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 6
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000162",
+    "olay_tarihi": "2025-01-13T05:16:00",
+    "firma_anonim_id": "MRO-EU-240",
+    "olay_ozeti": {
+      "olay_turu": "konfigurasyon_hatasi",
+      "saat_araligi": {
+        "baslangic": "2025-01-13T05:16:00",
+        "bitis": "2025-01-14T08:10:00"
+      },
+      "olay_aciklama": "Gaziantep komponent atölyesi biriminde yapılan altyapı değişikliği sırasında AMOS bakım kayıt yazılımı API arabirimi kimlik doğrulamasız hale gelmiştir.",
+      "kesinti_suresi_dakika": 1614,
+      "etkilenen_hizmetler": [
+        "Test sunucu arabirimi",
+        "Yedekleme erişim portalı"
+      ],
+      "tahmini_maddi_kayip_TL": 252487
+    },
+    "olay_sureci": "Olay, Gaziantep komponent atölyesi merkezinde AMOS bakım kayıt yazılımı sunucusunun üretim ortamına geçişi sırasında güvenlik ayarlarının varsayılan değerlerde bırakılmasıyla başladı. Geliştirme ortamında devre dışı bırakılmış olan kimlik doğrulama, dağıtım sürecinde tekrar etkinleştirilmedi. Sunucu 1614 dakika boyunca dışarıdan kimlik doğrulamasız erişime açık kaldı.",
+    "kok_neden_analizi": {
+      "temel_neden": "Geliştirmeden üretime geçişte güvenlik ayarlarının otomatik doğrulanmaması.",
+      "katkida_bulunan_etmenler": [
+        "Altyapı kod yönetiminin (Infrastructure as Code) güvenlik onay zincirinden geçirilmemesi.",
+        "Geliştirmeden üretime geçişte güvenlik ayarlarının otomatik doğrulanmaması.",
+        "Bulut yapılandırma denetiminin sürekli izleme aracı olmadan yapılması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Altyapı kod yönetimi (IaC) güvenlik onay zincirinden geçirilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Geliştirmeden üretime geçişte otomatik güvenlik denetimi zorunlu hale getirilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Sürekli yapılandırma izleme aracı (CSPM) kurulacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Altyapı kod yönetimi (IaC) güvenlik onay zincirinden geçirilecek.",
+        "baslama_tarihi": "2025-01-16",
+        "bitis_tarihi": "2025-07-12"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Geliştirmeden üretime geçişte otomatik güvenlik denetimi zorunlu hale getirilecek.",
+        "baslama_tarihi": "2025-01-16",
+        "bitis_tarihi": "2025-01-27"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Sürekli yapılandırma izleme aracı (CSPM) kurulacak.",
+        "baslama_tarihi": "2025-01-14",
+        "bitis_tarihi": "2025-01-27"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0007",
+        "technique": "T1133",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "12.4.1",
+        "3.1.1",
+        "18.1.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": false,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.623167",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 7
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000942",
+    "olay_tarihi": "2024-07-11T05:53:00",
+    "firma_anonim_id": "MRO-TR-371",
+    "olay_ozeti": {
+      "olay_turu": "oltalama_saldirisi",
+      "saat_araligi": {
+        "baslangic": "2024-07-11T05:53:00",
+        "bitis": "2024-07-11T12:28:00"
+      },
+      "olay_aciklama": "Trabzon hat bakım istasyonu ofisinde BT operasyon yöneticisi pozisyonundaki personele, uçak üreticisi servis bültenini taklit eden bir e-posta gönderilmiştir. Personel ekteki bağlantıyı tıklayarak iş emri yönetim platformu sayfasının kopyasına yönlenmiş ve kimlik bilgilerini paylaşmıştır.",
+      "kesinti_suresi_dakika": 395,
+      "etkilenen_hizmetler": [
+        "Onaylayıcı personel yetkilendirme kuyruğu",
+        "BKEK doküman erişimi",
+        "ARBİS bağlantılı kuruluş portal erişimi",
+        "Kurumsal e-posta sunucusu"
+      ],
+      "tahmini_maddi_kayip_TL": 307003
+    },
+    "olay_sureci": "Olayın kronolojisi sabah saat 5 53 civarında kurumsal e-posta sunucusuna ulaşan oltalama iletisiyle başlamıştır. İleti, başlık satırında resmi bir kurum referansı taşıyordu ve gönderici alanı meşrulaştırılmış görünüyordu. BT operasyon yöneticisi, dönemsel BKEK güncelleme süreci nedeniyle bu iletinin gerçek olduğunu varsaydı ve gömülü bağlantıyı tıkladı. Açılan sahte portal arabirimi görsel olarak orijinalinin neredeyse birebir kopyasıydı. Kullanıcı adı ve parola girildikten kısa süre sonra aynı kimlik bilgileriyle olağandışı bir IP adresinden başarılı oturum açıldığı Kurumsal SOME izleme paneline yansıdı. Anormal coğrafi konum tabanlı oturum filtresinin tetiklenmesiyle hesap askıya alındı, parola sıfırlandı ve aynı oltalama dalgasına maruz kalmış diğer personel uyarıldı.",
+    "kok_neden_analizi": {
+      "temel_neden": "Çok faktörlü kimlik doğrulamanın yalnızca BT sistem yöneticileri için aktif olması ve diğer rollere yayılmamış olması.",
+      "katkida_bulunan_etmenler": [
+        "Anormal coğrafi konum tabanlı oturum tespit eşik süresinin saatlik olması, gerçek zamanlı tespit yeteneğinin eksikliği.",
+        "Personelin oltalama farkındalık eğitiminin altı aydan uzun süredir yenilenmemiş olması ve kurumsal e-posta ağ geçidinde dış alan adı doğrulamasının (DMARC strict) aktif olmaması.",
+        "Çok faktörlü kimlik doğrulamanın yalnızca BT sistem yöneticileri için aktif olması ve diğer rollere yayılmamış olması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Tüm kullanıcı rollerine zorunlu MFA aktive edilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Yıllık oltalama simülasyonu programı kurulumu yapılacak.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Tüm personele güncellenmiş oltalama farkındalık eğitimi verilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Tüm kullanıcı rollerine zorunlu MFA aktive edilecek.",
+        "baslama_tarihi": "2024-07-12",
+        "bitis_tarihi": "2024-10-09"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Yıllık oltalama simülasyonu programı kurulumu yapılacak.",
+        "baslama_tarihi": "2024-07-14",
+        "bitis_tarihi": "2024-07-25"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Tüm personele güncellenmiş oltalama farkındalık eğitimi verilecek.",
+        "baslama_tarihi": "2024-07-13",
+        "bitis_tarihi": "2024-08-10"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.",
+        "baslama_tarihi": "2024-07-12",
+        "bitis_tarihi": "2025-01-07"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1566",
+        "subtechnique": "T1566.002"
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.2.1",
+        "4.1.1",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.679252",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 8
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000156",
+    "olay_tarihi": "2025-09-23T08:58:00",
+    "firma_anonim_id": "MRO-TR-394",
+    "olay_ozeti": {
+      "olay_turu": "ot_sistem_sizmasi",
+      "saat_araligi": {
+        "baslangic": "2025-09-23T08:58:00",
+        "bitis": "2025-09-23T20:51:00"
+      },
+      "olay_aciklama": "Esenboğa NDT atölyesi hangarındaki kalibrasyon kontrol sistemi, üretici varsayılan parolasının değiştirilmemesi nedeniyle ele geçirilmiştir. Olay 713 dakika içinde davranış tabanlı izleme aracı tarafından tespit edilmiştir.",
+      "kesinti_suresi_dakika": 713,
+      "etkilenen_hizmetler": [
+        "Tahribatsız muayene veri tabanı",
+        "Motor test rig kontrol sistemi",
+        "Kalibrasyon kayıt sunucusu",
+        "Atölye yerel ağ segmenti"
+      ],
+      "tahmini_maddi_kayip_TL": 132027
+    },
+    "olay_sureci": "OT sistemine sızma süreci, Esenboğa NDT atölyesi bünyesindeki ofis e-posta sunucusu cihazının üretici varsayılan parolasının kuruluş tarafından değiştirilmemiş olmasıyla başladı. Saldırgan kuruluş ofis ağına önceden bulaşmış olan ana arka kapıdan, OT segmentasyonundaki yetersizlik nedeniyle bu cihaza ulaştı. Cihaza yapılan ilk bağlantı sonrası saldırgan 713 dakika boyunca cihaz log kayıtlarını manipüle etmeye çalıştı.",
+    "kok_neden_analizi": {
+      "temel_neden": "BT ve OT ağ segmentasyonunun yalnızca VLAN seviyesinde olması, mikro-segmentasyonun uygulanmaması.",
+      "katkida_bulunan_etmenler": [
+        "OT segmentindeki cihazlarda USB portu fiziksel kilit veya yazılım tabanlı erişim kontrolünün uygulanmamış olması.",
+        "Üretici varsayılan parolalarının değiştirilmemiş olması ve OT cihazlarının yazılım sürümlerinin güncel tutulmaması.",
+        "BT ve OT ağ segmentasyonunun yalnızca VLAN seviyesinde olması, mikro-segmentasyonun uygulanmaması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "OT-BT mikro-segmentasyon projesi başlatılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "OT cihazları için özel davranış tabanlı izleme kuralları kapsamı genişletilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Üretici varsayılan parolaları zorunlu olarak değiştirilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Tüm OT cihazlarının USB portlarına fiziksel kilit takılacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "OT-BT mikro-segmentasyon projesi başlatılacak.",
+        "baslama_tarihi": "2025-09-24",
+        "bitis_tarihi": "2026-03-22"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "OT cihazları için özel davranış tabanlı izleme kuralları kapsamı genişletilecek.",
+        "baslama_tarihi": "2025-09-24",
+        "bitis_tarihi": "2025-12-22"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Üretici varsayılan parolaları zorunlu olarak değiştirilecek.",
+        "baslama_tarihi": "2025-09-28",
+        "bitis_tarihi": "2025-11-22"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Tüm OT cihazlarının USB portlarına fiziksel kilit takılacak.",
+        "baslama_tarihi": "2025-09-26",
+        "bitis_tarihi": "2025-10-07"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1091",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "12.3.5",
+        "6.2.1",
+        "1.3.1",
+        "15.1.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": false,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.622721",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 9
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000789",
+    "olay_tarihi": "2024-12-07T15:57:00",
+    "firma_anonim_id": "MRO-TR-977",
+    "olay_ozeti": {
+      "olay_turu": "portal_erisim_ihlali",
+      "saat_araligi": {
+        "baslangic": "2024-12-07T15:57:00",
+        "bitis": "2024-12-08T02:12:00"
+      },
+      "olay_aciklama": "İstanbul ana üs bakım hangarı biriminden Sorumlu Müdür hesabı, oturum hijacking yöntemiyle ele geçirilmiştir. Saldırgan NDT cihaz kontrol bilgisayarı üzerinde yetkili kullanıcı olarak 615 dakika kalmıştır.",
+      "kesinti_suresi_dakika": 615,
+      "etkilenen_hizmetler": [
+        "SGSYY portal yetkisi",
+        "BKEK dijital onay erişimi",
+        "Yetkilendirme dijital imza"
+      ],
+      "tahmini_maddi_kayip_TL": 441121
+    },
+    "olay_sureci": "Kurumsal SOME izleme uzmanı hesabına ait dijital imza, fiziksel olarak çalınan bir USB anahtar üzerinden NDT cihaz kontrol bilgisayarı portalına yetkisiz onay vermek için kullanıldı. Olay imzaların çift onay zinciri kontrolünde fark edildi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Çok faktörlü kimlik doğrulamanın tüm yetkili kullanıcılara zorunlu kılınmaması.",
+      "katkida_bulunan_etmenler": [
+        "Dijital imza modüllerinin fiziksel güvence altına alınmaması.",
+        "Oturum yönetim politikasında oturum tokenlarının sınırlı süreli olmaması ve token rotasyonu uygulanmaması.",
+        "Çok faktörlü kimlik doğrulamanın tüm yetkili kullanıcılara zorunlu kılınmaması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "MFA tüm yetkili kullanıcılara zorunlu hale getirilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Oturum tokenları sınırlı süreli ve döner olacak şekilde yapılandırılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Dijital imza modülleri fiziksel güvence altına alınacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "MFA tüm yetkili kullanıcılara zorunlu hale getirilecek.",
+        "baslama_tarihi": "2024-12-11",
+        "bitis_tarihi": "2025-01-06"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Oturum tokenları sınırlı süreli ve döner olacak şekilde yapılandırılacak.",
+        "baslama_tarihi": "2024-12-11",
+        "bitis_tarihi": "2024-12-21"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Dijital imza modülleri fiziksel güvence altına alınacak.",
+        "baslama_tarihi": "2024-12-12",
+        "bitis_tarihi": "2025-06-05"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1556",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.4.2",
+        "13.2.1",
+        "1.6.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.668386",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 10
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000995",
+    "olay_tarihi": "2025-03-23T05:55:00",
+    "firma_anonim_id": "MRO-EU-177",
+    "olay_ozeti": {
+      "olay_turu": "shadow_it",
+      "saat_araligi": {
+        "baslangic": "2025-03-23T05:55:00",
+        "bitis": "2025-03-23T10:34:00"
+      },
+      "olay_aciklama": "Trabzon hat bakım istasyonu biriminde Üs bakım koordinatörü grubu, kurumsal iletişim platformu yetersiz bulduğu için WhatsApp grupları üzerinden ARBİS portal arabirimi ekran görüntüleri paylaşmıştır. KVKK iç denetiminde olay tespit edilmiştir.",
+      "kesinti_suresi_dakika": 279,
+      "etkilenen_hizmetler": [
+        "Personel kişisel mesajlaşma platformu",
+        "Vardiya değişim notları",
+        "İş kartı fotoğrafları",
+        "Bakım kayıt ekran görüntüleri"
+      ],
+      "tahmini_maddi_kayip_TL": 111315
+    },
+    "olay_sureci": "Bir personel grubu, Trabzon hat bakım istasyonu bünyesinde işten ayrılma süreçlerini hızlandırmak için kişisel mobil cihazlarındaki bir uygulamayla ARBİS portal arabirimi bilgisini izlemeye başladı. Onaylı kanal dışı bu uygulama, KVKK denetiminde tespit edildi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Personel farkındalık eğitiminde KVKK biyometrik veri kapsamının eksik anlatımı.",
+      "katkida_bulunan_etmenler": [
+        "Personel farkındalık eğitiminde KVKK biyometrik veri kapsamının eksik anlatımı.",
+        "Vardiya değişimi iletişim protokolünün dijital olarak desteklenmemesi.",
+        "Kurumsal iletişim yazılımının mobil cihaz desteğinin yetersiz olması ve BYOD politikasının yokluğu."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "KVKK iç denetim periyodu aylık seviyeye çekilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "orta"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "BYOD politikası yazılacak ve onaylı uygulama listesi belirlenecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "KVKK uyumlu kurumsal mobil iletişim platformuna geçiş yapılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Tüm personele KVKK özel nitelikli veri kapsamı eğitimi verilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "KVKK iç denetim periyodu aylık seviyeye çekilecek.",
+        "baslama_tarihi": "2025-03-27",
+        "bitis_tarihi": "2025-04-22"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "BYOD politikası yazılacak ve onaylı uygulama listesi belirlenecek.",
+        "baslama_tarihi": "2025-03-26",
+        "bitis_tarihi": "2025-09-19"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "KVKK uyumlu kurumsal mobil iletişim platformuna geçiş yapılacak.",
+        "baslama_tarihi": "2025-03-24",
+        "bitis_tarihi": "2025-04-22"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Tüm personele KVKK özel nitelikli veri kapsamı eğitimi verilecek.",
+        "baslama_tarihi": "2025-03-24",
+        "bitis_tarihi": "2025-05-22"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 2,
+      "risk_seviyesi_metin": "orta",
+      "mitre_attack": {
+        "tactic": "TA0010",
+        "technique": "T1567",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "2.1.1",
+        "1.5.1",
+        "4.2.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.683144",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 11
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000957",
+    "olay_tarihi": "2024-10-06T08:51:00",
+    "firma_anonim_id": "MRO-TR-216",
+    "olay_ozeti": {
+      "olay_turu": "sosyal_muhendislik",
+      "saat_araligi": {
+        "baslangic": "2024-10-06T08:51:00",
+        "bitis": "2024-10-06T14:11:00"
+      },
+      "olay_aciklama": "Kurumsal SOME izleme uzmanı pozisyonundaki çalışana sahte SHGM denetim uyarısı içeren bir görüşme yapılmış ve gizli onay kodu paylaşıma açılmıştır.",
+      "kesinti_suresi_dakika": 320,
+      "etkilenen_hizmetler": [
+        "Yardım masası parola sıfırlama",
+        "BT destek erişim formu",
+        "Çağrı merkezi yetkilendirme",
+        "Yönetici onay zinciri taklit"
+      ],
+      "tahmini_maddi_kayip_TL": 200012
+    },
+    "olay_sureci": "Sahte SHGM denetim uyarısı içeren bir görüşme Kurumsal SOME izleme uzmanı ile yapıldı. Aramada gizli onay kodu istendi ve paylaşıldı. Saldırgan bu kodla Ramco MRO çözümü arabirimine yetkili kullanıcı olarak erişti.",
+    "kok_neden_analizi": {
+      "temel_neden": "Yönetici taklit saldırılarına karşı imza tabanlı doğrulama prosedürünün uygulanmaması.",
+      "katkida_bulunan_etmenler": [
+        "Personelin sosyal mühendislik teknikleri konusunda farkındalık eğitimi almamış olması.",
+        "Yönetici taklit saldırılarına karşı imza tabanlı doğrulama prosedürünün uygulanmaması.",
+        "Yardım masası kimlik doğrulama protokollerinin yetersiz olması ve çoklu doğrulama gerektirmemesi."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Yardım masası kimlik doğrulama protokolü çoklu doğrulama gerektirecek şekilde güncellenecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Yönetici taklit saldırılarına karşı imza tabanlı doğrulama prosedürü yazılacak.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Tüm personele sosyal mühendislik farkındalık eğitimi verilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Yardım masası kimlik doğrulama protokolü çoklu doğrulama gerektirecek şekilde güncellenecek.",
+        "baslama_tarihi": "2024-10-11",
+        "bitis_tarihi": "2025-04-04"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Yönetici taklit saldırılarına karşı imza tabanlı doğrulama prosedürü yazılacak.",
+        "baslama_tarihi": "2024-10-10",
+        "bitis_tarihi": "2025-04-04"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Tüm personele sosyal mühendislik farkındalık eğitimi verilecek.",
+        "baslama_tarihi": "2024-10-11",
+        "bitis_tarihi": "2025-04-04"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 3,
+      "risk_seviyesi_metin": "yuksek",
+      "mitre_attack": {
+        "tactic": "TA0006",
+        "technique": "T1556",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "4.1.1",
+        "1.6.1",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.680449",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 12
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000759",
+    "olay_tarihi": "2025-03-04T10:34:00",
+    "firma_anonim_id": "MRO-EU-226",
+    "olay_ozeti": {
+      "olay_turu": "tedarik_zinciri_kontaminasyonu",
+      "saat_araligi": {
+        "baslangic": "2025-03-04T10:34:00",
+        "bitis": "2025-03-05T15:22:00"
+      },
+      "olay_aciklama": "Diyarbakır hat bakım istasyonu tedarikçisinden alınan uçak yer destek iletişim ağı bileşeni, üretici güvenlik incelemesinden geçmeden gelen kompromize bir paketle kontamine olmuştur.",
+      "kesinti_suresi_dakika": 1728,
+      "etkilenen_hizmetler": [
+        "Tedarikçi entegrasyon API",
+        "OEM güncelleme dağıtım altyapısı",
+        "Yedek parça yönetim yazılımı"
+      ],
+      "tahmini_maddi_kayip_TL": 287736
+    },
+    "olay_sureci": "Tedarik zinciri kontaminasyonu, Diyarbakır hat bakım istasyonu kullandığı uçak yer destek iletişim ağı bileşeninin OEM tarafından sertifikalı olmayan bir alt tedarikçi üzerinden temin edilmesiyle başladı. Bileşen kuruluşa ulaştığında üzerinde önceden yüklenmiş arka kapı bulunuyordu. 1728 dakika boyunca etkisi sürdü.",
+    "kok_neden_analizi": {
+      "temel_neden": "Tedarikçi sözleşmelerinde SBOM ibrazı zorunluluğunun bulunmaması.",
+      "katkida_bulunan_etmenler": [
+        "Üretici güncelleme paketinde bağımsız bağımlılık zinciri doğrulamasının (SBOM analizi) yapılmaması.",
+        "Tedarikçi sözleşmelerinde SBOM ibrazı zorunluluğunun bulunmaması.",
+        "Dağıtım öncesi karantina döneminin uygulanmaması ve doğrudan otomatik dağıtım."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Davranış tabanlı izleme gerçek zamanlı yapılandırılacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Etkilenen iş istasyonları forensik analiz sonrası yeniden imaj alınacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Tüm üretici güncelleme paketleri 24 saat sandbox karantinasından geçirilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Tedarikçi sözleşmelerine SBOM ibrazı zorunluluğu eklenecek.",
+        "sorumlu_rol": "Tedarikci_Yonetim",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Davranış tabanlı izleme gerçek zamanlı yapılandırılacak.",
+        "baslama_tarihi": "2025-03-08",
+        "bitis_tarihi": "2025-08-31"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Etkilenen iş istasyonları forensik analiz sonrası yeniden imaj alınacak.",
+        "baslama_tarihi": "2025-03-07",
+        "bitis_tarihi": "2025-05-03"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Tüm üretici güncelleme paketleri 24 saat sandbox karantinasından geçirilecek.",
+        "baslama_tarihi": "2025-03-05",
+        "bitis_tarihi": "2025-08-31"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Tedarikçi sözleşmelerine SBOM ibrazı zorunluluğu eklenecek.",
+        "baslama_tarihi": "2025-03-08",
+        "bitis_tarihi": "2025-06-02"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1195",
+        "subtechnique": "T1195.002"
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "15.1.1",
+        "18.2.1",
+        "12.3.7"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.666410",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 13
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000233",
+    "olay_tarihi": "2025-06-02T01:29:00",
+    "firma_anonim_id": "MRO-TR-173",
+    "olay_ozeti": {
+      "olay_turu": "usb_zararli_yazilim",
+      "saat_araligi": {
+        "baslangic": "2025-06-02T01:29:00",
+        "bitis": "2025-06-02T04:01:00"
+      },
+      "olay_aciklama": "BT operasyon yöneticisi kişisel bilgisayarından getirdiği USB belleği Trabzon hat bakım istasyonu ofis bilgisayarında kullanmış ve BKEK doküman yönetim sistemi ağına bulaşmıştır.",
+      "kesinti_suresi_dakika": 152,
+      "etkilenen_hizmetler": [
+        "Atölye terminal bilgisayarı",
+        "Ofis bilgisayarı"
+      ],
+      "tahmini_maddi_kayip_TL": 59065
+    },
+    "olay_sureci": "Olay, BT operasyon yöneticisi kullanıcısının kişisel olarak kullandığı USB bellekteki belgeyi Trabzon hat bakım istasyonu ofis bilgisayarına kopyalamak istemesiyle başladı. USB cihazı kullanım öncesinde beyaz listede değildi ve port kilitleme uygulanmamıştı. USB içinde otomatik çalışan zararlı bir bileşen, takıldığı anda zincirleme yükleme başlattı. 152 dakika içinde ağda yatay hareket denendi ve Kurumsal SOME tespit etti.",
+    "kok_neden_analizi": {
+      "temel_neden": "Personelin USB güvenliği konusunda farkındalık eksikliği.",
+      "katkida_bulunan_etmenler": [
+        "USB cihaz beyaz liste politikasının uygulanmaması ve port fiziksel kilidi olmaması.",
+        "Antimalware araçlarının USB cihazlarda otomatik tarama yapacak şekilde yapılandırılmamış olması.",
+        "Personelin USB güvenliği konusunda farkındalık eksikliği."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Otomatik antimalware tarama USB takılışında zorunlu olacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Atölye cihazlarının USB portları fiziksel olarak kilitlenecek.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Personele USB güvenlik farkındalık eğitimi verilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "USB cihaz beyaz liste politikası uygulanacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Otomatik antimalware tarama USB takılışında zorunlu olacak.",
+        "baslama_tarihi": "2025-06-07",
+        "bitis_tarihi": "2025-06-16"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Atölye cihazlarının USB portları fiziksel olarak kilitlenecek.",
+        "baslama_tarihi": "2025-06-06",
+        "bitis_tarihi": "2025-07-02"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Personele USB güvenlik farkındalık eğitimi verilecek.",
+        "baslama_tarihi": "2025-06-06",
+        "bitis_tarihi": "2025-07-02"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "USB cihaz beyaz liste politikası uygulanacak.",
+        "baslama_tarihi": "2025-06-04",
+        "bitis_tarihi": "2025-08-01"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 3,
+      "risk_seviyesi_metin": "yuksek",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1091",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.3.1",
+        "4.2.1",
+        "12.4.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.628496",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 14
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000664",
+    "olay_tarihi": "2025-10-21T02:33:00",
+    "firma_anonim_id": "MRO-EU-617",
+    "olay_ozeti": {
+      "olay_turu": "yetki_iptal_eksikligi",
+      "saat_araligi": {
+        "baslangic": "2025-10-21T02:33:00",
+        "bitis": "2025-10-21T18:26:00"
+      },
+      "olay_aciklama": "İşten ayrılan Tedarikçi ilişkileri yöneticisi hesabına ait dijital imza yetkisi, İK ve BT arası iletişim kopukluğu nedeniyle iptal edilmemiştir.",
+      "kesinti_suresi_dakika": 953,
+      "etkilenen_hizmetler": [
+        "Bakım kayıt sistem erişimi",
+        "İşten ayrılan personelin tüm erişimleri",
+        "ARBİS hesap yetkisi"
+      ],
+      "tahmini_maddi_kayip_TL": 332115
+    },
+    "olay_sureci": "Sabiha Gökçen ana üs bakım tesisi merkezinde sözleşmesi feshedilen bir tedarikçi çalışanı, kuruluşa ait dijital sertifikası hâlâ aktif olduğu için ARBİS portal arabirimi kayıtlarına erişim sağlamaya devam etti. İK ve BT arasındaki iletişim kopukluğu nedeniyle sertifika iptali atlanmıştı.",
+    "kok_neden_analizi": {
+      "temel_neden": "İK ve BT birimleri arasındaki personel çıkış bildirimi protokolünün yetersiz olması.",
+      "katkida_bulunan_etmenler": [
+        "Erişim yetkilerinin periyodik gözden geçirme döngüsünün uzun olması.",
+        "Tedarikçi çalışan yetkilerinin sözleşme bitişiyle otomatik iptalinin uygulanmaması.",
+        "İK ve BT birimleri arasındaki personel çıkış bildirimi protokolünün yetersiz olması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Erişim yetkileri 3 ayda bir gözden geçirilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Tedarikçi çalışan yetkileri sözleşme bitiş tarihine bağlı otomatik iptal edilecek.",
+        "sorumlu_rol": "Tedarikci_Yonetim",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "İK ve BT arası personel çıkış protokolü dijitalleştirilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Erişim yetkileri 3 ayda bir gözden geçirilecek.",
+        "baslama_tarihi": "2025-10-23",
+        "bitis_tarihi": "2025-11-04"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Tedarikçi çalışan yetkileri sözleşme bitiş tarihine bağlı otomatik iptal edilecek.",
+        "baslama_tarihi": "2025-10-24",
+        "bitis_tarihi": "2025-11-20"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "İK ve BT arası personel çıkış protokolü dijitalleştirilecek.",
+        "baslama_tarihi": "2025-10-23",
+        "bitis_tarihi": "2025-11-04"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 2,
+      "risk_seviyesi_metin": "orta",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1078",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.1.4",
+        "7.2.1",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.659402",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 15
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000060",
+    "olay_tarihi": "2025-04-19T21:46:00",
+    "firma_anonim_id": "MRO-EU-327",
+    "olay_ozeti": {
+      "olay_turu": "oltalama_saldirisi",
+      "saat_araligi": {
+        "baslangic": "2025-04-19T21:46:00",
+        "bitis": "2025-04-20T16:07:00"
+      },
+      "olay_aciklama": "Sabiha Gökçen ana üs bakım tesisi biriminde çalışan C kategori üs bakım sorumlu mühendisi, Form-4 yenileme zorunluluğu gerekçesiyle gönderilen sahte SHGM e-postasına yanıt vererek kurumsal şifresini değiştirme talebi yapmıştır. İstek meşru bir kaynaktan gelmediğinden Kurumsal SOME tarafından gözlemlenmiş ve 1101 dakika içinde yanıt verilmiştir.",
+      "kesinti_suresi_dakika": 1101,
+      "etkilenen_hizmetler": [
+        "ARBİS bağlantılı kuruluş portal erişimi",
+        "Bakım kayıt yönetim sistemi",
+        "Kurumsal e-posta sunucusu",
+        "BKEK doküman erişimi"
+      ],
+      "tahmini_maddi_kayip_TL": 128664
+    },
+    "olay_sureci": "Olayın kronolojisi sabah saat 21 46 civarında kurumsal e-posta sunucusuna ulaşan oltalama iletisiyle başlamıştır. İleti, başlık satırında resmi bir kurum referansı taşıyordu ve gönderici alanı meşrulaştırılmış görünüyordu. C kategori üs bakım sorumlu mühendisi, dönemsel BKEK güncelleme süreci nedeniyle bu iletinin gerçek olduğunu varsaydı ve gömülü bağlantıyı tıkladı. Açılan sahte portal arabirimi görsel olarak orijinalinin neredeyse birebir kopyasıydı. Kullanıcı adı ve parola girildikten kısa süre sonra aynı kimlik bilgileriyle olağandışı bir IP adresinden başarılı oturum açıldığı Kurumsal SOME izleme paneline yansıdı. Anormal coğrafi konum tabanlı oturum filtresinin tetiklenmesiyle hesap askıya alındı, parola sıfırlandı ve aynı oltalama dalgasına maruz kalmış diğer personel uyarıldı.",
+    "kok_neden_analizi": {
+      "temel_neden": "Çok faktörlü kimlik doğrulamanın yalnızca BT sistem yöneticileri için aktif olması ve diğer rollere yayılmamış olması.",
+      "katkida_bulunan_etmenler": [
+        "Personelin oltalama farkındalık eğitiminin altı aydan uzun süredir yenilenmemiş olması ve kurumsal e-posta ağ geçidinde dış alan adı doğrulamasının (DMARC strict) aktif olmaması.",
+        "Anormal coğrafi konum tabanlı oturum tespit eşik süresinin saatlik olması, gerçek zamanlı tespit yeteneğinin eksikliği.",
+        "Çok faktörlü kimlik doğrulamanın yalnızca BT sistem yöneticileri için aktif olması ve diğer rollere yayılmamış olması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Tüm kullanıcı rollerine zorunlu MFA aktive edilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Tüm personele güncellenmiş oltalama farkındalık eğitimi verilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Yıllık oltalama simülasyonu programı kurulumu yapılacak.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Tüm kullanıcı rollerine zorunlu MFA aktive edilecek.",
+        "baslama_tarihi": "2025-04-24",
+        "bitis_tarihi": "2025-07-18"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Tüm personele güncellenmiş oltalama farkındalık eğitimi verilecek.",
+        "baslama_tarihi": "2025-04-21",
+        "bitis_tarihi": "2025-05-03"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.",
+        "baslama_tarihi": "2025-04-23",
+        "bitis_tarihi": "2025-05-03"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Yıllık oltalama simülasyonu programı kurulumu yapılacak.",
+        "baslama_tarihi": "2025-04-21",
+        "bitis_tarihi": "2025-07-18"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1566",
+        "subtechnique": "T1566.002"
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.2.1",
+        "4.1.1",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.614452",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 16
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000050",
+    "olay_tarihi": "2025-03-01T15:29:00",
+    "firma_anonim_id": "MRO-TR-510",
+    "olay_ozeti": {
+      "olay_turu": "oltalama_saldirisi",
+      "saat_araligi": {
+        "baslangic": "2025-03-01T15:29:00",
+        "bitis": "2025-03-01T22:41:00"
+      },
+      "olay_aciklama": "Esenboğa NDT atölyesi biriminde çalışan Hat bakım vardiya sorumlusu, Form-4 yenileme zorunluluğu gerekçesiyle gönderilen sahte SHGM e-postasına yanıt vererek kurumsal şifresini değiştirme talebi yapmıştır. İstek meşru bir kaynaktan gelmediğinden Kurumsal SOME tarafından gözlemlenmiş ve 432 dakika içinde yanıt verilmiştir.",
+      "kesinti_suresi_dakika": 432,
+      "etkilenen_hizmetler": [
+        "Onaylayıcı personel yetkilendirme kuyruğu",
+        "ARBİS bağlantılı kuruluş portal erişimi",
+        "Bakım kayıt yönetim sistemi",
+        "Kurumsal e-posta sunucusu"
+      ],
+      "tahmini_maddi_kayip_TL": 275803
+    },
+    "olay_sureci": "Olay zinciri, Hat bakım vardiya sorumlusu pozisyonundaki kullanıcının üç gün önce alınmış sahte bir yazışmayı sehven açmasıyla başladı. E-posta hizmet sağlayıcısının spam filtresi iletide şüpheli bir parametre tespit edememiş ve mesaj normal kullanıcı kutusuna düşmüştü. Mesajdaki bağlantı tıklandığında yönlendirilen sayfa, çok katmanlı yönlendirme zinciri kullanarak kullanıcıyı sahte oturum açma arabirimine taşıdı. Bilgilerin girilmesinin ardından arka planda gerçek kurumsal portal üzerinde otomatik oturum açıldı ve birkaç dakika içinde okuma denemeleri yapıldı. Olay Kurumsal SOME tarafından ağ akış analizi sırasında fark edildi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Personelin oltalama farkındalık eğitiminin altı aydan uzun süredir yenilenmemiş olması ve kurumsal e-posta ağ geçidinde dış alan adı doğrulamasının (DMARC strict) aktif olmaması.",
+      "katkida_bulunan_etmenler": [
+        "Çok faktörlü kimlik doğrulamanın yalnızca BT sistem yöneticileri için aktif olması ve diğer rollere yayılmamış olması.",
+        "Personelin oltalama farkındalık eğitiminin altı aydan uzun süredir yenilenmemiş olması ve kurumsal e-posta ağ geçidinde dış alan adı doğrulamasının (DMARC strict) aktif olmaması.",
+        "Anormal coğrafi konum tabanlı oturum tespit eşik süresinin saatlik olması, gerçek zamanlı tespit yeteneğinin eksikliği."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Yıllık oltalama simülasyonu programı kurulumu yapılacak.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Kurumsal e-posta ağ geçidinde DMARC reject politikası uygulanacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Tüm kullanıcı rollerine zorunlu MFA aktive edilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Yıllık oltalama simülasyonu programı kurulumu yapılacak.",
+        "baslama_tarihi": "2025-03-04",
+        "bitis_tarihi": "2025-03-15"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Kurumsal e-posta ağ geçidinde DMARC reject politikası uygulanacak.",
+        "baslama_tarihi": "2025-03-06",
+        "bitis_tarihi": "2025-05-30"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Tüm kullanıcı rollerine zorunlu MFA aktive edilecek.",
+        "baslama_tarihi": "2025-03-03",
+        "bitis_tarihi": "2025-05-30"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Anormal coğrafi konum oturum tespiti 5 dakikalık periyoda çekilecek.",
+        "baslama_tarihi": "2025-03-04",
+        "bitis_tarihi": "2025-03-31"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1566",
+        "subtechnique": "T1566.002"
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "1.2.1",
+        "4.1.1",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.613706",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 17
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000170",
+    "olay_tarihi": "2025-12-02T15:31:00",
+    "firma_anonim_id": "MRO-TR-385",
+    "olay_ozeti": {
+      "olay_turu": "ot_sistem_sizmasi",
+      "saat_araligi": {
+        "baslangic": "2025-12-02T15:31:00",
+        "bitis": "2025-12-02T23:02:00"
+      },
+      "olay_aciklama": "İstanbul ana üs bakım hangarı hangarındaki kalibrasyon kontrol sistemi, üretici varsayılan parolasının değiştirilmemesi nedeniyle ele geçirilmiştir. Olay 451 dakika içinde davranış tabanlı izleme aracı tarafından tespit edilmiştir.",
+      "kesinti_suresi_dakika": 451,
+      "etkilenen_hizmetler": [
+        "Kalibrasyon kayıt sunucusu",
+        "Atölye yerel ağ segmenti",
+        "NDT cihaz kontrol bilgisayarı",
+        "Tahribatsız muayene veri tabanı"
+      ],
+      "tahmini_maddi_kayip_TL": 128240
+    },
+    "olay_sureci": "Olayın başlangıç noktası, İstanbul ana üs bakım hangarı bünyesindeki NDT atölyesinde BKEK doküman yönetim sistemi cihazının üretici tarafından önerilen yıllık yazılım güncellemesidir. Teknisyen, üretici sitesinden indirilen paketi kişisel USB belleğe kopyalayıp kontrol bilgisayarına bağladı. USB cihazı beyaz listede olmamasına rağmen port fiziksel olarak kilitli değildi. Güncelleme paketinin imza doğrulaması başarılı görünüyordu ancak içine gizlenmiş ikinci yürütülebilir bileşen, kalibrasyon kayıt sunucusuna yatay geçiş hazırlığı için zamanlanmış görev oluşturdu. Görev 451 dakika sonra port tarama başlattı. Davranış tabanlı tespit kuralı yatay hareketi yakalayarak cihazı izole etti.",
+    "kok_neden_analizi": {
+      "temel_neden": "BT ve OT ağ segmentasyonunun yalnızca VLAN seviyesinde olması, mikro-segmentasyonun uygulanmaması.",
+      "katkida_bulunan_etmenler": [
+        "BT ve OT ağ segmentasyonunun yalnızca VLAN seviyesinde olması, mikro-segmentasyonun uygulanmaması.",
+        "Üretici varsayılan parolalarının değiştirilmemiş olması ve OT cihazlarının yazılım sürümlerinin güncel tutulmaması.",
+        "OT segmentindeki cihazlarda USB portu fiziksel kilit veya yazılım tabanlı erişim kontrolünün uygulanmamış olması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "OT-BT mikro-segmentasyon projesi başlatılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Tüm OT cihazlarının USB portlarına fiziksel kilit takılacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "OT cihazları için özel davranış tabanlı izleme kuralları kapsamı genişletilecek.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Üretici varsayılan parolaları zorunlu olarak değiştirilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "OT-BT mikro-segmentasyon projesi başlatılacak.",
+        "baslama_tarihi": "2025-12-04",
+        "bitis_tarihi": "2025-12-16"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Tüm OT cihazlarının USB portlarına fiziksel kilit takılacak.",
+        "baslama_tarihi": "2025-12-07",
+        "bitis_tarihi": "2026-03-02"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "OT cihazları için özel davranış tabanlı izleme kuralları kapsamı genişletilecek.",
+        "baslama_tarihi": "2025-12-05",
+        "bitis_tarihi": "2026-05-31"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Üretici varsayılan parolaları zorunlu olarak değiştirilecek.",
+        "baslama_tarihi": "2025-12-04",
+        "bitis_tarihi": "2026-03-02"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0001",
+        "technique": "T1091",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "12.3.5",
+        "6.2.1",
+        "1.3.1",
+        "15.1.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.623814",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 18
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000400",
+    "olay_tarihi": "2024-06-17T23:14:00",
+    "firma_anonim_id": "MRO-TR-191",
+    "olay_ozeti": {
+      "olay_turu": "fidye_yazilimi",
+      "saat_araligi": {
+        "baslangic": "2024-06-17T23:14:00",
+        "bitis": "2024-06-18T22:52:00"
+      },
+      "olay_aciklama": "SGSYY (Siber Güvenlik Sorumlu Yöneticisi) hesabı üzerinden bulaşan fidye yazılımı, Ankara hat bakım istasyonu ağındaki paylaşımlı sürücülerde yayılarak personel yetkilendirme portalı üzerindeki tüm bakım kayıtlarını şifrelemiştir.",
+      "kesinti_suresi_dakika": 1418,
+      "etkilenen_hizmetler": [
+        "BKEK doküman arşivi",
+        "Bakım kayıt yazılımı veri tabanı",
+        "Müşteri sözleşme arşivi"
+      ],
+      "tahmini_maddi_kayip_TL": 15574
+    },
+    "olay_sureci": "Olay, tedarikçi yazılım güncelleme paketinde gizlenmiş bir fidye yazılımı yükleyicisinin Ankara hat bakım istasyonu üzerinde otomatik dağıtılmasıyla başladı. Yükleyici 1418 dakika sessiz bekledi, ardından şifreleme sürecini tetikledi. personel yetkilendirme portalı ve bağlı sürücülerdeki tüm dosyalar erişilemez hale geldi.",
+    "kok_neden_analizi": {
+      "temel_neden": "Personelin makro içeren e-posta eki açma riskine karşı eğitilmemiş olması.",
+      "katkida_bulunan_etmenler": [
+        "Uzak masaüstü hizmetlerinin internete açık bırakılmış olması ve zayıf parolalarla korunması.",
+        "Personelin makro içeren e-posta eki açma riskine karşı eğitilmemiş olması.",
+        "Yedeklerin offline olmaması ve yedek bütünlüğünün düzenli olarak test edilmemesi."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "denetim",
+          "delik_aciklamasi": "Periyodik denetim aralığının olay tespitine geç tepki vermesi."
+        },
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "personel_egitimi",
+          "delik_aciklamasi": "Personel farkındalık eğitiminin son altı ay içinde yenilenmemiş olması."
+        },
+        {
+          "katman": "tedarikci",
+          "delik_aciklamasi": "Tedarikçi güvenlik denetiminin sözleşme düzeyinde zayıf kalması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Yedek bütünlüğü haftalık test edilecek.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "Uzak masaüstü hizmetleri VPN arkasına alınacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Yedekleme stratejisi 3-2-1 prensibine göre yeniden yapılandırılacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "E-posta eki çalıştırma kısıtlaması (sandboxing) uygulanacak.",
+        "sorumlu_rol": "Kurumsal_SOME",
+        "oncelik": "yuksek"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Yedek bütünlüğü haftalık test edilecek.",
+        "baslama_tarihi": "2024-06-18",
+        "bitis_tarihi": "2024-12-14"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "Uzak masaüstü hizmetleri VPN arkasına alınacak.",
+        "baslama_tarihi": "2024-06-19",
+        "bitis_tarihi": "2024-09-15"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Yedekleme stratejisi 3-2-1 prensibine göre yeniden yapılandırılacak.",
+        "baslama_tarihi": "2024-06-20",
+        "bitis_tarihi": "2024-07-01"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "E-posta eki çalıştırma kısıtlaması (sandboxing) uygulanacak.",
+        "baslama_tarihi": "2024-06-21",
+        "bitis_tarihi": "2024-07-17"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0040",
+        "technique": "T1486",
+        "subtechnique": ""
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "9.1.1",
+        "14.1.1",
+        "5.2.1"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": true
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.640656",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 19
+  },
+  {
+    "olay_id": "CDSA-MRO-SDG-000416",
+    "olay_tarihi": "2025-09-06T11:53:00",
+    "firma_anonim_id": "MRO-TR-971",
+    "olay_ozeti": {
+      "olay_turu": "kalibrasyon_butunluk_ihlali",
+      "saat_araligi": {
+        "baslangic": "2025-09-06T11:53:00",
+        "bitis": "2025-09-06T23:54:00"
+      },
+      "olay_aciklama": "Adana hat bakım istasyonu biriminde BT operasyon yöneticisi tarafından girilen kalibrasyon değerleri, denetim izi olmadan ARBİS portal arabirimi üzerinde güncellenmiştir.",
+      "kesinti_suresi_dakika": 721,
+      "etkilenen_hizmetler": [
+        "Bakım çıkış sertifikası geriye dönük inceleme",
+        "NDT cihaz kalibrasyon değerleri",
+        "Tork anahtarı kalibrasyon kayıtları"
+      ],
+      "tahmini_maddi_kayip_TL": 250777
+    },
+    "olay_sureci": "Periyodik iç denetim sırasında Adana hat bakım istasyonu bünyesindeki ARBİS portal arabirimi kayıtlarında dört adet tork anahtarı değerinin BT operasyon yöneticisi hesabıyla manuel olarak değiştirildiği fark edildi. Denetim izi yalnızca son bir hafta için ayrıntılı tutulduğundan eski değişiklikler için sadece özet log mevcuttu. Olay 721 dakika içinde geriye dönük bakım çıkış sertifikalarının gözden geçirilmesi gerektiğini ortaya koydu. SHY-145 Madde 18 kapsamında bildirim yapıldı.",
+    "kok_neden_analizi": {
+      "temel_neden": "Kalibrasyon değer değişikliklerinin onay zincirli iş akışı yerine tek kullanıcı erişimiyle yapılabilir olması.",
+      "katkida_bulunan_etmenler": [
+        "Kalibrasyon değer değişikliklerinin onay zincirli iş akışı yerine tek kullanıcı erişimiyle yapılabilir olması.",
+        "Kalibrasyon kayıt yazılımında değişiklik denetim izinin yalnızca kısa süreli tutulması ve eski değişikliklerin kriptografik korunmaması.",
+        "İç denetim periyodunun aylık değil çeyrek dönemli olması ve geç tespite yol açması."
+      ],
+      "swiss_cheese_katmanlari": [
+        {
+          "katman": "fiziksel_guvenlik",
+          "delik_aciklamasi": "Fiziksel erişim kontrolünün bazı OT alanlarında yetersiz olması."
+        },
+        {
+          "katman": "teknik_kontrol",
+          "delik_aciklamasi": "Otomatik teknik güvenlik kontrolünün yetersiz yapılandırılmış olması."
+        },
+        {
+          "katman": "yonetim",
+          "delik_aciklamasi": "Görev ayrılığı politikasının kritik rollere yayılmamış olması."
+        }
+      ]
+    },
+    "aksiyonlar": [
+      {
+        "aksiyon_no": 1,
+        "aciklama": "Kalibrasyon değer değişiklikleri için Sorumlu Müdür onay zinciri devreye alınacak.",
+        "sorumlu_rol": "Sorumlu_Mudur",
+        "oncelik": "acil"
+      },
+      {
+        "aksiyon_no": 2,
+        "aciklama": "İç denetim periyodu aylık seviyeye çekilecek.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 3,
+        "aciklama": "Görev ayrılığı politikası tüm bütünlük kritik rollere uygulanacak.",
+        "sorumlu_rol": "SGSYY",
+        "oncelik": "yuksek"
+      },
+      {
+        "aksiyon_no": 4,
+        "aciklama": "Kalibrasyon değişiklik denetim izi süresiz arşivlenecek ve kriptografik özet ile korunacak.",
+        "sorumlu_rol": "BT_Mudur",
+        "oncelik": "acil"
+      }
+    ],
+    "projelendirme": [
+      {
+        "proje_no": 1,
+        "duzeltici_faaliyet": "Kalibrasyon değer değişiklikleri için Sorumlu Müdür onay zinciri devreye alınacak.",
+        "baslama_tarihi": "2025-09-08",
+        "bitis_tarihi": "2025-10-06"
+      },
+      {
+        "proje_no": 2,
+        "duzeltici_faaliyet": "İç denetim periyodu aylık seviyeye çekilecek.",
+        "baslama_tarihi": "2025-09-08",
+        "bitis_tarihi": "2025-09-20"
+      },
+      {
+        "proje_no": 3,
+        "duzeltici_faaliyet": "Görev ayrılığı politikası tüm bütünlük kritik rollere uygulanacak.",
+        "baslama_tarihi": "2025-09-09",
+        "bitis_tarihi": "2025-12-05"
+      },
+      {
+        "proje_no": 4,
+        "duzeltici_faaliyet": "Kalibrasyon değişiklik denetim izi süresiz arşivlenecek ve kriptografik özet ile korunacak.",
+        "baslama_tarihi": "2025-09-10",
+        "bitis_tarihi": "2025-12-05"
+      }
+    ],
+    "etiketler": {
+      "risk_seviyesi": 4,
+      "risk_seviyesi_metin": "kritik",
+      "mitre_attack": {
+        "tactic": "TA0009",
+        "technique": "T1565",
+        "subtechnique": "T1565.001"
+      },
+      "shtsiber_ek19_kontrol_atfi": [
+        "3.2.1",
+        "6.1.2",
+        "1.4.2"
+      ],
+      "kvkk_ozel_veri_iceriyor": true,
+      "shy145_madde18_72saat_uygunluk": false
+    },
+    "metaveri": {
+      "uretim_tarihi": "2026-05-15T21:51:29.642195",
+      "uretim_motor_versiyonu": "CDSA-MRO-SDG-v2.0",
+      "sentetik_garanti": {
+        "epsilon_dp": 0.8,
+        "gercek_kisi_atfi": false,
+        "gercek_firma_atfi": false,
+        "gercek_olay_atfi": false
+      },
+      "delphi_dogrulama": {
+        "uzman_sayisi": 0,
+        "realism_score": null,
+        "compliance_score": null,
+        "delphi_round_count": 0
+      }
+    },
+    "panel_sira_no": 20
+  }
+]

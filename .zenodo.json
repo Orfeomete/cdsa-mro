@@ -1,0 +1,113 @@
+{
+  "title": "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Engine + Cyber + Maintenance Fusion",
+  "description": "<p>CDSA-MRO is the reference implementation of the maintenance safety pillar of the Complementary Diagnostic Safety Approach (CDSA), a third-generation aviation safety paradigm formalised as a Federated Reinforcement Learning (FRL) framework following the CDSA Methodological Unification Decision (Scenario C, 21 May 2026, frozen status).</p><p>The v2 scaffold (22 May 2026) adds Python modules (multimodal, federated, xai) for the FRL paradigm extension. Full implementations are deferred to TÜBİTAK 1001 ARDEB Project 3 (Sept 2026 application cycle; 2027-2030 execution). The v1.0.0 release modules and reference data remain unchanged.</p>",
+  "creators": [
+    {
+      "name": "Cantekin, Mete",
+      "affiliation": "Department of Computer Engineering, Istanbul Beykent University",
+      "orcid": "0009-0001-6990-6340"
+    }
+  ],
+  "version": "1.0.0+v2-scaffold",
+  "publication_date": "2026-05-22",
+  "language": "eng",
+  "license": "MIT",
+  "access_right": "open",
+  "upload_type": "software",
+  "communities": [
+    {
+      "identifier": "aviation"
+    },
+    {
+      "identifier": "machine-learning"
+    },
+    {
+      "identifier": "synthetic-data"
+    }
+  ],
+  "keywords": [
+    "reinforcement learning",
+    "synthetic data",
+    "cyber safety",
+    "aviation maintenance",
+    "data locality",
+    "continuing airworthiness",
+    "Part-145",
+    "CDSA-MRO",
+    "SHT-SIBER",
+    "differential privacy",
+    "PPO",
+    "Gymnasium",
+    "MITRE ATT&CK",
+    "Turkish Civil Aviation",
+    "regulatory compliance",
+    "aviation safety",
+    "maintenance safety",
+    "federated reinforcement learning",
+    "multi-modal fusion",
+    "cross-modal attention",
+    "SHAP",
+    "counterfactual reasoning",
+    "explainable AI",
+    "EASA AI Roadmap Level 2",
+    "CDSA paradigm",
+    "Scenario C",
+    "convergent validation"
+  ],
+  "subjects": [
+    {
+      "term": "Reinforcement Learning",
+      "identifier": "https://en.wikipedia.org/wiki/Reinforcement_learning",
+      "scheme": "url"
+    },
+    {
+      "term": "Aviation Safety",
+      "identifier": "https://en.wikipedia.org/wiki/Aviation_safety",
+      "scheme": "url"
+    },
+    {
+      "term": "Synthetic Data",
+      "identifier": "https://en.wikipedia.org/wiki/Synthetic_data",
+      "scheme": "url"
+    }
+  ],
+  "notes": "v2 scaffold release (22 May 2026): paradigm-alignment update following CDSA Scenario C decision. New src/ scaffolded modules (multimodal, federated, xai) added for the FRL extension; full implementations deferred to TÜBİTAK 1001 ARDEB Project 3 (Sept 2026 cycle, 2027-2030 execution). The v1.0.0 release tag remains valid and reproducible.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Orfeomete/cdsa-mro",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/Orfeomete/cdsa-bb3",
+      "relation": "isPartOf",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/Orfeomete/cdsa-atm",
+      "relation": "isPartOf",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/Orfeomete/cdsa-site",
+      "relation": "isPartOf",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "references": [
+    "European Union Aviation Safety Agency. Implementing Regulation (EU) 2023/203, Part-IS. Official Journal of the European Union; 2023.",
+    "European Union Aviation Safety Agency. Commission Regulation (EU) No 1321/2014, Annex II Part-145. Official Journal of the European Union; 2014.",
+    "Sivil Havacilik Genel Mudurlugu (SHGM). Sivil Havacilik Isletmelerine Yonelik Siber Guvenlik Talimati (SHT-SIBER). 2022.",
+    "Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O. Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347; 2017.",
+    "Sutton RS, Barto AG. Reinforcement Learning: An Introduction. Second Edition. MIT Press; 2018.",
+    "International Civil Aviation Organization. Annex 19 to the Convention on International Civil Aviation: Safety Management. Second Edition. ICAO; 2016.",
+    "Turkish Personal Data Protection Authority. Law No. 6698 on the Protection of Personal Data. Official Gazette No. 29677; 2016.",
+    "Dwork C, Roth A. The algorithmic foundations of differential privacy. Foundations and Trends in Theoretical Computer Science; 2014.",
+    "MITRE Corporation. MITRE ATT&CK Framework. 2024."
+  ],
+  "grants": []
+}

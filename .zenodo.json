@@ -1,6 +1,6 @@
 {
   "title": "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Engine + Cyber + Maintenance Fusion",
-  "description": "<p>CDSA-MRO is the reference implementation of the maintenance safety pillar of the Complementary Diagnostic Safety Approach (CDSA), a third-generation aviation safety paradigm formalised as a Federated Reinforcement Learning (FRL) framework following the CDSA Methodological Unification Decision (Scenario C, 21 May 2026, frozen status).</p><p>The v2 scaffold (22 May 2026) adds Python modules (multimodal, federated, xai) for the FRL paradigm extension. Full implementations are deferred to TÜBİTAK 1001 ARDEB Project 3 (Sept 2026 application cycle; 2027-2030 execution). The v1.0.0 release modules and reference data remain unchanged.</p>",
+  "description": "<p>CDSA-MRO is the reference implementation of the maintenance safety pillar of the Complementary Diagnostic Safety Approach (CDSA), a third-generation aviation safety paradigm formalised as a Federated Reinforcement Learning (FRL) framework (Scenario C decision, 21 May 2026). The v2.1.0 release (12 June 2026) replaces the v2.0.0 scaffold stubs with full NumPy reference implementations (federated, multimodal, rl_agents, rl_environment, xai; all unit-tested) and adds seeded, reproducible CPU-scale federated training runs (random / centralised PPO / FedAvg / FedProx / FedProx+DP) with result JSONs under experiments/results/. An interactive results panel is published at https://cdsa.app/mro. Framework-scale training with real data is planned under TÜBİTAK funding (Phase B). The v1.0.0 release modules and reference data remain unchanged.</p>",
   "creators": [
     {
       "name": "Cantekin, Mete",
@@ -8,7 +8,7 @@
       "orcid": "0009-0001-6990-6340"
     }
   ],
-  "version": "1.0.0+v2-scaffold",
+  "version": "2.1.0",
   "publication_date": "2026-05-22",
   "language": "eng",
   "license": "MIT",
@@ -71,7 +71,7 @@
       "scheme": "url"
     }
   ],
-  "notes": "v2 scaffold release (22 May 2026): paradigm-alignment update following CDSA Scenario C decision. New src/ scaffolded modules (multimodal, federated, xai) added for the FRL extension; full implementations deferred to TÜBİTAK 1001 ARDEB Project 3 (Sept 2026 cycle, 2027-2030 execution). The v1.0.0 release tag remains valid and reproducible.",
+  "notes": "v2.1.0 (12 June 2026): Faz A implementation + A6 CPU-scale federated runs. v1.0.0 and v2.0.0-scaffold tags remain valid; see CHANGELOG.md for details.",
   "related_identifiers": [
     {
       "identifier": "https://github.com/Orfeomete/cdsa-mro",

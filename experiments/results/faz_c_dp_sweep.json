@@ -1,0 +1,162 @@
+{
+  "pillar": "CDSA-MRO",
+  "date": "2026-07-02",
+  "seed": 42,
+  "design": {
+    "agg": "fedprox mu=0.01 + Laplace DP, sensitivity=0.01",
+    "rounds": 160,
+    "eps_values": [
+      0.5,
+      2.0
+    ],
+    "note": "eps=1.0 referansi faz_a_results.json'da; degerlendirme statik ortam, faz_b protokolu (3 seed)"
+  },
+  "eps_0.5": {
+    "final": {
+      "mean_reward": 7.34,
+      "accuracy_pct": 42.7,
+      "critical_recall": 0.494,
+      "per_class_recall": {
+        "izleme_devam": null,
+        "uyari_olustur": 0.0,
+        "ic_sorusturma": 0.0,
+        "some_mudahale": 0.0,
+        "shgm_72saat_bildirim": 1.0
+      },
+      "distinct_actions_used": 1,
+      "confusion_sum": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          239
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          788
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          769
+        ]
+      ]
+    },
+    "curve": [
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88
+    ]
+  },
+  "eps_2.0": {
+    "final": {
+      "mean_reward": 7.34,
+      "accuracy_pct": 42.7,
+      "critical_recall": 0.494,
+      "per_class_recall": {
+        "izleme_devam": null,
+        "uyari_olustur": 0.0,
+        "ic_sorusturma": 0.0,
+        "some_mudahale": 0.0,
+        "shgm_72saat_bildirim": 1.0
+      },
+      "distinct_actions_used": 1,
+      "confusion_sum": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          239
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          788
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          769
+        ]
+      ]
+    },
+    "curve": [
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88
+    ]
+  }
+}

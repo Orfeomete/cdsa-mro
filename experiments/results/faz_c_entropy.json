@@ -1,0 +1,162 @@
+{
+  "pillar": "CDSA-MRO",
+  "date": "2026-07-02",
+  "seed": 42,
+  "design": {
+    "agg": "fedprox mu=0.01, DP yok",
+    "rounds": 160,
+    "ent_values": [
+      0.01,
+      0.05
+    ],
+    "note": "entropi bonusu alt-sinifta; ent=0 tabani faz_a_results.json fedprox; degerlendirme statik ortam, faz_b protokolu (3 seed)"
+  },
+  "ent_0.01": {
+    "final": {
+      "mean_reward": 7.34,
+      "accuracy_pct": 42.7,
+      "critical_recall": 0.494,
+      "per_class_recall": {
+        "izleme_devam": null,
+        "uyari_olustur": 0.0,
+        "ic_sorusturma": 0.0,
+        "some_mudahale": 0.0,
+        "shgm_72saat_bildirim": 1.0
+      },
+      "distinct_actions_used": 1,
+      "confusion_sum": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          239
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          788
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          769
+        ]
+      ]
+    },
+    "curve": [
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88
+    ]
+  },
+  "ent_0.05": {
+    "final": {
+      "mean_reward": 8.94,
+      "accuracy_pct": 53.0,
+      "critical_recall": 0.613,
+      "per_class_recall": {
+        "izleme_devam": null,
+        "uyari_olustur": 0.0,
+        "ic_sorusturma": 0.0,
+        "some_mudahale": 0.482,
+        "shgm_72saat_bildirim": 0.746
+      },
+      "distinct_actions_used": 2,
+      "confusion_sum": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          179,
+          60
+        ],
+        [
+          0,
+          0,
+          0,
+          380,
+          408
+        ],
+        [
+          0,
+          0,
+          0,
+          195,
+          574
+        ]
+      ]
+    },
+    "curve": [
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.88,
+      7.91,
+      6.93,
+      7.9,
+      9.26,
+      8.8,
+      9.05,
+      9.58,
+      9.55,
+      9.62,
+      9.37,
+      9.73,
+      9.04,
+      9.45,
+      9.74,
+      9.3
+    ]
+  }
+}

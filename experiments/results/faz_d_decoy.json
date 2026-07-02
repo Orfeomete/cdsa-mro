@@ -1,0 +1,48 @@
+{
+  "pillar": "CDSA-MRO",
+  "date": "2026-07-03",
+  "seed": 42,
+  "design": {
+    "k_decoy": 2,
+    "groups": {
+      "real": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "decoy": [
+        10,
+        11
+      ]
+    },
+    "rounds": 160,
+    "smoke": false,
+    "note": "decoy = iid U(0,1), odulle/gecisle iliskisiz; beklenti grup-Shapley decoy atifi ~0; sonuc ne cikarsa raporlanir"
+  },
+  "final_eval": {
+    "mean_reward": 7.34,
+    "accuracy_pct": 42.7,
+    "critical_recall": 0.494,
+    "distinct_actions_used": 1
+  },
+  "shapley_pct_by_action": {
+    "shgm_72saat_bildirim": {
+      "real": 88.9,
+      "decoy": 11.1
+    }
+  },
+  "decoy_attribution_pct": {
+    "by_action": {
+      "shgm_72saat_bildirim": 11.1
+    },
+    "mean": 11.1,
+    "max": 11.1
+  }
+}

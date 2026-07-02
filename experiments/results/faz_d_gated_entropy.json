@@ -1,0 +1,165 @@
+{
+  "pillar": "CDSA-MRO",
+  "date": "2026-07-03",
+  "seed": 42,
+  "design": {
+    "ent_coef": 0.05,
+    "recall_floor": 0.9,
+    "rounds": 160,
+    "smoke": false,
+    "note": "entropi bonusu yalniz probe kritik-recall >= FLOOR iken aktif; probe her PROBE_EVERY roundda, greedy politika ile"
+  },
+  "gate_log": [
+    {
+      "round": 8,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 16,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 24,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 32,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 40,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 48,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 56,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 64,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 72,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 80,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 88,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 96,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 104,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 112,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 120,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 128,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 136,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 144,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 152,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    },
+    {
+      "round": 160,
+      "probe_recall": 0.508,
+      "gate_on_next": false
+    }
+  ],
+  "gate_on_ratio": 0.0,
+  "final": {
+    "mean_reward": 7.34,
+    "accuracy_pct": 42.7,
+    "critical_recall": 0.494,
+    "per_class_recall": {
+      "izleme_devam": null,
+      "uyari_olustur": 0.0,
+      "ic_sorusturma": 0.0,
+      "some_mudahale": 0.0,
+      "shgm_72saat_bildirim": 1.0
+    },
+    "distinct_actions_used": 1,
+    "confusion_sum": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        239
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        788
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        769
+      ]
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+{
+ "pillar": "CDSA-MRO",
+ "date": "2026-07-02",
+ "seed": 42,
+ "eval_steps": 600,
+ "eval_reps": 3,
+ "drop_idx": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "note": "B1+B2 inference-time robustness; egitilmis parametrelerle, yeniden egitim YOK; bozulma yalniz gozleme uygulanir",
+ "action_labels": [
+  "izleme_devam",
+  "uyari_olustur",
+  "ic_sorusturma",
+  "some_mudahale",
+  "shgm_72saat_bildirim"
+ ],
+ "models": {
+  "fedprox": {
+   "clean": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "gauss_0.05": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "gauss_0.10": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "gauss_0.20": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "drop_0.05": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "drop_0.10": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   }
+  },
+  "fedavg": {
+   "clean": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "gauss_0.05": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "gauss_0.10": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "gauss_0.20": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "drop_0.05": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   },
+   "drop_0.10": {
+    "mean_reward": {
+     "mean": 7.336,
+     "std": 0.224
+    },
+    "accuracy_pct": {
+     "mean": 42.722,
+     "std": 0.906
+    },
+    "critical_recall": {
+     "mean": 0.494,
+     "std": 0.007
+    },
+    "false_critical_rate": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "missed_critical_rate": {
+     "mean": 0.0,
+     "std": 0.0
+    }
+   }
+  }
+ }
+}

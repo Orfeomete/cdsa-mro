@@ -1,0 +1,134 @@
+{
+  "pillar": "CDSA-MRO",
+  "date": "2026-07-02",
+  "seed": 42,
+  "design": {
+    "kappa": 1.0,
+    "window": 32,
+    "agg": "fedprox mu=0.01",
+    "rounds": 160,
+    "note": "tempo=son 32 adimdaki kritik-olay orani; kacirilan-kritik cezasi x(1+k*tempo), sahte-kritik x(1+k*(1-tempo)); degerlendirme statik-odul ortaminda"
+  },
+  "dynrew_fedprox": {
+    "mean_reward": 7.34,
+    "accuracy_pct": 42.7,
+    "critical_recall": 0.494,
+    "per_class_recall": {
+      "izleme_devam": null,
+      "uyari_olustur": 0.0,
+      "ic_sorusturma": 0.0,
+      "some_mudahale": 0.0,
+      "shgm_72saat_bildirim": 1.0
+    },
+    "distinct_actions_used": 1,
+    "confusion_sum": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        239
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        788
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        769
+      ]
+    ]
+  },
+  "curve": [
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88,
+    7.88
+  ],
+  "static_fedprox_baseline": {
+    "mean_reward": 7.34,
+    "accuracy_pct": 42.7,
+    "critical_recall": 0.494,
+    "per_class_recall": {
+      "izleme_devam": null,
+      "uyari_olustur": 0.0,
+      "ic_sorusturma": 0.0,
+      "some_mudahale": 0.0,
+      "shgm_72saat_bildirim": 1.0
+    },
+    "distinct_actions_used": 1,
+    "confusion_sum": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        239
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        788
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        769
+      ]
+    ]
+  }
+}

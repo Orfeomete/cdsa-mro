@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.2.0-dev] — 2026-07-03 (unreleased)
+## [2.2.0] — 2026-07-03
 
 ### Added (Faz B/C/D revision-preparation experiments; seeded, CPU-scale)
 - Faz B: inference-time robustness + confusion-matrix evaluation and a
@@ -32,8 +32,8 @@
 ### Unchanged
 - Published core code, environments and Faz A outputs — no behavioural
   changes.
-- The v2.1.0 release and its Zenodo DOI remain valid; no new release or
-  DOI is cut for this section (deferred to the acceptance/revision stage).
+- The v2.1.0 release and its Zenodo DOI remain valid; this v2.2.0 release
+  archives the Faz B/C/D outputs on Zenodo.
 
 ## [2.0.0-scaffold] — 2026-05-22
 
@@ -107,13 +107,15 @@
 
 _(Roadmap renumbered 2026-06-12: the CPU-scale reference implementation of the planned 2.1.0 federated/XAI items shipped early as the actual 2.1.0 release below; framework-scale items move to 2.2.0/2.3.0.)_
 
-### [2.2.0] — Target 2026-Q4 (framework-scale)
+_(Roadmap renumbered again 2026-07-03: the Faz B/C/D revision-preparation experiments shipped as the actual 2.2.0 release above; framework-scale items move to 2.3.0/2.4.0.)_
+
+### [2.3.0] — Target 2026-Q4 (framework-scale)
 - PyTorch deep policy networks
 - Stable-Baselines3 PPO integration
 - 1M+ training timesteps
 - Hyperparameter search (Optuna)
 
-### [2.3.0] — Target 2027-Q1 (federated extension at scale)
+### [2.4.0] — Target 2027-Q1 (federated extension at scale)
 - Federated learning extension (5 simulated MROs)
 - SHAP-based explainability layer
 - Integrated gradients

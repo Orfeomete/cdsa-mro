@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.2.0-dev] — 2026-07-03 (unreleased)
+
+### Added (Faz B/C/D revision-preparation experiments; seeded, CPU-scale)
+- Faz B: inference-time robustness + confusion-matrix evaluation and a
+  tempo-aware-reward retraining experiment — `experiments/faz_b_robustness.py`,
+  `experiments/faz_b_dynamic_reward.py` + seeded output JSONs under
+  `experiments/results/`.
+- Faz C: differential-privacy ε sweep (ε = 0.5 / 2.0) and entropy-targeted
+  exploration (coef 0.01 / 0.05), each a separate 160-round FedProx
+  retraining — `experiments/faz_c_dp_sweep.py`, `experiments/faz_c_entropy.py`
+  + output JSONs.
+- Faz D: decoy-signal (group-Shapley) attribution test and
+  recall-floor-gated exploration — `experiments/faz_d_decoy.py`,
+  `experiments/faz_d_gated_entropy.py` + output JSONs.
+- Per-phase result panels with honesty bands at https://cdsa.app/mro/.
+
+### Findings (honest summary — numbers verbatim from `experiments/results/*.json`)
+- All Faz B robustness conditions and the tempo-aware-reward retraining
+  reproduce the constant-action policy (accuracy 42.7%, critical recall
+  0.494, one of five actions used) — Faz A rows should not be read as
+  evidence of task mastery.
+- Faz C: the ε conditions and 0.01 entropy leave the policy unchanged;
+  a 0.05 entropy bonus breaks the single-action collapse for the first
+  time (two of five actions, accuracy 53.0%, critical recall 0.613) —
+  a partial but real improvement.
+- Faz D: the exploration gate never opens (gate_on ratio 0.0 — the 0.90
+  critical-recall floor is never reached); decoy attribution is 11.1%,
+  to be read over near-constant outputs.
+
+### Unchanged
+- Published core code, environments and Faz A outputs — no behavioural
+  changes.
+- The v2.1.0 release and its Zenodo DOI remain valid; no new release or
+  DOI is cut for this section (deferred to the acceptance/revision stage).
+
 ## [2.0.0-scaffold] — 2026-05-22
 
 ### Added (Scenario C paradigm alignment, additive only)

@@ -259,6 +259,51 @@ achieves a 2.7-fold improvement.
 
 ---
 
+## Experiment Phases (Faz A–D)
+
+The `experiments/` folder contains four phases of seeded CPU-scale runs
+(seed 42, FedProx unless noted). All outputs live under
+`experiments/results/`; the interactive result panels with honesty bands
+at **https://cdsa.app/mro/** read those JSONs verbatim.
+
+- **Faz A — seeded reference runs** (`faz_a_staged.py`, `faz_a_run.py`):
+  federated baselines (FedAvg / FedProx / FedProx+DP) vs Central PPO.
+  Finding: all configurations converge to identical values
+  (43.7% / 0.499) as a result of a constant-action policy — not
+  evidence of task mastery.
+- **Faz B — robustness & confusion matrix** (`faz_b_robustness.py`,
+  `faz_b_dynamic_reward.py`): seeded inference-time perturbations plus a
+  tempo-aware-reward retraining. Finding: the evaluated policy collapses
+  to a single action in every condition (42.7% / 0.494); the tempo-aware
+  reward does not improve on the static baseline.
+- **Faz C — ε sweep & entropy-targeted exploration**
+  (`faz_c_dp_sweep.py`, `faz_c_entropy.py`): DP ε ∈ {0.5, 2.0} and
+  entropy ∈ {0.01, 0.05} retrainings. Finding: only the 0.05 entropy
+  bonus breaks the single-action collapse (two of five actions,
+  53.0% / 0.613) — a partial but real improvement.
+- **Faz D — decoy attribution & gated exploration** (`faz_d_decoy.py`,
+  `faz_d_gated_entropy.py`): two irrelevant U(0,1) channels with
+  group-Shapley attribution; entropy active only above a 0.90
+  critical-recall floor. Finding: the gate never opens (gate_on 0.0);
+  decoy attribution is 11.1%, to be read over near-constant outputs.
+
+### How to reproduce
+
+```bash
+cd experiments
+python faz_b_robustness.py
+python faz_b_dynamic_reward.py
+python faz_c_dp_sweep.py
+python faz_c_entropy.py
+python faz_d_decoy.py
+python faz_d_gated_entropy.py
+```
+
+Each script is seeded and writes its results JSON into
+`experiments/results/`.
+
+---
+
 ## How to Cite
 
 If you use this framework, the data set, or the code in your research,

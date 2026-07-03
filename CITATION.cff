@@ -2,8 +2,9 @@ cff-version: 1.2.0
 message: "If you use CDSA-MRO in academic work, please cite the software (this file), the accompanying sibling journal article and the CDSA paradigm-defining Safety Science article."
 type: software
 title: "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Fusion of Engine Health, Cyber-Safety and Maintenance History"
-version: "1.0.0+v2-scaffold"
-date-released: "2026-05-22"
+version: "2.2.0"
+date-released: "2026-07-03"
+doi: "10.5281/zenodo.20649671"
 authors:
   - family-names: "Cantekin"
     given-names: "Mete"

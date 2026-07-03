@@ -8,7 +8,7 @@ Maintenance Organisations Using Synthetic Data.**
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-orange.svg)](LICENSE-DATA)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org)
 [![arXiv](https://img.shields.io/badge/arXiv-preprint-red.svg)](#)
-[![DOI](https://img.shields.io/badge/DOI-pending-yellow.svg)](#)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20649671.svg)](https://doi.org/10.5281/zenodo.20649671)
 
 ---
 
@@ -325,7 +325,7 @@ please cite:
   author = {Cantekin, Mete},
   year   = {2026},
   publisher = {Zenodo},
-  doi    = {pending}
+  doi    = {10.5281/zenodo.20649671}
 }
 ```
 

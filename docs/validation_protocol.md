@@ -196,8 +196,8 @@ scheduled for execution.
 
 - **Cross-sector replication:** Apply the protocol in healthcare,
   finance, and defence cyber-safety domains.
-- **Expanded panel:** Grow panel to 10+ experts under TÜBİTAK
-  funding.
+- **Expanded panel:** Grow panel to 10+ experts, planned as future work
+  (contingent on a prospective TÜBİTAK 1001 project; not yet funded).
 - **Quantitative validation:** Apply downstream task performance
   comparison between models trained on synthetic vs. real-world
   data (when real data becomes available through field study).

@@ -389,7 +389,7 @@ author's own.
 | v1.1 | 30 Jun 2026 | Modified Delphi validation results (3-5 experts) |
 | v2.0 | Q4 2026 | PyTorch deep policy, Stable-Baselines3 PPO, 1M timesteps |
 | v2.1 | Q1 2027 | Federated learning extension, XAI integration |
-| v3.0 | 2027 | Field deployment study (TÜBİTAK-funded) |
+| v3.0 | 2027 | Field deployment study (planned; prospective TÜBİTAK 1001 project) |
 
 ---
 

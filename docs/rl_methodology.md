@@ -162,4 +162,4 @@ four algorithms exceed the baseline by significant margins.
 - **v2.2 Explainability** — SHAP and integrated gradients on the
   PyTorch policy.
 - **v3.0 Real-world deployment** — Field study with a Turkish Part-145
-  operator under TÜBİTAK funding.
+  operator, planned as future work (contingent on a prospective TÜBİTAK 1001 project; not yet funded).

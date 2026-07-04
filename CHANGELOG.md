@@ -122,7 +122,7 @@ _(Roadmap renumbered again 2026-07-03: the Faz B/C/D revision-preparation experi
 
 ### [3.0.0] — Target 2027
 - Field deployment study with a Turkish Part-145 operator
-- TÜBİTAK-funded validation
+- Validation with real operational data (planned via a prospective TÜBİTAK 1001 project; not yet funded)
 - Anonymised production data integration
 
 ## [2.1.0] — 2026-06-12 (Faz A implementation)
@@ -140,7 +140,7 @@ _(Roadmap renumbered again 2026-07-03: the Faz B/C/D revision-preparation experi
 - `tests/test_v2_modules.py`: 9 unit tests covering all v2 modules.
 ### Notes
 - Faz A scope: CPU-scale reference implementations (zero server cost).
-  Framework-scale training remains under TUBITAK 1001 Project 3 (Faz B).
+  Framework-scale training is planned under TUBITAK 1001 Project 3 (Faz B; not yet funded).
 
 ### Changed (11 Jun 2026, A6 runs)
 - PPOActorCritic: reward_scale + global gradient-norm clipping.

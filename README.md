@@ -7,7 +7,6 @@ Maintenance Organisations Using Synthetic Data.**
 [![License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-orange.svg)](LICENSE-DATA)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org)
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-red.svg)](#)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20649671.svg)](https://doi.org/10.5281/zenodo.20649671)
 
 ---
@@ -36,8 +35,9 @@ The accompanying doctoral thesis (CDSA-MRO_Tez_v2, Istanbul Beykent
 University, Department of Computer Engineering, May 2026) presents
 the full framework in Turkish. The thesis positions the data-locality
 regime as **v1 — pure locality** (the configuration in this
-repository) with a roadmap to **v2 — federated extension** under
-the TÜBİTAK 1001 ARDEB Project 3 application (September 2026).
+repository) with a roadmap to **v2 — federated extension** under a
+single consolidated TÜBİTAK 1001 application (planned; September 2026
+target).
 
 The framework is released as open source to enable reproducibility,
 comparison, and sectoral adoption.
@@ -55,7 +55,7 @@ Reinforcement Learning (FRL)** research programme:
 |---|---|---|---|
 | **CDSA-BB3** | Pilot biometrics | `Orfeomete/cdsa-bb3` | IJCIP (Q1, under review) |
 | **CDSA-MRO** | Maintenance safety | `Orfeomete/cdsa-mro` | EAAI (Q1, under review) |
-| **CDSA-ATM** | Air traffic management | `Orfeomete/cdsa-atm` | ESWA (Q1, under review) |
+| **CDSA-ATM** | Air traffic management | `Orfeomete/cdsa-atm` | Journal submission in preparation |
 
 This **CDSA-MRO** repository implements the maintenance safety
 pillar with a **Multi-modal CNN + Transformer + LSTM** policy network operating
@@ -72,9 +72,9 @@ evidence across the three domains.
 The current `src/` layout retains the v1.0.0 modules and adds
 **scaffolded FRL modules** for the paradigm extension. The v2 modules
 are **scaffolds**: `__init__.py` + placeholder docstrings documenting
-the planned interface. Full implementations are deferred to
-**TÜBİTAK 1001 ARDEB Project 3** (September 2026 application cycle;
-2027-2030 execution). Treat v2 modules as **architectural commitments**,
+the planned interface. Full implementations are deferred to a single
+consolidated **TÜBİTAK 1001** application (planned; September 2026
+target). Treat v2 modules as **architectural commitments**,
 not as runnable code at this scaffold stage.
 
 The four-component action space (or 4-class
@@ -85,8 +85,7 @@ For the paradigm-defining argument, refer to:
 - `docs/scenario_c_paradigm_context.md` (paradigm context summary)
 - The CDSA Methodological Unification Decision document (internal,
   cited as `[Cantekin 2026, CDSA Scenario C]`)
-- The umbrella article (Information Fusion Q1, in preparation,
-  September 2026)
+- The umbrella article (Information Fusion Q1, in preparation)
 
 ---
 
@@ -310,16 +309,6 @@ If you use this framework, the data set, or the code in your research,
 please cite:
 
 ```bibtex
-@article{cantekin2026cdsamro,
-  title   = {A Reinforcement-Learning and Data-Locality-Based Cyber-Safety
-             Incident Prediction Framework for Continuing Airworthiness
-             in Aviation Maintenance Organisations Using Synthetic Data},
-  author  = {Cantekin, Mete},
-  year    = {2026},
-  journal = {arXiv preprint},
-  note    = {Preprint v1, DOI pending}
-}
-
 @dataset{cantekin2026synthetic,
   title  = {CDSA-MRO Synthetic Cyber-Safety Incident Dataset v1.0},
   author = {Cantekin, Mete},
@@ -328,6 +317,9 @@ please cite:
   doi    = {10.5281/zenodo.20649671}
 }
 ```
+
+A journal article on this pillar is currently under peer review;
+citation details will be added here once the review process concludes.
 
 A machine-readable citation file is available at
 [`CITATION.cff`](CITATION.cff).
@@ -389,7 +381,7 @@ author's own.
 | v1.1 | 30 Jun 2026 | Modified Delphi validation results (3-5 experts) |
 | v2.0 | Q4 2026 | PyTorch deep policy, Stable-Baselines3 PPO, 1M timesteps |
 | v2.1 | Q1 2027 | Federated learning extension, XAI integration |
-| v3.0 | 2027 | Field deployment study (TÜBİTAK-funded) |
+| v3.0 | 2027 | Field deployment study (TÜBİTAK, planned) |
 
 ---
 
@@ -409,8 +401,8 @@ This repository is part of the CDSA framework ecosystem maintained under
 | [`pilotsense-auth`](https://github.com/Orfeomete/pilotsense-auth) | Cryptographic 2/3 signature demo |
 | [`pilotsense-ops`](https://github.com/Orfeomete/pilotsense-ops) | Anonymized fleet monitoring |
 
-- **arXiv preprint** — Cantekin (2026). See `docs/` for the rendered
-  preprint once available.
+- **arXiv preprint** — to be deposited once the journal review process
+  concludes.
 - **Doctoral thesis** — In preparation, Istanbul Beykent University,
   Department of Computer Engineering, under the supervision of
   Assoc. Prof. Dr. Ibrahim Furkan INCE.

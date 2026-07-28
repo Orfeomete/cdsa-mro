@@ -53,18 +53,18 @@ Reinforcement Learning (FRL)** research programme:
 
 | Pillar | Domain | Companion repo | Companion journal article |
 |---|---|---|---|
-| **CDSA-BB3** | Pilot biometrics | `Orfeomete/cdsa-bb3` | JATM v8 (Q2, in submission) |
-| **CDSA-MRO** | Maintenance safety | `Orfeomete/cdsa-mro` | RESS v2 (Q1, in preparation) |
-| **CDSA-ATM** | Air traffic management | `Orfeomete/cdsa-atm` | CEAS v2 (Q2, in preparation) |
+| **CDSA-BB3** | Pilot biometrics | `Orfeomete/cdsa-bb3` | IJCIP (Q1, under review) |
+| **CDSA-MRO** | Maintenance safety | `Orfeomete/cdsa-mro` | EAAI (Q1, under review) |
+| **CDSA-ATM** | Air traffic management | `Orfeomete/cdsa-atm` | ESWA (Q1, under review) |
 
 This **CDSA-MRO** repository implements the maintenance safety
 pillar with a **Multi-modal CNN + Transformer + LSTM** policy network operating
 over **Engine + Cyber + Maintenance** modalities and a federated layer
 designed for a MRO consortium (MRO-A, MRO-B, MRO-C (simulated three-MRO consortium)).
-The sibling pillars are CDSA-BB3 (pilot biometrics, JATM Q2 v8 in submission) and the parallel ATM pillar; together they provide convergent
+The sibling pillars are CDSA-BB3 (pilot biometrics, IJCIP Q1, under review) and the parallel ATM pillar; together they provide convergent
 validation across three independent aviation domains.
 
-A paradigm-defining umbrella article (Safety Science Q1, September 2026
+A paradigm-defining umbrella article (Information Fusion Q1, target
 submission target) positions the three pillars under a common
 diagnostic-safety paradigm with quantitative convergent validation
 evidence across the three domains.
@@ -85,7 +85,7 @@ For the paradigm-defining argument, refer to:
 - `docs/scenario_c_paradigm_context.md` (paradigm context summary)
 - The CDSA Methodological Unification Decision document (internal,
   cited as `[Cantekin 2026, CDSA Scenario C]`)
-- The Safety Science Q1 umbrella article (in preparation,
+- The umbrella article (Information Fusion Q1, in preparation,
   September 2026)
 
 ---
@@ -389,7 +389,7 @@ author's own.
 | v1.1 | 30 Jun 2026 | Modified Delphi validation results (3-5 experts) |
 | v2.0 | Q4 2026 | PyTorch deep policy, Stable-Baselines3 PPO, 1M timesteps |
 | v2.1 | Q1 2027 | Federated learning extension, XAI integration |
-| v3.0 | 2027 | Field deployment study (planned; prospective TÜBİTAK 1001 project) |
+| v3.0 | 2027 | Field deployment study (TÜBİTAK-funded) |
 
 ---
 

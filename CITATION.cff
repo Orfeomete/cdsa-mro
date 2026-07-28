@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use CDSA-MRO in academic work, please cite the software (this file), the accompanying sibling journal article and the CDSA paradigm-defining Safety Science article."
+message: "If you use CDSA-MRO in academic work, please cite the software (this file), the accompanying sibling journal article and the CDSA umbrella article."
 type: software
 title: "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Fusion of Engine Health, Cyber-Safety and Maintenance History"
 version: "2.2.0"
@@ -48,8 +48,8 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0001-6990-6340"
       affiliation: "Department of Computer Engineering, Istanbul Beykent University"
   year: 2026
-  journal: "Reliability Engineering and System Safety (RESS)"
-  notes: "v2 paradigm-aligned manuscript, in preparation for Q1 submission"
+  journal: "Engineering Applications of Artificial Intelligence"
+  notes: "under review, manuscript EAAI-26-21255"
 references:
   - type: article
     authors:
@@ -108,6 +108,6 @@ references:
       - family-names: "Cantekin"
         given-names: "Mete"
     title: "Complementary Diagnostic Safety Approach (CDSA): A Federated Reinforcement Learning Paradigm for Three-Pillar Aviation Safety Convergent Validation"
-    journal: "Safety Science"
+    journal: "Information Fusion (target)"
     notes: "v1 paradigm-defining article, September 2026 submission target"
     year: 2026

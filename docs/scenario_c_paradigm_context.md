@@ -18,7 +18,7 @@ A senior aviation professional reviewing the CDSA-APP framework in May 2026 note
 | Federated layer | Pilot consortium | MRO consortium | ANSP consortium |
 | XAI | SHAP + counterfactual + LIME | (same) | (same) |
 | Privacy | DP (ε ≤ 1.0) + Shamir (2,3) | (same) | (same) |
-| Companion journal | JATM Q2 (v8) | RESS Q1 (v2) | CEAS Q2 (v2) |
+| Companion journal | IJCIP Q1 (under review) | EAAI Q1 (under review) | ESWA Q1 (under review) |
 
 The paradigm layer (FRL + FedAvg/FedProx), privacy layer (DP + Shamir)
 and explainability layer (SHAP + counterfactual + LIME) are **constant
@@ -49,7 +49,7 @@ the v1.0.0 release tag and the existing modules. The scaffolded v2
 modules can be ignored.
 
 If you are reading this repo to **understand the paradigm context for
-the RESS v2 (Reliability Engineering and System Safety, Q1, in preparation) manuscript or the Safety Science Q1
+the Engineering Applications of Artificial Intelligence manuscript (under review) or the umbrella
 paradigm-defining article**: use the v2 update notes in README.md and
 this paradigm context document.
 

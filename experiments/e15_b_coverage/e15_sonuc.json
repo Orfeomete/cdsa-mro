@@ -1,0 +1,283 @@
+{
+ "on_kayit_sha256": "ada1e12bb12256e89e3d4f854625edcc2e275d2c923f57d7cabcb8dc6ec8ac27",
+ "k1_sha256": "e480c550dfcf3ee9fafdec0b252a10532e7f38f566b085748dd345a89d76d5c3",
+ "k2_sha256": "f4da49ed33c96cc4104c9d889ec403fdbbe94ba56c90f1bf1ca1910acbfb5d7e",
+ "kumeler": {
+  "GPS": {
+   "tipoloji": "ATM",
+   "n": 50,
+   "k1_kapsama": 0.48,
+   "k2_kapsama": 0.52,
+   "k1_siklik": {
+    "gnss_jamming": 20,
+    "kapsam_disi": 26,
+    "airspace_infringement": 1,
+    "loss_of_separation": 3
+   },
+   "k2_siklik": {
+    "gnss_jamming": 20,
+    "kapsam_disi": 24,
+    "airspace_infringement": 1,
+    "surveillance_data_loss": 2,
+    "loss_of_separation": 3
+   },
+   "k2_eklenen_sinif_payi": 0.44,
+   "yuzde_uyum": 0.92,
+   "kappa": 0.8636,
+   "kapsam_ici_sinifsiz": [
+    {
+     "acn": 2062063,
+     "not": "nedeni belirsiz GNSS arızası",
+     "metin": "Air carrier Captain reported GPS malfunction flying through Eastern European airspace."
+    },
+    {
+     "acn": 2048762,
+     "not": "nedeni belirsiz GNSS sinyal kaybı",
+     "metin": "Captain reported GPS signal loss in ORBB foreign airspace caused distractions which resulted..."
+    },
+    {
+     "acn": 2044772,
+     "not": "GPS, FMC ve transponder arıza göstergesi, neden kesik metinde yok",
+     "metin": "B737 Captain reported temporary malfunction indications of GPS, FMC, and transponder due to..."
+    },
+    {
+     "acn": 1998026,
+     "not": "nedeni belirsiz GPS anomalisi",
+     "metin": "Corporate jet Captain reported executing a go-around from approach to SMO after experiencing GPS anomalies."
+    }
+   ],
+   "notlar": [
+    {
+     "acn": 2040998,
+     "not": "kasıtsız girişim, inşaat kaynaklı"
+    }
+   ],
+   "uyusmazliklar": [
+    {
+     "acn": 2042566,
+     "k1": "kapsam_disi",
+     "k2": "surveillance_data_loss"
+    },
+    {
+     "acn": 2034531,
+     "k1": "loss_of_separation",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 2031003,
+     "k1": "kapsam_disi",
+     "k2": "surveillance_data_loss"
+    },
+    {
+     "acn": 2023441,
+     "k1": "kapsam_disi",
+     "k2": "loss_of_separation"
+    }
+   ]
+  },
+  "Controller": {
+   "tipoloji": "ATM",
+   "n": 50,
+   "k1_kapsama": 0.24,
+   "k2_kapsama": 0.3,
+   "k1_siklik": {
+    "gnss_jamming": 4,
+    "kapsam_disi": 38,
+    "loss_of_separation": 6,
+    "position_falsification": 1,
+    "airspace_infringement": 1
+   },
+   "k2_siklik": {
+    "gnss_jamming": 5,
+    "kapsam_disi": 35,
+    "loss_of_separation": 6,
+    "runway_incursion": 4
+   },
+   "k2_eklenen_sinif_payi": 0.1,
+   "yuzde_uyum": 0.8,
+   "kappa": 0.5512,
+   "kapsam_ici_sinifsiz": [],
+   "notlar": [
+    {
+     "acn": 2100050,
+     "not": "kesik, sonlandırılması istenen şey metinde yok"
+    }
+   ],
+   "uyusmazliklar": [
+    {
+     "acn": 2103770,
+     "k1": "kapsam_disi",
+     "k2": "loss_of_separation"
+    },
+    {
+     "acn": 2100867,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 2096127,
+     "k1": "loss_of_separation",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 2095755,
+     "k1": "kapsam_disi",
+     "k2": "loss_of_separation"
+    },
+    {
+     "acn": 2095449,
+     "k1": "loss_of_separation",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 2091195,
+     "k1": "kapsam_disi",
+     "k2": "gnss_jamming"
+    },
+    {
+     "acn": 2089492,
+     "k1": "position_falsification",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 2085582,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 2084287,
+     "k1": "airspace_infringement",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 2084286,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    }
+   ]
+  },
+  "PilotController": {
+   "tipoloji": "ATM",
+   "n": 50,
+   "k1_kapsama": 0.24,
+   "k2_kapsama": 0.26,
+   "k1_siklik": {
+    "kapsam_disi": 38,
+    "loss_of_separation": 9,
+    "runway_incursion": 1,
+    "tcas_ra": 2
+   },
+   "k2_siklik": {
+    "kapsam_disi": 37,
+    "runway_incursion": 5,
+    "loss_of_separation": 6,
+    "tcas_ra": 2
+   },
+   "k2_eklenen_sinif_payi": 0.0,
+   "yuzde_uyum": 0.82,
+   "kappa": 0.5635,
+   "kapsam_ici_sinifsiz": [],
+   "notlar": [],
+   "uyusmazliklar": [
+    {
+     "acn": 2003270,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 1996166,
+     "k1": "runway_incursion",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 1985949,
+     "k1": "loss_of_separation",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 1984404,
+     "k1": "loss_of_separation",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 1977785,
+     "k1": "loss_of_separation",
+     "k2": "kapsam_disi"
+    },
+    {
+     "acn": 1964518,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 1934630,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 1933983,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    },
+    {
+     "acn": 1927304,
+     "k1": "kapsam_disi",
+     "k2": "runway_incursion"
+    }
+   ]
+  },
+  "Maintenance": {
+   "tipoloji": "MRO",
+   "n": 50,
+   "k1_kapsama": 0.0,
+   "k2_kapsama": 0.0,
+   "k1_siklik": {
+    "kapsam_disi": 50
+   },
+   "k2_siklik": {
+    "kapsam_disi": 50
+   },
+   "k2_eklenen_sinif_payi": 0.0,
+   "yuzde_uyum": 1.0,
+   "kappa": 1.0,
+   "kapsam_ici_sinifsiz": [],
+   "notlar": [],
+   "uyusmazliklar": []
+  }
+ },
+ "atm_hic_gorulmeyen_eklenen": [
+  "gnss_spoofing",
+  "adsb_injection",
+  "datalink_interruption",
+  "atm_system_intrusion",
+  "voice_channel_spoofing",
+  "notam_tampering",
+  "time_sync_attack",
+  "position_falsification"
+ ],
+ "atm_hic_gorulmeyen_klasik": [
+  "frequency_congestion"
+ ],
+ "mro_hic_gorulmeyen": [
+  "ransomware",
+  "ddos_attack",
+  "usb_malware",
+  "phishing_attack",
+  "social_engineering",
+  "account_takeover",
+  "portal_access_breach",
+  "ot_system_intrusion",
+  "shadow_it",
+  "inadequate_access_revocation",
+  "training_system_manipulation",
+  "work_order_forgery",
+  "calibration_integrity_violation",
+  "supply_chain_contamination",
+  "configuration_error"
+ ],
+ "toplam": {
+  "n": 200,
+  "yuzde_uyum": 0.885,
+  "kappa": 0.8285
+ }
+}

@@ -85,7 +85,11 @@ class PPOActorCritic:
 
     # -- clipped-surrogate update ------------------------------------------
     def update(self, states, actions, old_logps, advantages, returns,
-               epochs: int = 4):
+               epochs: int = 4, prox_ref: dict | None = None,
+               prox_mu: float = 0.0):
+        """prox_ref/prox_mu (Faz E / E5): yerel kayba mu/2*||w - w_g||^2
+        proksimal terimi eklenir (ozgun FedProx, Li et al. 2020, Alg. 2).
+        VARSAYILAN prox_ref=None -> Faz A davranisi bit-birebir korunur."""
         states = np.asarray(states, dtype=float)
         actions = np.asarray(actions, dtype=int)
         old_logps = np.asarray(old_logps, dtype=float)
@@ -131,7 +135,12 @@ class PPOActorCritic:
             gnorm = np.sqrt(sum(float((g * g).sum()) for g, _ in grads)) / N
             scale = (self.max_grad_norm / gnorm) if gnorm > self.max_grad_norm else 1.0
             for g, m in grads:
-                setattr(self, m, getattr(self, m) - self.lr * scale * g / N)
+                if prox_ref is None or not prox_mu:
+                    setattr(self, m, getattr(self, m) - self.lr * scale * g / N)
+                else:
+                    cur = getattr(self, m)
+                    prox = prox_mu * (cur - np.asarray(prox_ref[m], dtype=float))
+                    setattr(self, m, cur - self.lr * (scale * g / N + prox))
         return last_loss / N
 
     # -- federated exchange --------------------------------------------------

@@ -1,0 +1,187 @@
+{
+ "damar": "CDSA-MRO",
+ "deney": "E2",
+ "kol_secimi": "(a) baglamsal bant",
+ "protokol": {
+  "ad": "1.800 karar esdeger degerlendirme (faz_e0 ile birebir)",
+  "eval_steps": 600,
+  "eval_reps": 3,
+  "n_karar": 1800,
+  "env_tohumlari": [
+   942,
+   943,
+   944
+  ],
+  "reset_tohumlari": null
+ },
+ "tohumlar": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "n_egitim": 3000,
+ "maliyet_lojistik_tanimi": "cok sinifli lojistik + beklenen maliyeti enazlayan karar; K ortamin odul islevinden olculdu",
+ "kollar": {
+  "maliyet_lojistik": {
+   "n_tohum": 5,
+   "makro_f1_tohumlar": [
+    0.4111,
+    0.4046,
+    0.4125,
+    0.4116,
+    0.4117
+   ],
+   "makro_f1_ort": 0.4103,
+   "makro_f1_ss": 0.0032,
+   "dogruluk_ort": 0.6803,
+   "kritik_duyarlilik_ort": 0.6923
+  },
+  "karar_agaci_d4": {
+   "n_tohum": 5,
+   "makro_f1_tohumlar": [
+    0.4528,
+    0.4578,
+    0.599,
+    0.45,
+    0.4565
+   ],
+   "makro_f1_ort": 0.4832,
+   "makro_f1_ss": 0.0648,
+   "dogruluk_ort": 0.7661,
+   "kritik_duyarlilik_ort": 0.7894
+  },
+  "sabit_cogunluk_a4": {
+   "n_tohum": 4,
+   "makro_f1_tohumlar": [
+    0.1197,
+    0.1197,
+    0.1197,
+    0.1197
+   ],
+   "makro_f1_ort": 0.1197,
+   "makro_f1_ss": 0.0,
+   "dogruluk_ort": 0.4272,
+   "kritik_duyarlilik_ort": 0.5
+  },
+  "sabit_hep_kritik_a3": {
+   "n_tohum": 5,
+   "makro_f1_tohumlar": [
+    0.1218,
+    0.1218,
+    0.1218,
+    0.1218,
+    0.1218
+   ],
+   "makro_f1_ort": 0.1218,
+   "makro_f1_ss": 0.0,
+   "dogruluk_ort": 0.4378,
+   "kritik_duyarlilik_ort": 0.5
+  },
+  "sabit_hep_kritik_a4": {
+   "n_tohum": 5,
+   "makro_f1_tohumlar": [
+    0.1197,
+    0.1197,
+    0.1197,
+    0.1197,
+    0.1197
+   ],
+   "makro_f1_ort": 0.1197,
+   "makro_f1_ss": 0.0,
+   "dogruluk_ort": 0.4272,
+   "kritik_duyarlilik_ort": 0.5
+  },
+  "etiket_kurali_ust_sinir": {
+   "n_tohum": 5,
+   "makro_f1_tohumlar": [
+    0.8,
+    0.8,
+    0.8,
+    0.8,
+    0.8
+   ],
+   "makro_f1_ort": 0.8,
+   "makro_f1_ss": 0.0,
+   "dogruluk_ort": 1.0,
+   "kritik_duyarlilik_ort": 1.0
+  },
+  "sabit_cogunluk_a3": {
+   "n_tohum": 1,
+   "makro_f1_tohumlar": [
+    0.1218
+   ],
+   "makro_f1_ort": 0.1218,
+   "makro_f1_ss": 0.0,
+   "dogruluk_ort": 0.4378,
+   "kritik_duyarlilik_ort": 0.5
+  }
+ },
+ "gercek_etiket_dagilimi": [
+  0,
+  4,
+  239,
+  788,
+  769
+ ],
+ "maliyet_matrisi_K": [
+  [
+   100.0,
+   100.0,
+   60.0,
+   80.0,
+   100.0
+  ],
+  [
+   100.0,
+   100.0,
+   7.0,
+   14.0,
+   21.0
+  ],
+  [
+   100.0,
+   100.0,
+   -15.671,
+   5.192,
+   12.169
+  ],
+  [
+   100.0,
+   100.0,
+   1.329,
+   -17.808,
+   5.169
+  ],
+  [
+   100.0,
+   100.0,
+   4.329,
+   1.192,
+   -19.831
+  ]
+ ],
+ "sinif_agirliklari": [
+  1.7996,
+  1.7996,
+  0.3269,
+  0.4516,
+  0.6224
+ ],
+ "egitim_etiket_dagilimi": [
+  0,
+  3,
+  415,
+  1276,
+  1306
+ ],
+ "kural_E2_1": {
+  "esik": 0.05,
+  "referans_maliyet_lojistik_makro_f1_ort": 0.4103,
+  "hukum": {
+   "_durum": "PPO kollari bu kosuda YOK (E7 cok tohumlu kontrol noktalari henuz uretilmedi) — E2.1 hukmu VERILMEDI"
+  }
+ },
+ "sure_sn": 1.9
+}

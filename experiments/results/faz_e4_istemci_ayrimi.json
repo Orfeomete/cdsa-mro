@@ -1,0 +1,106 @@
+{
+ "damar": "CDSA-MRO",
+ "deney": "E4",
+ "senaryo": "temel_ayrik_kayit",
+ "kaynak": "CDSA-MRO: synthetic_incidents_v1.json kayitlari (n=1000)",
+ "n_istemci": 3,
+ "istemci_kayit_sayilari": [
+  334,
+  333,
+  333
+ ],
+ "istemci_kayitlari_ayrik_mi": true,
+ "cift_kesisim_buyuklukleri": [
+  0,
+  0,
+  0
+ ],
+ "sinif_dagilimlari": [
+  [
+   0.0,
+   0.0,
+   0.1617,
+   0.3802,
+   0.4581
+  ],
+  [
+   0.0,
+   0.0,
+   0.1021,
+   0.4655,
+   0.4324
+  ],
+  [
+   0.0,
+   0.003,
+   0.1502,
+   0.4294,
+   0.4174
+  ]
+ ],
+ "kritik_sinif_paylari": [
+  0.8383,
+  0.8979,
+  0.8468
+ ],
+ "js_esigi": 0.1,
+ "cift_js": {
+  "0-1": {
+   "sinif_js": 0.0909,
+   "ozellik_js_ortalama": 0.0419,
+   "ozellik_js_maks": 0.092,
+   "ozellik_js": [
+    0.092,
+    0.0628,
+    0.048,
+    0.0816,
+    0.0591,
+    0.0011,
+    0.0005,
+    0.0177,
+    0.049,
+    0.0074
+   ],
+   "damga": "benzesik (JS < 0,10)"
+  },
+  "0-2": {
+   "sinif_js": 0.0584,
+   "ozellik_js_ortalama": 0.0567,
+   "ozellik_js_maks": 0.1288,
+   "ozellik_js": [
+    0.0815,
+    0.0638,
+    0.0473,
+    0.1288,
+    0.0935,
+    0.0457,
+    0.0313,
+    0.0004,
+    0.0726,
+    0.0019
+   ],
+   "damga": "benzesik (JS < 0,10)"
+  },
+  "1-2": {
+   "sinif_js": 0.0738,
+   "ozellik_js_ortalama": 0.0509,
+   "ozellik_js_maks": 0.128,
+   "ozellik_js": [
+    0.0612,
+    0.0513,
+    0.0292,
+    0.128,
+    0.1009,
+    0.0468,
+    0.0318,
+    0.0181,
+    0.0358,
+    0.0055
+   ],
+   "damga": "benzesik (JS < 0,10)"
+  }
+ },
+ "kural_E4_1": "'Non-IID' sozcugu yalniz JS >= 0,10 olculmus cifti olan kurulumlar icin kullanilir.",
+ "ayrim_tohumu": 7004,
+ "havuz_tohumu": 7042
+}

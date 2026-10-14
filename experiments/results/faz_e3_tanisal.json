@@ -1,0 +1,1087 @@
+{
+ "damar": "CDSA-MRO",
+ "deney": "E3.1-tanisal",
+ "baslik": "E3.1 sonucunun sinif destegine duyarliligi — tanisal cozumleme",
+ "on_kayitli_sonucun_yerine_gecmez": "Tanisal analiz: on kayitli E3.1 sonucunun YERINE GECMEZ. On kayitli olcu (bes sinif uzerinden makro-F1), 5 puanlik esik ve ham sonuclar degismemistir; bu blok sonradan yapilan cozumlemedir (06.09.2026).",
+ "tur": "tanisal",
+ "tarih": "06.09.2026",
+ "yeni_egitim_yapildi_mi": false,
+ "kaynak": {
+  "ham_sonuc_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/faz_e3_ayrik_degerlendirme.json",
+  "ham_cekirdek_md5": "ae3899e4977815b43026e31e687e30b0",
+  "ham_cekirdek_sha256": "b5fd5f9b027262b1b44a1ec802659786475c99bd42612cbf8e4292e4463689c6",
+  "ham_cekirdek_tanimi": "dosyanin '_duzeltme_*' bloklari disindaki butun alanlari, json.dumps(indent=1, ensure_ascii=False) ile serilestirilmis",
+  "ham_dosya_md5_su_an": "a84b464246c0f5a4fcddac200a8a8165",
+  "kayit_dizini": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/e_kayit",
+  "kullanilan_kayit_sayisi": 32,
+  "atlanan_gecersiz_kayitlar": [
+   "CDSA-MRO-E3-e3_etiket_kurali_ust_sinir_egitim-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_etiket_kurali_ust_sinir_test-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_karar_agaci_d4_egitim-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_karar_agaci_d4_test-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_maliyet_lojistik_egitim-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_maliyet_lojistik_test-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_ppo_fedavg_egitim-t42-20260906T034959Z.json",
+   "CDSA-MRO-E3-e3_ppo_fedavg_test-t42-20260906T034959Z.json",
+   "CDSA-MRO-E3-e3_ppo_merkezi_egitim-t42-20260906T034936Z.json",
+   "CDSA-MRO-E3-e3_ppo_merkezi_test-t42-20260906T034936Z.json",
+   "CDSA-MRO-E3-e3_sabit_cogunluk_a4_egitim-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_sabit_cogunluk_a4_test-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_sabit_hep_kritik_a3_egitim-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_sabit_hep_kritik_a3_test-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_sabit_hep_kritik_a4_egitim-t42-20260906T034913Z.json",
+   "CDSA-MRO-E3-e3_sabit_hep_kritik_a4_test-t42-20260906T034913Z.json"
+  ],
+  "yontem": "her sayi, E3.1 kosusunda yazilmis E0 kayitlarindaki karisiklik matrislerinden turetilmistir; model yeniden egitilmemis, tahminler yeniden uretilmemistir"
+ },
+ "olcu_tanimlari": {
+  "a_on_kayitli": "makro-F1, BES sinif uzerinden ortalama; destegi olmayan sinif F1 = 0 olarak ortalamaya girer (faz_e_kayit.makro_f1 — E2 ile ayni tanim)",
+  "b_destekli": "makro-F1, yalniz o kumede destegi olan siniflar uzerinden",
+  "c_ortak": "makro-F1, egitim VE testte destegi olan siniflar uzerinde her iki kumede yeniden hesaplanmis",
+  "kesinlik_duyarlilik": "her zaman TAM 5x5 matristen; alt kume yalniz ORTALAMANIN alindigi sinif kumesini daraltir",
+  "d_ayristirma": "on kayitli fark (a) = ortak sinif kaybi (c) + sinif dagilimi etkisi; sinif dagilimi etkisi, egitimde destegi olup testte destegi olmayan siniflarin bes sinifli ortalamaya sifir girmesinden dogar"
+ },
+ "sinif_etiketleri": [
+  "izleme_devam",
+  "uyari_olustur",
+  "ic_sorusturma",
+  "some_mudahale",
+  "shgm_72saat_bildirim"
+ ],
+ "kritik_siniflar": [
+  3,
+  4
+ ],
+ "kollar": {
+  "etiket_kurali_ust_sinir": {
+   "kol_turu": "etiket_kurali",
+   "n_tohum": 1,
+   "tohumlar": [
+    42
+   ],
+   "egitim": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.8,
+    "makro_f1_destekli_siniflar": 1.0
+   },
+   "test": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.6,
+    "makro_f1_destekli_siniflar": 1.0
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 1.0,
+   "makro_f1_ortak_test": 1.0,
+   "makro_f1_destekli_egitim": 1.0,
+   "makro_f1_destekli_test": 1.0,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 20.0,
+    "ortak_sinif_farki_puan": 0.0,
+    "sinif_dagilimi_payi_puan": 20.0,
+    "sinif_dagilimi_payi_orani": 1.0,
+    "esik_tetiklendi_mi": true,
+    "genelleme_acigi": "kanitli degil — ortak siniflarda kayip yok (destek etkisi)"
+   }
+  },
+  "karar_agaci_d4": {
+   "kol_turu": "ogrenen",
+   "n_tohum": 1,
+   "tohumlar": [
+    42
+   ],
+   "egitim": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.8958,
+     0.7023,
+     0.8618
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.7478,
+     0.8154,
+     0.7962
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.8152,
+     0.7547,
+     0.8277
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.4795,
+    "makro_f1_destekli_siniflar": 0.5994
+   },
+   "test": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.3793,
+     0.2188
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.1732,
+     0.5147
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.2378,
+     0.307
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.109,
+    "makro_f1_destekli_siniflar": 0.1816
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.7992,
+   "makro_f1_ortak_test": 0.1816,
+   "makro_f1_destekli_egitim": 0.5994,
+   "makro_f1_destekli_test": 0.1816,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 37.05,
+    "ortak_sinif_farki_puan": 61.76,
+    "sinif_dagilimi_payi_puan": -24.71,
+    "sinif_dagilimi_payi_orani": -0.6669,
+    "esik_tetiklendi_mi": true,
+    "genelleme_acigi": "kanitli — ortak siniflarda da kayip var"
+   }
+  },
+  "maliyet_lojistik": {
+   "kol_turu": "ogrenen",
+   "n_tohum": 1,
+   "tohumlar": [
+    42
+   ],
+   "egitim": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.8958,
+     0.626,
+     0.5874
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.7478,
+     0.2752,
+     0.8859
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.8152,
+     0.3823,
+     0.7064
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.3808,
+    "makro_f1_destekli_siniflar": 0.476
+   },
+   "test": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.3214,
+     0.2889
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0709,
+     0.7647
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.1161,
+     0.4194
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.1071,
+    "makro_f1_destekli_siniflar": 0.1785
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.6346,
+   "makro_f1_ortak_test": 0.1785,
+   "makro_f1_destekli_egitim": 0.476,
+   "makro_f1_destekli_test": 0.1785,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 27.37,
+    "ortak_sinif_farki_puan": 45.61,
+    "sinif_dagilimi_payi_puan": -18.24,
+    "sinif_dagilimi_payi_orani": -0.6664,
+    "esik_tetiklendi_mi": true,
+    "genelleme_acigi": "kanitli — ortak siniflarda da kayip var"
+   }
+  },
+  "ppo_fedavg": {
+   "kol_turu": "ogrenen",
+   "n_tohum": 5,
+   "tohumlar": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "egitim": {
+    "tohumlar": [
+     42,
+     43,
+     44,
+     45,
+     46
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.4706
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.64
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.128,
+    "makro_f1_destekli_siniflar": 0.16
+   },
+   "test": {
+    "tohumlar": [
+     42,
+     43,
+     44,
+     45,
+     46
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.3119
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.4755
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.0951,
+    "makro_f1_destekli_siniflar": 0.1585
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.2133,
+   "makro_f1_ortak_test": 0.1585,
+   "makro_f1_destekli_egitim": 0.16,
+   "makro_f1_destekli_test": 0.1585,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 3.29,
+    "ortak_sinif_farki_puan": 5.48,
+    "sinif_dagilimi_payi_puan": -2.19,
+    "sinif_dagilimi_payi_orani": -0.6657,
+    "esik_tetiklendi_mi": false,
+    "genelleme_acigi": "kanitli — ortak siniflarda da kayip var"
+   }
+  },
+  "ppo_merkezi": {
+   "kol_turu": "ogrenen",
+   "n_tohum": 5,
+   "tohumlar": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "egitim": {
+    "tohumlar": [
+     42,
+     43,
+     44,
+     45,
+     46
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0911,
+     0.4885
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0644,
+     0.9489
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0684,
+     0.6407
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.1418,
+    "makro_f1_destekli_siniflar": 0.1773
+   },
+   "test": {
+    "tohumlar": [
+     42,
+     43,
+     44,
+     45,
+     46
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.1593,
+     0.3039
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0315,
+     0.9382
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0483,
+     0.4586
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.1014,
+    "makro_f1_destekli_siniflar": 0.169
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.2364,
+   "makro_f1_ortak_test": 0.169,
+   "makro_f1_destekli_egitim": 0.1773,
+   "makro_f1_destekli_test": 0.169,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 4.04,
+    "ortak_sinif_farki_puan": 6.74,
+    "sinif_dagilimi_payi_puan": -2.7,
+    "sinif_dagilimi_payi_orani": -0.6683,
+    "esik_tetiklendi_mi": false,
+    "genelleme_acigi": "kanitli — ortak siniflarda da kayip var"
+   }
+  },
+  "sabit_cogunluk_a4": {
+   "kol_turu": "sabit_politika",
+   "n_tohum": 1,
+   "tohumlar": [
+    42
+   ],
+   "egitim": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.4706
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.64
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.128,
+    "makro_f1_destekli_siniflar": 0.16
+   },
+   "test": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.3119
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.4755
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.0951,
+    "makro_f1_destekli_siniflar": 0.1585
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.2133,
+   "makro_f1_ortak_test": 0.1585,
+   "makro_f1_destekli_egitim": 0.16,
+   "makro_f1_destekli_test": 0.1585,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 3.29,
+    "ortak_sinif_farki_puan": 5.48,
+    "sinif_dagilimi_payi_puan": -2.19,
+    "sinif_dagilimi_payi_orani": -0.6657,
+    "esik_tetiklendi_mi": false,
+    "genelleme_acigi": "uygulanmaz — sabit politika ogrenmez; egitim/test farki yalnizca iki kumenin sinif bilesiminden dogar"
+   }
+  },
+  "sabit_hep_kritik_a3": {
+   "kol_turu": "sabit_politika",
+   "n_tohum": 1,
+   "tohumlar": [
+    42
+   ],
+   "egitim": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.3811,
+     0.0
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.5519,
+     0.0
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.1104,
+    "makro_f1_destekli_siniflar": 0.138
+   },
+   "test": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.5826,
+     0.0
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.7362,
+     0.0
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.1472,
+    "makro_f1_destekli_siniflar": 0.2454
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.184,
+   "makro_f1_ortak_test": 0.2454,
+   "makro_f1_destekli_egitim": 0.138,
+   "makro_f1_destekli_test": 0.2454,
+   "ayristirma": {
+    "on_kayitli_fark_puan": -3.68,
+    "ortak_sinif_farki_puan": -6.14,
+    "sinif_dagilimi_payi_puan": 2.46,
+    "sinif_dagilimi_payi_orani": -0.6685,
+    "esik_tetiklendi_mi": false,
+    "genelleme_acigi": "uygulanmaz — sabit politika ogrenmez; egitim/test farki yalnizca iki kumenin sinif bilesiminden dogar"
+   }
+  },
+  "sabit_hep_kritik_a4": {
+   "kol_turu": "sabit_politika",
+   "n_tohum": 1,
+   "tohumlar": [
+    42
+   ],
+   "egitim": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     1,
+     115,
+     298,
+     368
+    ],
+    "destegi_olan_siniflar": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.4706
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.64
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.128,
+    "makro_f1_destekli_siniflar": 0.16
+   },
+   "test": {
+    "tohumlar": [
+     42
+    ],
+    "sinif_destek": [
+     0,
+     0,
+     23,
+     127,
+     68
+    ],
+    "destegi_olan_siniflar": [
+     2,
+     3,
+     4
+    ],
+    "sinif_kesinlik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.3119
+    ],
+    "sinif_duyarlilik": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "sinif_f1": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.4755
+    ],
+    "makro_f1_on_kayitli_5sinif": 0.0951,
+    "makro_f1_destekli_siniflar": 0.1585
+   },
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "ortak_sinif_adlari": [
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "makro_f1_ortak_egitim": 0.2133,
+   "makro_f1_ortak_test": 0.1585,
+   "makro_f1_destekli_egitim": 0.16,
+   "makro_f1_destekli_test": 0.1585,
+   "ayristirma": {
+    "on_kayitli_fark_puan": 3.29,
+    "ortak_sinif_farki_puan": 5.48,
+    "sinif_dagilimi_payi_puan": -2.19,
+    "sinif_dagilimi_payi_orani": -0.6657,
+    "esik_tetiklendi_mi": false,
+    "genelleme_acigi": "uygulanmaz — sabit politika ogrenmez; egitim/test farki yalnizca iki kumenin sinif bilesiminden dogar"
+   }
+  }
+ },
+ "ortak_siniflar_genel": [
+  2,
+  3,
+  4
+ ],
+ "egitim_etiket_dagilimi": [
+  0,
+  1,
+  115,
+  298,
+  368
+ ],
+ "test_etiket_dagilimi": [
+  0,
+  0,
+  23,
+  127,
+  68
+ ],
+ "dogrulama": {
+  "ham_json_ile_ayni_makro_f1": {
+   "etiket_kurali_ust_sinir_egitim": {
+    "ham": 0.8,
+    "tanisal_yeniden_uretim": 0.8,
+    "ayni": true
+   },
+   "etiket_kurali_ust_sinir_test": {
+    "ham": 0.6,
+    "tanisal_yeniden_uretim": 0.6,
+    "ayni": true
+   },
+   "karar_agaci_d4_egitim": {
+    "ham": 0.4795,
+    "tanisal_yeniden_uretim": 0.4795,
+    "ayni": true
+   },
+   "karar_agaci_d4_test": {
+    "ham": 0.109,
+    "tanisal_yeniden_uretim": 0.109,
+    "ayni": true
+   },
+   "maliyet_lojistik_egitim": {
+    "ham": 0.3808,
+    "tanisal_yeniden_uretim": 0.3808,
+    "ayni": true
+   },
+   "maliyet_lojistik_test": {
+    "ham": 0.1071,
+    "tanisal_yeniden_uretim": 0.1071,
+    "ayni": true
+   },
+   "ppo_fedavg_egitim": {
+    "ham": 0.128,
+    "tanisal_yeniden_uretim": 0.128,
+    "ayni": true
+   },
+   "ppo_fedavg_test": {
+    "ham": 0.0951,
+    "tanisal_yeniden_uretim": 0.0951,
+    "ayni": true
+   },
+   "ppo_merkezi_egitim": {
+    "ham": 0.1418,
+    "tanisal_yeniden_uretim": 0.1418,
+    "ayni": true
+   },
+   "ppo_merkezi_test": {
+    "ham": 0.1014,
+    "tanisal_yeniden_uretim": 0.1014,
+    "ayni": true
+   },
+   "sabit_cogunluk_a4_egitim": {
+    "ham": 0.128,
+    "tanisal_yeniden_uretim": 0.128,
+    "ayni": true
+   },
+   "sabit_cogunluk_a4_test": {
+    "ham": 0.0951,
+    "tanisal_yeniden_uretim": 0.0951,
+    "ayni": true
+   },
+   "sabit_hep_kritik_a3_egitim": {
+    "ham": 0.1104,
+    "tanisal_yeniden_uretim": 0.1104,
+    "ayni": true
+   },
+   "sabit_hep_kritik_a3_test": {
+    "ham": 0.1472,
+    "tanisal_yeniden_uretim": 0.1472,
+    "ayni": true
+   },
+   "sabit_hep_kritik_a4_egitim": {
+    "ham": 0.128,
+    "tanisal_yeniden_uretim": 0.128,
+    "ayni": true
+   },
+   "sabit_hep_kritik_a4_test": {
+    "ham": 0.0951,
+    "tanisal_yeniden_uretim": 0.0951,
+    "ayni": true
+   }
+  },
+  "hepsi_tutarli": true
+ },
+ "etiket_kurali_okumasi": {
+  "egitim_dogruluk": 1.0,
+  "test_dogruluk": 1.0,
+  "ortak_sinif_farki_puan": 0.0,
+  "on_kayitli_fark_puan": 20.0,
+  "okuma": "Etiket kurali egitimde ve testte %100 dogrudur; ortak siniflarda F1 farki 0 puandir. On kayitli 20 puanlik dusus, egitimde dort testte uc sinif bulunmasindan ve bulunmayan siniflarin bes sinifli ortalamaya sifir girmesinden dogar: bu bir genelleme basarisizligi degil, olcunun sinif destegine duyarliligidir."
+ },
+ "ozet_hukum": {
+  "esik_tetiklendi": [
+   "etiket_kurali_ust_sinir",
+   "karar_agaci_d4",
+   "maliyet_lojistik"
+  ],
+  "ortak_siniflarda_kayip_kanitli": [
+   "karar_agaci_d4",
+   "maliyet_lojistik",
+   "ppo_fedavg",
+   "ppo_merkezi"
+  ],
+  "not": "'esik tetiklendi' Kural E3.1'in mekanik sonucudur; 'genelleme acigi kanitli' ayri bir okumadir ve ortak sinif farkina dayanir."
+ },
+ "sure_sn": 0.01
+}

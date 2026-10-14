@@ -1,0 +1,437 @@
+{
+ "damar": "CDSA-MRO",
+ "deney": "E3.1",
+ "baslik": "aile bazli ayrik degerlendirme (karar ani ozellikleri)",
+ "ayrim_kaynagi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/faz_e3_ayrim.json",
+ "ayrim_dondurulmus_ve_yeniden_uretilebilir": true,
+ "ayrim": {
+  "aile_sayisi": 15,
+  "test_aileleri": [
+   "fidye_yazilimi",
+   "konfigurasyon_hatasi",
+   "usb_zararli_yazilim"
+  ],
+  "egitim_aileleri": [
+   "ddos_saldirisi",
+   "egitim_sistem_manipulasyonu",
+   "hesap_ele_gecirme",
+   "is_emri_sahteciligi",
+   "kalibrasyon_butunluk_ihlali",
+   "oltalama_saldirisi",
+   "ot_sistem_sizmasi",
+   "portal_erisim_ihlali",
+   "shadow_it",
+   "sosyal_muhendislik",
+   "tedarik_zinciri_kontaminasyonu",
+   "yetki_iptal_eksikligi"
+  ],
+  "n_toplam": 1000,
+  "n_egitim": 782,
+  "n_test": 218,
+  "test_orani_gerceklesen": 0.218,
+  "aile_ortusmesi_yok": true,
+  "kayit_ortusmesi_yok": true,
+  "ayrim_tohumu": 7003
+ },
+ "ozellikler": {
+  "karar_ani_indeksleri": [
+   0,
+   1,
+   2,
+   5,
+   6,
+   7
+  ],
+  "karar_ani_adlari": [
+   "olay_turu_id",
+   "mitre_tactic",
+   "etkilenen_hizmet_sayisi",
+   "kvkk_ozel_veri",
+   "shy145_72saat_uygunluk",
+   "ek19_kontrol_atfi_sayisi"
+  ],
+  "cikarilan_indeksler": [
+   3,
+   4,
+   8,
+   9
+  ],
+  "cikarilan_adlar": [
+   "kesinti_suresi_dk",
+   "tahmini_maddi_kayip_TL",
+   "swiss_cheese_katman_sayisi",
+   "aksiyon_sayisi"
+  ],
+  "sklearn_kollarinda": "cikarilan sutunlar ALINMAZ (6 sutun)",
+  "ppo_kollarinda": "gozlem boyutu 10 korunur, cikarilan 4 sutun SIFIRLANIR (faz_e_veri.e3_ortamlari ile ayni kural)"
+ },
+ "on_isleme": {
+  "yontem": "StandardScaler",
+  "fit_kumesi": "YALNIZ egitim",
+  "kod_satiri": "olcek.fit(Xtr)  # <-- fit YALNIZ egitim  (faz_e3_ayrik_degerlendirme._olcekle)",
+  "test_kumesi_islemi": "yalnizca transform",
+  "egitim_ortalamalari": [
+   0.469675,
+   0.273657,
+   0.594885,
+   0.676471,
+   0.877238,
+   0.622762
+  ],
+  "egitim_olcekleri": [
+   0.340832,
+   0.338791,
+   0.162696,
+   0.467823,
+   0.328164,
+   0.063516
+  ],
+  "ortam_ici_normalizasyon": "cdsa_mro_env._olaydan_ozellik icindeki bolenler (14.0, 5.0, log(2500), log(500000), 6.0) KOD SABITIDIR; veriden fit EDILMEZ, bu nedenle test kumesinden bilgi tasimaz"
+ },
+ "maliyet_matrisi_K": [
+  [
+   100.0,
+   40.0,
+   60.0,
+   80.0,
+   100.0
+  ],
+  [
+   100.0,
+   -12.0,
+   7.0,
+   14.0,
+   21.0
+  ],
+  [
+   100.0,
+   3.0,
+   -15.652,
+   5.255,
+   12.201
+  ],
+  [
+   100.0,
+   6.0,
+   1.348,
+   -17.745,
+   5.201
+  ],
+  [
+   100.0,
+   9.0,
+   4.348,
+   1.255,
+   -19.799
+  ]
+ ],
+ "maliyet_matrisi_kaynagi": "yalniz egitim kayitlari (n=782) uzerinde olculdu",
+ "sinif_agirliklari": [
+  2.5987,
+  0.3768,
+  0.4723,
+  0.653,
+  0.8992
+ ],
+ "egitim_etiket_dagilimi": [
+  0,
+  1,
+  115,
+  298,
+  368
+ ],
+ "test_etiket_dagilimi": [
+  0,
+  0,
+  23,
+  127,
+  68
+ ],
+ "olcu": "makro-F1 (faz_e_kayit.makro_f1; bes sinif uzerinden, E2 ile ayni tanim)",
+ "esik_puan": 5.0,
+ "tohumlar": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "tur": 100,
+ "kollar": {
+  "maliyet_lojistik": {
+   "tur": "sklearn/sabit",
+   "n_tohum": 1,
+   "egitim_makro_f1": 0.3808,
+   "test_makro_f1": 0.1071,
+   "egitim_dogruluk": 0.6317,
+   "test_dogruluk": 0.2798
+  },
+  "karar_agaci_d4": {
+   "tur": "sklearn/sabit",
+   "n_tohum": 1,
+   "egitim_makro_f1": 0.4795,
+   "test_makro_f1": 0.109,
+   "egitim_dogruluk": 0.7954,
+   "test_dogruluk": 0.2615
+  },
+  "sabit_cogunluk_a4": {
+   "tur": "sklearn/sabit",
+   "n_tohum": 1,
+   "egitim_makro_f1": 0.128,
+   "test_makro_f1": 0.0951,
+   "egitim_dogruluk": 0.4706,
+   "test_dogruluk": 0.3119
+  },
+  "sabit_hep_kritik_a3": {
+   "tur": "sklearn/sabit",
+   "n_tohum": 1,
+   "egitim_makro_f1": 0.1104,
+   "test_makro_f1": 0.1472,
+   "egitim_dogruluk": 0.3811,
+   "test_dogruluk": 0.5826
+  },
+  "sabit_hep_kritik_a4": {
+   "tur": "sklearn/sabit",
+   "n_tohum": 1,
+   "egitim_makro_f1": 0.128,
+   "test_makro_f1": 0.0951,
+   "egitim_dogruluk": 0.4706,
+   "test_dogruluk": 0.3119
+  },
+  "etiket_kurali_ust_sinir": {
+   "tur": "sklearn/sabit",
+   "n_tohum": 1,
+   "egitim_makro_f1": 0.8,
+   "test_makro_f1": 0.6,
+   "egitim_dogruluk": 1.0,
+   "test_dogruluk": 1.0
+  },
+  "ppo_merkezi": {
+   "tur": "PPO",
+   "n_tohum": 5,
+   "tohumlar": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "egitim_makro_f1_tohumlar": [
+    0.128,
+    0.128,
+    0.1335,
+    0.1916,
+    0.128
+   ],
+   "test_makro_f1_tohumlar": [
+    0.0951,
+    0.0951,
+    0.0964,
+    0.1252,
+    0.0951
+   ],
+   "egitim_makro_f1": 0.1418,
+   "test_makro_f1": 0.1014,
+   "egitim_makro_f1_ss": 0.0279,
+   "test_makro_f1_ss": 0.0133,
+   "duvar_saati_sn": [
+    23.07,
+    22.89,
+    22.66,
+    22.68,
+    22.92
+   ],
+   "cevre_gecisi": [
+    172800,
+    172800,
+    172800,
+    172800,
+    172800
+   ]
+  },
+  "ppo_fedavg": {
+   "tur": "PPO",
+   "n_tohum": 5,
+   "tohumlar": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "egitim_makro_f1_tohumlar": [
+    0.128,
+    0.128,
+    0.128,
+    0.128,
+    0.128
+   ],
+   "test_makro_f1_tohumlar": [
+    0.0951,
+    0.0951,
+    0.0951,
+    0.0951,
+    0.0951
+   ],
+   "egitim_makro_f1": 0.128,
+   "test_makro_f1": 0.0951,
+   "egitim_makro_f1_ss": 0.0,
+   "test_makro_f1_ss": 0.0,
+   "duvar_saati_sn": [
+    23.32,
+    22.81,
+    22.85,
+    23.07,
+    23.1
+   ],
+   "cevre_gecisi": [
+    172800,
+    172800,
+    172800,
+    172800,
+    172800
+   ]
+  }
+ },
+ "kural_E3_1": {
+  "lafiz": "test sonucu egitim sonucundan 5 PUANDAN fazla duserse 'genelleme acigi' yazilir; ana tabloya YALNIZ test kumesi girer",
+  "esik_puan": 5.0,
+  "olcu": "makro-F1, yuzde puani",
+  "ana_tabloya_giren": "test kumesi sutunu",
+  "hukum": {
+   "maliyet_lojistik": {
+    "egitim_makro_f1": 0.3808,
+    "test_makro_f1": 0.1071,
+    "fark_yuzde_puani_egitim_eksi_test": 27.37,
+    "hukum": "genelleme acigi (fark > 5 puan)"
+   },
+   "karar_agaci_d4": {
+    "egitim_makro_f1": 0.4795,
+    "test_makro_f1": 0.109,
+    "fark_yuzde_puani_egitim_eksi_test": 37.05,
+    "hukum": "genelleme acigi (fark > 5 puan)"
+   },
+   "sabit_cogunluk_a4": {
+    "egitim_makro_f1": 0.128,
+    "test_makro_f1": 0.0951,
+    "fark_yuzde_puani_egitim_eksi_test": 3.29,
+    "hukum": "genelleme acigi yazilmaz (fark <= 5 puan)"
+   },
+   "sabit_hep_kritik_a3": {
+    "egitim_makro_f1": 0.1104,
+    "test_makro_f1": 0.1472,
+    "fark_yuzde_puani_egitim_eksi_test": -3.68,
+    "hukum": "genelleme acigi yazilmaz (fark <= 5 puan)"
+   },
+   "sabit_hep_kritik_a4": {
+    "egitim_makro_f1": 0.128,
+    "test_makro_f1": 0.0951,
+    "fark_yuzde_puani_egitim_eksi_test": 3.29,
+    "hukum": "genelleme acigi yazilmaz (fark <= 5 puan)"
+   },
+   "etiket_kurali_ust_sinir": {
+    "egitim_makro_f1": 0.8,
+    "test_makro_f1": 0.6,
+    "fark_yuzde_puani_egitim_eksi_test": 20.0,
+    "hukum": "genelleme acigi (fark > 5 puan)"
+   },
+   "ppo_merkezi": {
+    "egitim_makro_f1": 0.1418,
+    "test_makro_f1": 0.1014,
+    "fark_yuzde_puani_egitim_eksi_test": 4.04,
+    "hukum": "genelleme acigi yazilmaz (fark <= 5 puan)"
+   },
+   "ppo_fedavg": {
+    "egitim_makro_f1": 0.128,
+    "test_makro_f1": 0.0951,
+    "fark_yuzde_puani_egitim_eksi_test": 3.29,
+    "hukum": "genelleme acigi yazilmaz (fark <= 5 puan)"
+   }
+  }
+ },
+ "sure_sn": 230.2,
+ "_duzeltme_06092026": {
+  "_uyari": "Bu blok SONRADAN eklenmistir. Yukaridaki butun ham sayilar, olcu tanimi, 5 puanlik esik ve \"kural_E3_1.hukum\" alanlari DEGISMEMISTIR; burada yalniz bu hukmun NASIL OKUNACAGI ayrilmaktadir.",
+  "tarih": "06.09.2026",
+  "ham_cekirdek_md5": "ae3899e4977815b43026e31e687e30b0",
+  "ham_cekirdek_tanimi": "bu dosyanin '_duzeltme_*' bloklari disindaki butun alanlari, json.dumps(indent=1, ensure_ascii=False) ile serilestirilmis",
+  "ayrim": "\"esik tetiklendi\" ile \"genelleme acigi kanitlandi\" AYNI SEY DEGILDIR. \"Esik tetiklendi\", Kural E3.1'in mekanik sonucudur: egitim makro-F1 eksi test makro-F1 > 5 puan. \"Genelleme acigi kanitlandi\" ise ayri bir okumadir ve ancak egitim ile testte ORTAK olan siniflarda da kayip olculdugunde yazilir.",
+  "olcunun_sinif_destegine_duyarliligi": "On kayitli olcu makro-F1'i BES sinif uzerinden ortalar; destegi olmayan sinif ortalamaya F1 = 0 olarak girer. Egitim kumesinde dort sinifin (destek [0, 1, 115, 298, 368]), test kumesinde uc sinifin (destek [0, 0, 23, 127, 68]) ornegi vardir. Bu nedenle kusursuz bir siniflandirici bile egitimde 4/5 = 0,80, testte 3/5 = 0,60 alir; aradaki 20 puan olcunun sinif destegine duyarliligidir.",
+  "etiket_kurali_ust_sinir": {
+   "esik_tetiklendi": true,
+   "genelleme_acigi": "HAYIR — kanitli degil",
+   "gerekce": "Etiket kurali hem egitimde hem testte %100 dogrudur (dogruluk 1,0 / 1,0) ve ortak siniflar {2,3,4} uzerinde makro-F1 farki 0,00 puandir. 20 puanlik dusus, testte bulunmayan siniflarin bes sinifli ortalamaya sifir girmesinden dogar.",
+   "ortak_sinif_farki_puan": 0.0
+  },
+  "diger_kollar": "Ogrenen ve sabit kollarin sinif bazli sonuclari, destek sayilari ve ortak siniflar uzerindeki tamamlayici karsilastirmasi tanisal analizdedir: results/faz_e3_tanisal.json (betik: experiments/faz_e3_tanisal.py). Tanisal analiz on kayitli sonucun YERINE GECMEZ.",
+  "kol_bazinda_okuma": {
+   "maliyet_lojistik": {
+    "esik_tetiklendi": true,
+    "on_kayitli_fark_puan": 27.37,
+    "ortak_sinif_farki_puan": 45.61,
+    "sinif_dagilimi_payi_puan": -18.24,
+    "genelleme_acigi_okumasi": "kanitli — ortak siniflarda da kayip var"
+   },
+   "karar_agaci_d4": {
+    "esik_tetiklendi": true,
+    "on_kayitli_fark_puan": 37.05,
+    "ortak_sinif_farki_puan": 61.76,
+    "sinif_dagilimi_payi_puan": -24.71,
+    "genelleme_acigi_okumasi": "kanitli — ortak siniflarda da kayip var"
+   },
+   "sabit_cogunluk_a4": {
+    "esik_tetiklendi": false,
+    "on_kayitli_fark_puan": 3.29,
+    "ortak_sinif_farki_puan": 5.48,
+    "sinif_dagilimi_payi_puan": -2.19,
+    "genelleme_acigi_okumasi": "uygulanmaz — sabit politika ogrenmez; egitim/test farki yalnizca iki kumenin sinif bilesiminden dogar"
+   },
+   "sabit_hep_kritik_a3": {
+    "esik_tetiklendi": false,
+    "on_kayitli_fark_puan": -3.68,
+    "ortak_sinif_farki_puan": -6.14,
+    "sinif_dagilimi_payi_puan": 2.46,
+    "genelleme_acigi_okumasi": "uygulanmaz — sabit politika ogrenmez; egitim/test farki yalnizca iki kumenin sinif bilesiminden dogar"
+   },
+   "sabit_hep_kritik_a4": {
+    "esik_tetiklendi": false,
+    "on_kayitli_fark_puan": 3.29,
+    "ortak_sinif_farki_puan": 5.48,
+    "sinif_dagilimi_payi_puan": -2.19,
+    "genelleme_acigi_okumasi": "uygulanmaz — sabit politika ogrenmez; egitim/test farki yalnizca iki kumenin sinif bilesiminden dogar"
+   },
+   "etiket_kurali_ust_sinir": {
+    "esik_tetiklendi": true,
+    "on_kayitli_fark_puan": 20.0,
+    "ortak_sinif_farki_puan": 0.0,
+    "sinif_dagilimi_payi_puan": 20.0,
+    "genelleme_acigi_okumasi": "kanitli degil — ortak siniflarda kayip yok (destek etkisi)"
+   },
+   "ppo_merkezi": {
+    "esik_tetiklendi": false,
+    "on_kayitli_fark_puan": 4.04,
+    "ortak_sinif_farki_puan": 6.74,
+    "sinif_dagilimi_payi_puan": -2.7,
+    "genelleme_acigi_okumasi": "kanitli — ortak siniflarda da kayip var"
+   },
+   "ppo_fedavg": {
+    "esik_tetiklendi": false,
+    "on_kayitli_fark_puan": 3.29,
+    "ortak_sinif_farki_puan": 5.48,
+    "sinif_dagilimi_payi_puan": -2.19,
+    "genelleme_acigi_okumasi": "kanitli — ortak siniflarda da kayip var"
+   }
+  },
+  "degismeyenler": [
+   "olcu",
+   "esik_puan",
+   "kollar",
+   "kural_E3_1",
+   "egitim_etiket_dagilimi",
+   "test_etiket_dagilimi",
+   "maliyet_matrisi_K",
+   "ayrim"
+  ],
+  "kural_degisikligi": "YOK — Kural E3.1 ve 5 puanlik esik oldugu gibi durmaktadir; yeni bir egitim kampanyasi kosulmamistir."
+ }
+}

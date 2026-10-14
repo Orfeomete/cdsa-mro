@@ -22,8 +22,12 @@ class FedProxAggregator(FedAvgAggregator):
     """FedAvg with proximal regularisation utilities (mu >= 0)."""
 
     def __init__(self, mu: float = 0.01, dp_epsilon: float | None = None,
-                 dp_sensitivity: float = 1.0, seed: int | None = None):
-        super().__init__(dp_epsilon=dp_epsilon, dp_sensitivity=dp_sensitivity, seed=seed)
+                 dp_sensitivity: float = 1.0, seed: int | None = None,
+                 dp_mode: str = "legacy", dp_clip_c: float | None = None,
+                 dp_rounds: int | None = None):
+        super().__init__(dp_epsilon=dp_epsilon, dp_sensitivity=dp_sensitivity,
+                         seed=seed, dp_mode=dp_mode, dp_clip_c=dp_clip_c,
+                         dp_rounds=dp_rounds)
         if mu < 0:
             raise ValueError("mu must be >= 0")
         self.mu = float(mu)

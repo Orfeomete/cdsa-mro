@@ -1,0 +1,50 @@
+2105330|ZAB Controller reported the complexity and workload levels at sectors were unsafe due to scheduled GPS jamming causing
+2105322|A TRACON Controller reported they could not provide adequate assistance to a small aircraft requesting priority handling
+2103770|A TRACON Controller reported Tower allowed aircraft to depart opposite direction into arrival traffic due to confusion
+2103769|ZAU Controller reported IND Tower and SBN TRACON use the same UHF Frequency of 257.8 which caused confusion
+2103382|TRACON Controller reported using wrong call sign when issuing descent instructions resulted in confusion on readbacks
+2103375|TRACON Controller reported failure to hear readback altitude error, resulted in descent below MVA and a CFTT event.
+2103374|ZAB Controllers reported White Sands Missile Range GPS jamming exercises severely affected sector workload and complexity
+2102100|A TRACON Controller and corporate jet pilot reported the controller issued a Low Altitude Alert due to the pilot
+2100867|A Tower Local Controller reported they cleared an aircraft onto the runway with another aircraft on short final.
+2100496|Center Controller reported the OM was refusing to comply with policy in stopping GPS jamming despite the workload
+2100054|A Center Controller reported they did not correct a pilot readback of the wrong frequency resulting in loss of contact
+2100051|TRACON Controller reported an aircraft descended below its assigned altitude. The Controller issued a low altitude
+2100050|A Center Controller reported the Operations Manager would not comply with the Area's Supervisor request to terminate
+2099557|A TRACON Controller reported an aircraft on an ILS approach encountered severe turbulence and descended below the
+2098635|Tower Controller reported being later notified of aircraft that had a landing incident also had a possible touchdown
+2098625|Controller reported failure to climb traffic above subsequent higher MVA resulting in a CFTT event.
+2097564|Tower Controller trainee and their instructor reported an aircraft on upwind in the pattern reported a NMAC
+2096127|A Center Controller reported conflicting information with NOTAM, procedures, and personnel resulted in unknown
+2095755|MRY Tower Local Controller reported TRACON handed off two aircraft with a large overtake that required immediate
+2095449|TRACON Controller reported vectoring an aircraft below the MVA towards a lower MVA and away from conflicting traffic.
+2095039|A Ground Control trainee and their Instructor reported a taxiing aircraft had to stop suddenly to avoid another
+2093647|D01 Controller reported aircraft acknowledged traffic in sight then returned on frequency to report a NMAC.
+2093299|A TRACON Controller reported they issued a clearance to an aircraft that caused it to fly below the Minimum Vectoring
+2092994|A Center Controller reported they vectored a departing aircraft below the Minimum IFR Altitude.
+2092033|ZBW Controller reported limited radio capability to issue a climb clearance resulted in an aircraft entering a higher
+2091195|A ZAB Center Controller reported they had to request the Operations Manager to coordinate ceasing intentional GPS
+2091194|Albuquerque Center Controller reported they routinely have difficulty communicating with aircraft due to faulty
+2091189|ZAB Center Controller reported planned GPS jamming in their sectors near the TXO VOR caused an air carrier and other
+2091187|A Tower Local Controller reported a VFR aircraft overshot the final approach course into confliction with VFR
+2091178|LAF Tower Controller reported the lack of an operational crash phone hinders the ability to contact first responders
+2090425|A Tower Controller reported an aircraft did not comply with their taxi instructions and proceeded onto a taxiway
+2090112|Two Center Controllers reported an aircraft transiting their sector flew below minimum safe altitude.
+2089650|A Tower Controller reported a NMAC occurred due to TRACON turning a departing C172 into the path of a subsequent
+2089492|EDC Tower Controller reported an arriving aircraft made an incorrect position report and flew across the departure
+2086529|P50 TRACON Controller reported very poor radio quality resulted in altitude readback error and a CFTT event.
+2085583|PUB Tower Controller reported issuing a low altitude alert to a night VFR arrival that entered the pattern below
+2085582|A Tower Local Controller providing OJT reported they did not notice their trainee cleared an aircraft to line up
+2085581|Tower Controllers reported they did not notice an aircraft lined up on short final for the wrong runway with
+2084287|TRACON and Tower Controllers reported traffic landed on closed parallel runway at night, without a clearance.
+2084286|A Tower Ground Controller reported the Local Controller cleared an aircraft for takeoff while another aircraft
+2082692|A TRACON Handoff/Assist controller reported the Radar Controller vectored a departing aircraft below the Minimum
+2082683|Chicago Center Controller reported an aircraft deviated from direct MOBIL clearance because they entered the fix
+2081579|A TRACON Controller reported they descended an aircraft below the Minimum Vectoring Altitude due to misreading
+2081184|Tower Ground Controller reported a taxing aircraft began to stray from its clearance and caused a critical ground
+2081180|Air traffic Controller reported being distracted with briefings and sector updating while an aircraft descended
+2080752|Local controller reported aircraft on go around did not respond to control instructions resulting in aircraft flying
+2080747|A TRACON Supervisor working a sector reported they turned an aircraft the wrong direction which placed it below
+2076812|A New York ARTCC Controller reported their frequency 125.32 is routinely mistaken for Boston ARTCC 135.32.
+2076185|Air Traffic Controller reported military UAS started a descent that was not coordinated by adjacent facility,
+2076177|Approach Controller reported an aircraft did not fly the published missed approach and the pilot reported encountering

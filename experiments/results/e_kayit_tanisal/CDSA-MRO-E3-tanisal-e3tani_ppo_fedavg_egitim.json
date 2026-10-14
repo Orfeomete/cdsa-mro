@@ -1,0 +1,190 @@
+{
+ "sema_surum": "faz_e_kayit/1.0",
+ "kosu_kimligi": "CDSA-MRO-E3-e3tani_ppo_fedavg_egitim-t42-20260906T141629Z",
+ "damar": "CDSA-MRO",
+ "deney": "E3",
+ "kol": "e3tani_ppo_fedavg_egitim",
+ "tohum": 42,
+ "tarih_utc": "2026-09-06T14:16:29.830505+00:00",
+ "kod_surumu": {
+  "yontem": "git",
+  "git_head": "997cea5d9b8790a0306ca3bc8632680bc341ee05",
+  "kirli": true,
+  "dosya_ozetleri": null,
+  "kod_agac_ozeti": "8e7e6cda8c46b21e6db3ec2c869f4cc227c4738a6ba8daf8885d2f0c43a206a8"
+ },
+ "yapilandirma_koddan": {
+  "e3_tanisal": {
+   "tur": "tanisal",
+   "kaynak_kayitlar": "CDSA-MRO-E3-e3_ppo_fedavg_egitim-*",
+   "n_tohum": 5,
+   "tohumlar": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "ortak_siniflar": [
+    2,
+    3,
+    4
+   ],
+   "yeni_egitim_yapildi_mi": false
+  },
+  "faz_e_veri": {
+   "E3_TEST_ORANI": 0.2,
+   "E3_AYRIM_TOHUMU": 7003,
+   "E3_KARAR_ANI": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7
+   ],
+   "E3_CIKARILAN": [
+    3,
+    4,
+    8,
+    9
+   ],
+   "E3_OZELLIK_ADLARI": [
+    "olay_turu_id",
+    "mitre_tactic",
+    "etkilenen_hizmet_sayisi",
+    "kesinti_suresi_dk",
+    "tahmini_maddi_kayip_TL",
+    "kvkk_ozel_veri",
+    "shy145_72saat_uygunluk",
+    "ek19_kontrol_atfi_sayisi",
+    "swiss_cheese_katman_sayisi",
+    "aksiyon_sayisi"
+   ],
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_e_veri.py",
+   "_modul_sha256": "937470f3161928301c9e0b5accb2948ddf994c62407c8625f536fdf0a5fb8183"
+  },
+  "faz_e3_ayrik_degerlendirme": {
+   "TOHUMLAR": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "TUR": 100,
+   "E3_ESIK_PUAN": 5.0,
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_e3_ayrik_degerlendirme.py",
+   "_modul_sha256": "6713328d62c7be9e651233d61f7c5ee80e3b21ff463281674da34c02c38d3b4b"
+  }
+ },
+ "veri": {
+  "yol": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/data/synthetic_incidents_v1.json",
+  "sha256": "9987944fd819df4cb43abb5f09f988b0ab9e2192cf25c0a8184074399d25b005",
+  "n_kayit": 3910,
+  "not": "E3.1 tanisal: kol kayitlarinin karisiklik matrisleri toplanmistir (tohumlar birlestirilmis); yeni tahmin URETILMEMISTIR"
+ },
+ "tahmin_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/e_kayit_tanisal/tahmin_CDSA-MRO-E3-tanisal-e3tani_ppo_fedavg_egitim.json",
+ "karisiklik_matrisi": {
+  "duzen": "[true][pred]",
+  "matris": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    5
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    575
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1490
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1840
+   ]
+  ],
+  "n": 3910,
+  "etiketler": [
+   "izleme_devam",
+   "uyari_olustur",
+   "ic_sorusturma",
+   "some_mudahale",
+   "shgm_72saat_bildirim"
+  ]
+ },
+ "metrikler": {
+  "sinif_f1": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.64
+  ],
+  "sinif_kesinlik": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.4706
+  ],
+  "sinif_duyarlilik": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "makro_f1": 0.128,
+  "dogruluk": 0.4706,
+  "makro_f1_on_kayitli_5sinif": 0.128,
+  "makro_f1_destekli_siniflar": 0.16,
+  "makro_f1_ortak_siniflar": 0.2133,
+  "sinif_destek": [
+   0,
+   1,
+   115,
+   298,
+   368
+  ]
+ },
+ "ortam": {
+  "python": "3.11.15",
+  "numpy": "1.26.4",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "makine": "x86_64"
+ },
+ "notlar": {
+  "tur": "tanisal",
+  "on_kayitli_sonucun_yerine_gecmez": "Tanisal analiz: on kayitli E3.1 sonucunun YERINE GECMEZ. On kayitli olcu (bes sinif uzerinden makro-F1), 5 puanlik esik ve ham sonuclar degismemistir; bu blok sonradan yapilan cozumlemedir (06.09.2026).",
+  "ayristirma": {
+   "on_kayitli_fark_puan": 3.29,
+   "ortak_sinif_farki_puan": 5.48,
+   "sinif_dagilimi_payi_puan": -2.19,
+   "sinif_dagilimi_payi_orani": -0.6657,
+   "esik_tetiklendi_mi": false,
+   "genelleme_acigi": "kanitli — ortak siniflarda da kayip var"
+  }
+ },
+ "sure_sn": 0.025
+}

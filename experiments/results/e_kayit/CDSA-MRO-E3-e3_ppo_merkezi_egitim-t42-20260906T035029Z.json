@@ -1,0 +1,188 @@
+{
+ "sema_surum": "faz_e_kayit/1.0",
+ "kosu_kimligi": "CDSA-MRO-E3-e3_ppo_merkezi_egitim-t42-20260906T035029Z",
+ "damar": "CDSA-MRO",
+ "deney": "E3",
+ "kol": "e3_ppo_merkezi_egitim",
+ "tohum": 42,
+ "tarih_utc": "2026-09-06T03:50:29.789842+00:00",
+ "kod_surumu": {
+  "yontem": "git",
+  "git_head": "997cea5d9b8790a0306ca3bc8632680bc341ee05",
+  "kirli": true,
+  "dosya_ozetleri": null,
+  "kod_agac_ozeti": "d99d558082312ac47e1dd79acef0b3974d137905ecf477ed8618689d0c87dcb7"
+ },
+ "yapilandirma_koddan": {
+  "faz_a_config": {
+   "PILLAR": "CDSA-MRO",
+   "N_ACTIONS": 5,
+   "STATE_DIM": 10,
+   "NEW_STEP_API": false,
+   "INFO_TRUE_KEY": "true_action",
+   "ACTION_LABELS": [
+    "izleme_devam",
+    "uyari_olustur",
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "CRITICAL_ACTIONS": [
+    3,
+    4
+   ],
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_a_config.py",
+   "_modul_sha256": "98ed3a391a35b20b9197e5603330790a7c98ec278d4406a1f62fda0f819842ce"
+  },
+  "faz_e3_ayrik_degerlendirme": {
+   "TOHUMLAR": [
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "TUR": 100,
+   "E3_ESIK_PUAN": 5.0,
+   "AGAC_DERINLIK": 4,
+   "AGAC_RANDOM_STATE": 0,
+   "LOJISTIK_MAX_ITER": 2000,
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_e3_ayrik_degerlendirme.py",
+   "_modul_sha256": "6713328d62c7be9e651233d61f7c5ee80e3b21ff463281674da34c02c38d3b4b"
+  },
+  "faz_e_veri": {
+   "E3_TEST_ORANI": 0.2,
+   "E3_AYRIM_TOHUMU": 7003,
+   "E3_KARAR_ANI": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7
+   ],
+   "E3_CIKARILAN": [
+    3,
+    4,
+    8,
+    9
+   ],
+   "E3_OZELLIK_ADLARI": [
+    "olay_turu_id",
+    "mitre_tactic",
+    "etkilenen_hizmet_sayisi",
+    "kesinti_suresi_dk",
+    "tahmini_maddi_kayip_TL",
+    "kvkk_ozel_veri",
+    "shy145_72saat_uygunluk",
+    "ek19_kontrol_atfi_sayisi",
+    "swiss_cheese_katman_sayisi",
+    "aksiyon_sayisi"
+   ],
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_e_veri.py",
+   "_modul_sha256": "937470f3161928301c9e0b5accb2948ddf994c62407c8625f536fdf0a5fb8183"
+  },
+  "e3_kosu": {
+   "kol_turu": "PPO",
+   "tur": 100,
+   "cevre_gecisi": 172800,
+   "gozlem": "10 boyut; cikarilan 4 sutun sifirlanmis",
+   "n_istemci": 3,
+   "egitim_korpusu": "yalniz E3 egitim aileleri"
+  }
+ },
+ "veri": {
+  "yol": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/data/synthetic_incidents_v1.json",
+  "sha256": "9987944fd819df4cb43abb5f09f988b0ab9e2192cf25c0a8184074399d25b005",
+  "n_kayit": 782,
+  "not": "E3 aile ayrimi — EGITIM kaydi alt kumesi (in-sample)"
+ },
+ "tahmin_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/e_kayit/tahmin_CDSA-MRO-E3-e3_ppo_merkezi_egitim-t42-20260906T035029Z.json",
+ "karisiklik_matrisi": {
+  "duzen": "[true][pred]",
+  "matris": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    115
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    298
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    368
+   ]
+  ],
+  "n": 782,
+  "etiketler": [
+   "izleme_devam",
+   "uyari_olustur",
+   "ic_sorusturma",
+   "some_mudahale",
+   "shgm_72saat_bildirim"
+  ]
+ },
+ "metrikler": {
+  "sinif_f1": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.64
+  ],
+  "sinif_kesinlik": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.4706
+  ],
+  "sinif_duyarlilik": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "makro_f1": 0.128,
+  "dogruluk": 0.4706,
+  "kritik_sinif_duyarlilik": [
+   0.0,
+   1.0
+  ],
+  "duvar_saati_sn": 23.07,
+  "cevre_gecisi": 172800
+ },
+ "ortam": {
+  "python": "3.11.15",
+  "numpy": "1.26.4",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "makine": "x86_64"
+ },
+ "notlar": {},
+ "sure_sn": 0.014
+}

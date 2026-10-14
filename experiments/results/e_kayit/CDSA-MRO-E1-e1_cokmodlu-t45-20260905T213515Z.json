@@ -1,0 +1,165 @@
+{
+ "sema_surum": "faz_e_kayit/1.0",
+ "kosu_kimligi": "CDSA-MRO-E1-e1_cokmodlu-t45-20260905T213515Z",
+ "damar": "CDSA-MRO",
+ "deney": "E1",
+ "kol": "e1_cokmodlu",
+ "tohum": 45,
+ "tarih_utc": "2026-09-05T21:35:15.474008+00:00",
+ "kod_surumu": {
+  "yontem": "git",
+  "git_head": "997cea5d9b8790a0306ca3bc8632680bc341ee05",
+  "kirli": true,
+  "dosya_ozetleri": null,
+  "kod_agac_ozeti": "9ea3efd7a2b36bad8c83977f862891334551aa288ad6aacb55ecd162826893b4"
+ },
+ "yapilandirma_koddan": {
+  "faz_a_config": {
+   "PILLAR": "CDSA-MRO",
+   "N_ACTIONS": 5,
+   "STATE_DIM": 10,
+   "NEW_STEP_API": false,
+   "INFO_TRUE_KEY": "true_action",
+   "ACTION_LABELS": [
+    "izleme_devam",
+    "uyari_olustur",
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "CRITICAL_ACTIONS": [
+    3,
+    4
+   ],
+   "MODALITY_GROUPS": {},
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_a_config.py",
+   "_modul_sha256": "98ed3a391a35b20b9197e5603330790a7c98ec278d4406a1f62fda0f819842ce"
+  },
+  "faz_a_staged": {
+   "LOCAL_ROLLOUTS": 6,
+   "ROLLOUT_LEN": 96,
+   "PROBE_STEPS": 300,
+   "EVAL_STEPS": 600,
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_a_staged.py",
+   "_modul_sha256": "c4ea59a3161a21e97af36ff8a6b0611d605f1f957a807d6d1d142997963bca6c"
+  },
+  "faz_e_kampanya": {
+   "TUR_VARSAYILAN": 100,
+   "E8_TUR": 160,
+   "E8_EPS": {
+    "dp_eps10": 0.0625,
+    "dp_eps1": 0.00625
+   },
+   "E1_BIRINCIL": null,
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_e_kampanya.py",
+   "_modul_sha256": "903ef8c4439c00cd32ad9661616b44dbafa2adb6c2d9adb51c826ae3b7807a4a"
+  },
+  "kosu": {
+   "kol": "e1_cokmodlu",
+   "tur_koddan": 100,
+   "tohum": 45,
+   "cevre_gecisi": 172800,
+   "iletisim_bayt": 5251200,
+   "istemci_kurulumu": {
+    "kaynak": "faz_a_config.make_client_envs (Faz A kurulumu)",
+    "n_istemci": 3
+   },
+   "e1_birincil_modalite": null
+  }
+ },
+ "veri": {
+  "yol": null,
+  "sha256": "448a1200bc31e0b3f1f9ddabc5afe2c209afde9dacf11d41ac4eb00ea21a5c65",
+  "n_kayit": 1800,
+  "not": "uretilmis ortam; sha256 = uretim tanimi ozeti: CDSA-MRO e1_cokmodlu tohum=45 tur=100; degerlendirme: 3x600 esdeger protokol"
+ },
+ "tahmin_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/e_kayit/tahmin_CDSA-MRO-E1-e1_cokmodlu-t45-20260905T213515Z.json",
+ "karisiklik_matrisi": {
+  "duzen": "[true][pred]",
+  "matris": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    239,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    788,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    769,
+    0
+   ]
+  ],
+  "n": 1800,
+  "etiketler": [
+   "izleme_devam",
+   "uyari_olustur",
+   "ic_sorusturma",
+   "some_mudahale",
+   "shgm_72saat_bildirim"
+  ]
+ },
+ "metrikler": {
+  "sinif_f1": [
+   0.0,
+   0.0,
+   0.0,
+   0.609,
+   0.0
+  ],
+  "sinif_kesinlik": [
+   0.0,
+   0.0,
+   0.0,
+   0.4378,
+   0.0
+  ],
+  "sinif_duyarlilik": [
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0
+  ],
+  "makro_f1": 0.1218,
+  "dogruluk": 0.4378,
+  "duvar_saati_sn": 27.48,
+  "cevre_gecisi": 172800,
+  "iletisim_bayt": 5251200,
+  "kritik_sinif_duyarlilik": [
+   1.0,
+   0.0
+  ]
+ },
+ "ortam": {
+  "python": "3.11.15",
+  "numpy": "1.26.4",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "makine": "x86_64"
+ },
+ "notlar": {},
+ "sure_sn": 0.014
+}

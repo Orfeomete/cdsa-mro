@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use CDSA-MRO in academic work, please cite the software (this file), the accompanying sibling journal article and the CDSA umbrella article."
 type: software
 title: "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Fusion of Engine Health, Cyber-Safety and Maintenance History"
-version: "2.2.0"
-date-released: "2026-07-03"
+version: "2.3.0"
+date-released: "2026-10-14"
 doi: "10.5281/zenodo.20649671"
 authors:
   - family-names: "Cantekin"
@@ -49,7 +49,7 @@ preferred-citation:
       affiliation: "Department of Computer Engineering, Istanbul Beykent University"
   year: 2026
   journal: "Engineering Applications of Artificial Intelligence"
-  notes: "under review, manuscript EAAI-26-21255"
+  notes: "manuscript in preparation, not under review"
 references:
   - type: article
     authors:

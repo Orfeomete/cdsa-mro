@@ -53,15 +53,15 @@ Reinforcement Learning (FRL)** research programme:
 
 | Pillar | Domain | Companion repo | Companion journal article |
 |---|---|---|---|
-| **CDSA-BB3** | Pilot biometrics | `Orfeomete/cdsa-bb3` | IJCIP (Q1, under review) |
-| **CDSA-MRO** | Maintenance safety | `Orfeomete/cdsa-mro` | EAAI (Q1, under review) |
-| **CDSA-ATM** | Air traffic management | `Orfeomete/cdsa-atm` | Journal submission in preparation |
+| **CDSA-BB3** | Pilot biometrics | `Orfeomete/cdsa-bb3` | Manuscript in preparation |
+| **CDSA-MRO** | Maintenance safety | `Orfeomete/cdsa-mro` | Manuscript in preparation |
+| **CDSA-ATM** | Air traffic management | `Orfeomete/cdsa-atm` | Manuscript in preparation |
 
 This **CDSA-MRO** repository implements the maintenance safety
 pillar with a **Multi-modal CNN + Transformer + LSTM** policy network operating
 over **Engine + Cyber + Maintenance** modalities and a federated layer
 designed for a MRO consortium (MRO-A, MRO-B, MRO-C (simulated three-MRO consortium)).
-The sibling pillars are CDSA-BB3 (pilot biometrics, IJCIP Q1, under review) and the parallel ATM pillar; together they provide convergent
+The sibling pillars are CDSA-BB3 (pilot biometrics) and the parallel ATM pillar; together they provide convergent
 validation across three independent aviation domains.
 
 A paradigm-defining umbrella article (Information Fusion Q1, target

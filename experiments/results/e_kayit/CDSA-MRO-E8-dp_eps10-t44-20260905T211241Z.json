@@ -1,0 +1,184 @@
+{
+ "sema_surum": "faz_e_kayit/1.0",
+ "kosu_kimligi": "CDSA-MRO-E8-dp_eps10-t44-20260905T211241Z",
+ "damar": "CDSA-MRO",
+ "deney": "E8",
+ "kol": "dp_eps10",
+ "tohum": 44,
+ "tarih_utc": "2026-09-05T21:12:41.019752+00:00",
+ "kod_surumu": {
+  "yontem": "git",
+  "git_head": "997cea5d9b8790a0306ca3bc8632680bc341ee05",
+  "kirli": true,
+  "dosya_ozetleri": null,
+  "kod_agac_ozeti": "0e3e5c160e1c2fe38afa6fd4528da1e54c7cfeb9e53566101c51d42cf562ae5f"
+ },
+ "yapilandirma_koddan": {
+  "faz_a_config": {
+   "PILLAR": "CDSA-MRO",
+   "N_ACTIONS": 5,
+   "STATE_DIM": 10,
+   "NEW_STEP_API": false,
+   "INFO_TRUE_KEY": "true_action",
+   "ACTION_LABELS": [
+    "izleme_devam",
+    "uyari_olustur",
+    "ic_sorusturma",
+    "some_mudahale",
+    "shgm_72saat_bildirim"
+   ],
+   "CRITICAL_ACTIONS": [
+    3,
+    4
+   ],
+   "MODALITY_GROUPS": {},
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_a_config.py",
+   "_modul_sha256": "98ed3a391a35b20b9197e5603330790a7c98ec278d4406a1f62fda0f819842ce"
+  },
+  "faz_a_staged": {
+   "LOCAL_ROLLOUTS": 6,
+   "ROLLOUT_LEN": 96,
+   "PROBE_STEPS": 300,
+   "EVAL_STEPS": 600,
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_a_staged.py",
+   "_modul_sha256": "c4ea59a3161a21e97af36ff8a6b0611d605f1f957a807d6d1d142997963bca6c"
+  },
+  "faz_e_kampanya": {
+   "TUR_VARSAYILAN": 100,
+   "E8_TUR": 160,
+   "E8_EPS": {
+    "dp_eps10": 0.0625,
+    "dp_eps1": 0.00625
+   },
+   "E1_BIRINCIL": null,
+   "_modul_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/faz_e_kampanya.py",
+   "_modul_sha256": "903ef8c4439c00cd32ad9661616b44dbafa2adb6c2d9adb51c826ae3b7807a4a"
+  },
+  "kosu": {
+   "kol": "dp_eps10",
+   "tur_koddan": 160,
+   "tohum": 44,
+   "cevre_gecisi": 276480,
+   "iletisim_bayt": 8401920,
+   "istemci_kurulumu": {
+    "kaynak": "faz_a_config.make_client_envs (Faz A kurulumu)",
+    "n_istemci": 3,
+    "dp_defteri": {
+     "mekanizma": "Laplace, saf eps-DP",
+     "korunacak_birim": "istemci guncellemesi",
+     "komsuluk": "degistirme (n sabit)",
+     "n": 3,
+     "C": 9.4,
+     "delta1_2C_over_n": 6.266666666666667,
+     "eps_tur": 0.0625,
+     "T_tur": 160,
+     "eps_toplam": 10.0,
+     "laplace_olcek": 100.26666666666667,
+     "bilesim": "temel ardisik (saf DP; on kayit Ek 3 madde 3)",
+     "kirpik_norm_max": 9.400000000000002,
+     "kirpilmamis_norm": [
+      36.94000107695676,
+      37.459855858312366,
+      40.15943782072611
+     ]
+    }
+   },
+   "e1_birincil_modalite": null
+  }
+ },
+ "veri": {
+  "yol": null,
+  "sha256": "95095d85abe558914680b2ce30f0625f82a93b089d35b97aa7eb5f0a961b31b9",
+  "n_kayit": 1800,
+  "not": "uretilmis ortam; sha256 = uretim tanimi ozeti: CDSA-MRO dp_eps10 tohum=44 tur=160; degerlendirme: 3x600 esdeger protokol"
+ },
+ "tahmin_dosyasi": "/home/claude/cdsa/CDSA-MRO/12_GitHub_Repo/cdsa-mro/experiments/results/e_kayit/tahmin_CDSA-MRO-E8-dp_eps10-t44-20260905T211241Z.json",
+ "karisiklik_matrisi": {
+  "duzen": "[true][pred]",
+  "matris": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    4,
+    0,
+    0,
+    0
+   ],
+   [
+    161,
+    34,
+    0,
+    0,
+    44
+   ],
+   [
+    641,
+    54,
+    3,
+    13,
+    77
+   ],
+   [
+    565,
+    60,
+    25,
+    16,
+    103
+   ]
+  ],
+  "n": 1800,
+  "etiketler": [
+   "izleme_devam",
+   "uyari_olustur",
+   "ic_sorusturma",
+   "some_mudahale",
+   "shgm_72saat_bildirim"
+  ]
+ },
+ "metrikler": {
+  "sinif_f1": [
+   0.0,
+   0.0513,
+   0.0,
+   0.0318,
+   0.2075
+  ],
+  "sinif_kesinlik": [
+   0.0,
+   0.0263,
+   0.0,
+   0.4483,
+   0.4598
+  ],
+  "sinif_duyarlilik": [
+   0.0,
+   1.0,
+   0.0,
+   0.0165,
+   0.1339
+  ],
+  "makro_f1": 0.0581,
+  "dogruluk": 0.0667,
+  "duvar_saati_sn": 44.27,
+  "cevre_gecisi": 276480,
+  "iletisim_bayt": 8401920,
+  "kritik_sinif_duyarlilik": [
+   0.0165,
+   0.1339
+  ]
+ },
+ "ortam": {
+  "python": "3.11.15",
+  "numpy": "1.26.4",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "makine": "x86_64"
+ },
+ "notlar": {},
+ "sure_sn": 0.014
+}

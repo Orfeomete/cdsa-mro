@@ -1,6 +1,6 @@
 {
   "title": "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Engine + Cyber + Maintenance Fusion",
-  "description": "<p>The v2.3.0 release (14 October 2026) adds the Faz E preregistered evaluation code, run records and results, the E15 typology coverage check and the frozen coding book, with their preregistrations. CDSA-MRO is the reference implementation of the maintenance safety pillar of the Complementary Diagnostic Safety Approach (CDSA), a third-generation aviation safety paradigm formalised as a Federated Reinforcement Learning (FRL) framework (Scenario C decision, 21 May 2026). The v2.2.0 release (3 July 2026, superseding v2.1.0 of 12 June 2026) replaces the v2.0.0 scaffold stubs with full NumPy reference implementations (federated, multimodal, rl_agents, rl_environment, xai; all unit-tested) and adds seeded, reproducible CPU-scale federated training runs (random / centralised PPO / FedAvg / FedProx / FedProx+DP) with result JSONs under experiments/results/. An interactive results panel is published at https://cdsa.app/mro. Framework-scale training with real data is planned future work (Modül B); no funding is secured at this stage. The v1.0.0 release modules and reference data remain unchanged.</p>",
+  "description": "<p>The v2.4.0 release (22 October 2026) adds the transition-dependence test whose SHA-256 digest the E12 and E13 run files record, with its result for the three environments, and the 18 October 2026 validation diagnostic study as one archive (30 models, 270 checkpoints frozen before testing, TensorBoard event files and per-class test scores). The README now states the current programme of three manuscripts, none of which is under review, in place of the retired pillar and umbrella articles. The v2.3.0 release (14 October 2026) adds the Faz E preregistered evaluation code, run records and results, the E15 typology coverage check and the frozen coding book, with their preregistrations. CDSA-MRO is the reference implementation of the maintenance safety pillar of the Complementary Diagnostic Safety Approach (CDSA), a third-generation aviation safety paradigm formalised as a Federated Reinforcement Learning (FRL) framework (Scenario C decision, 21 May 2026). The v2.2.0 release (3 July 2026, superseding v2.1.0 of 12 June 2026) replaces the v2.0.0 scaffold stubs with full NumPy reference implementations (federated, multimodal, rl_agents, rl_environment, xai; all unit-tested) and adds seeded, reproducible CPU-scale federated training runs (random / centralised PPO / FedAvg / FedProx / FedProx+DP) with result JSONs under experiments/results/. An interactive results panel is published at https://cdsa.app/mro. Framework-scale training with real data is planned future work (Modül B); no funding is secured at this stage. The v1.0.0 release modules and reference data remain unchanged.</p>",
   "creators": [
     {
       "name": "Cantekin, Mete",
@@ -8,8 +8,8 @@
       "orcid": "0009-0001-6990-6340"
     }
   ],
-  "version": "2.3.0",
-  "publication_date": "2026-10-14",
+  "version": "2.4.0",
+  "publication_date": "2026-10-22",
   "language": "eng",
   "license": "MIT",
   "access_right": "open",
@@ -71,7 +71,7 @@
       "scheme": "url"
     }
   ],
-  "notes": "v2.1.0 (12 June 2026): Faz A implementation + A6 CPU-scale federated runs. v1.0.0 and v2.0.0-scaffold tags remain valid; see CHANGELOG.md for details.",
+  "notes": "See CHANGELOG.md for the contents of each release from v1.0.0 to v2.4.0.",
   "related_identifiers": [
     {
       "identifier": "https://github.com/Orfeomete/cdsa-mro",

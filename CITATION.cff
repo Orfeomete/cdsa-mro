@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use CDSA-MRO in academic work, please cite the software (this file), the accompanying sibling journal article and the CDSA umbrella article."
+message: "If you use CDSA-MRO in academic work, please cite the software (this file)."
 type: software
 title: "CDSA-MRO: Maintenance Safety Pillar of the CDSA Federated Reinforcement Learning Paradigm — Multi-modal Fusion of Engine Health, Cyber-Safety and Maintenance History"
-version: "2.3.0"
-date-released: "2026-10-14"
+version: "2.4.0"
+date-released: "2026-10-22"
 doi: "10.5281/zenodo.20649671"
 authors:
   - family-names: "Cantekin"
@@ -29,27 +29,14 @@ keywords:
   - Scenario C
   - convergent validation
 abstract: >
-  CDSA-MRO is the reference implementation of the
-  maintenance safety pillar of the Complementary Diagnostic Safety
-  Approach (CDSA), a third-generation aviation safety paradigm
-  formalised as a Federated Reinforcement Learning (FRL) framework
-  following the CDSA Methodological Unification Decision (Scenario C,
-  21 May 2026, frozen status). The v2 scaffold adds Python modules
-  (multimodal, federated, xai) for the FRL paradigm
-  extension; full implementations are deferred to TÜBİTAK 1001 ARDEB Project 3
-  (September 2026 application cycle). The v1.0.0 release modules and
-  reference data remain unchanged.
-preferred-citation:
-  type: article
-  title: "Aviation Maintenance Safety Framework with Federated Reinforcement Learning for Multi-modal Engine Health and Cyber-Safety Decision-Making"
-  authors:
-    - family-names: "Cantekin"
-      given-names: "Mete"
-      orcid: "https://orcid.org/0009-0001-6990-6340"
-      affiliation: "Department of Computer Engineering, Istanbul Beykent University"
-  year: 2026
-  journal: "Engineering Applications of Artificial Intelligence"
-  notes: "manuscript in preparation, not under review"
+  CDSA-MRO is the reference implementation of the maintenance safety
+  pillar of the Complementary Diagnostic Safety Approach (CDSA). It
+  contains the synthetic incident data and record schema, NumPy reference
+  implementations of the federated reinforcement learning modules
+  (v2.2.0), the Faz E preregistered evaluation code and run records, the
+  E15 typology coverage audit and the frozen coding book (v2.3.0).
+  Release v2.4.0 adds the transition-dependence test and the 18 October
+  2026 validation diagnostic study. All data are synthetic or public.
 references:
   - type: article
     authors:
@@ -103,11 +90,3 @@ references:
     notes: "Internal frozen decision document, Istanbul Beykent University"
     year: 2026
     month: 5
-  - type: article
-    authors:
-      - family-names: "Cantekin"
-        given-names: "Mete"
-    title: "Complementary Diagnostic Safety Approach (CDSA): A Federated Reinforcement Learning Paradigm for Three-Pillar Aviation Safety Convergent Validation"
-    journal: "Information Fusion (target)"
-    notes: "v1 paradigm-defining article, September 2026 submission target"
-    year: 2026

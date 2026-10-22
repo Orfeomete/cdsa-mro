@@ -44,6 +44,22 @@ comparison, and sectoral adoption.
 
 ---
 
+## Current status (v2.4.0, 22 October 2026)
+
+This repository is one of the three code archives of the CDSA research programme. Since 10 September 2026 the programme has consisted of three manuscripts, none of which is under review at present. They are listed by topic below, and their full citations will be added here once they are published.
+
+| Manuscript (topic) | Material used from the three repositories |
+|---|---|
+| Preregistered evaluation of federated deep reinforcement learning in three synthetic aviation decision tasks | Faz E code and run records, the transition-dependence test, the E12 positive control and the E13 external test (cdsa-atm), and the 18 October 2026 validation diagnostic study |
+| Dual anchoring of aviation occurrence taxonomies to Part-IS information-security events | the E15 coverage audit, the frozen coding book and the maintenance record schema (cdsa-mro), and the air traffic record schema (cdsa-atm) |
+| Threshold key custody for physiological recording in aviation investigation | the AES-256-GCM and Shamir modules and the Stage 0 and Stage 0b studies (cdsa-bb3) |
+
+The earlier pillar articles and the umbrella (paradigm) article were retired on 10 September 2026, and their content was carried into these three manuscripts. Release v2.4.0 adds two items that the manuscripts already describe. `experiments/transition_dependence/` holds the transition-dependence test with the SHA-256 digest recorded by the E12 and E13 run files, together with its result for the three environments. `experiments/validation_diagnostic_20261018/` holds the 18 October 2026 validation diagnostic study as one archive with 30 models, 270 checkpoints frozen before testing, TensorBoard event files and per-class test scores.
+
+Sections further down that describe the May 2026 scaffold stage, earlier articles or planned funding are kept as historical notes. `CHANGELOG.md` is the authoritative record of what each release contains.
+
+---
+
 ## Paradigm Context — CDSA Scenario C (v2 update, 22 May 2026)
 
 Following the **CDSA Methodological Unification Decision (Scenario C,
@@ -64,18 +80,13 @@ designed for a MRO consortium (MRO-A, MRO-B, MRO-C (simulated three-MRO consorti
 The sibling pillars are CDSA-BB3 (pilot biometrics) and the parallel ATM pillar; together they provide convergent
 validation across three independent aviation domains.
 
-A paradigm-defining umbrella article (Information Fusion Q1, target
-submission target) positions the three pillars under a common
-diagnostic-safety paradigm with quantitative convergent validation
-evidence across the three domains.
+The umbrella (paradigm) article planned in May 2026 was retired on
+10 September 2026 (see Current status above).
 
 The current `src/` layout retains the v1.0.0 modules and adds
-**scaffolded FRL modules** for the paradigm extension. The v2 modules
-are **scaffolds**: `__init__.py` + placeholder docstrings documenting
-the planned interface. Full implementations are deferred to a single
-consolidated **TÜBİTAK 1001** application (planned; September 2026
-target). Treat v2 modules as **architectural commitments**,
-not as runnable code at this scaffold stage.
+the **FRL modules** for the paradigm extension. The v2 modules were first published as scaffolds in May 2026. Since
+v2.2.0 (3 July 2026) they are full NumPy reference implementations with
+unit tests, and their v2.3.0 versions are the code that the Faz E runs used.
 
 The four-component action space (or 4-class
 for CDSA-MRO) is:
@@ -85,7 +96,6 @@ For the paradigm-defining argument, refer to:
 - `docs/scenario_c_paradigm_context.md` (paradigm context summary)
 - The CDSA Methodological Unification Decision document (internal,
   cited as `[Cantekin 2026, CDSA Scenario C]`)
-- The umbrella article (Information Fusion Q1, in preparation)
 
 ---
 
@@ -318,8 +328,9 @@ please cite:
 }
 ```
 
-A journal article on this pillar is currently under peer review;
-citation details will be added here once the review process concludes.
+No manuscript that uses this repository is under review at present.
+Citations of the related manuscripts will be added here once they are
+published.
 
 A machine-readable citation file is available at
 [`CITATION.cff`](CITATION.cff).
@@ -345,10 +356,9 @@ Beykent University) for academic guidance during the doctoral
 research. Acknowledgements to the modified Delphi panel members will
 be added in v2.
 
-This work is part of the doctoral thesis being prepared at Istanbul
-Beykent University, Department of Computer Engineering, with planned
-external funding through TÜBİTAK ARDEB 1001 (proposal in
-preparation).
+This work is part of preliminary doctoral research at Istanbul
+Beykent University, Department of Computer Engineering. No external
+funding has been received.
 
 ---
 
@@ -393,7 +403,7 @@ This repository is part of the CDSA framework ecosystem maintained under
 | Repository | Role |
 |---|---|
 | [`cdsa-site`](https://github.com/Orfeomete/cdsa-site) | Public hub & landing page (cdsa.app) |
-| [`cdsa-blackbox`](https://github.com/Orfeomete/cdsa-blackbox) | Investigation module — biometric synthetic data + cryptographic multi-signature |
+| [`cdsa-bb3`](https://github.com/Orfeomete/cdsa-bb3) | Pilot biometrics module — biometric synthetic data + cryptographic multi-signature |
 | [`cdsa-mro`](https://github.com/Orfeomete/cdsa-mro) | **This repo** — Maintenance Organisation module (SDG + RL) |
 | [`hipoksi-app-`](https://github.com/Orfeomete/hipoksi-app-) | PilotO2 hypoxia simulator |
 | [`pilotguard-app-`](https://github.com/Orfeomete/pilotguard-app-) | Pre-flight readiness monitor |
@@ -403,6 +413,6 @@ This repository is part of the CDSA framework ecosystem maintained under
 
 - **arXiv preprint** — to be deposited once the journal review process
   concludes.
-- **Doctoral thesis** — In preparation, Istanbul Beykent University,
+- **Doctoral research** — Preliminary stage, Istanbul Beykent University,
   Department of Computer Engineering, under the supervision of
   Assoc. Prof. Dr. Ibrahim Furkan INCE.
